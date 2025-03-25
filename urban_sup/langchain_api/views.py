@@ -4,6 +4,7 @@ from rest_framework import status
 from .serializers import ChatExchangeSerializer
 from .models import ChatExchange, get_chat_history
 from .langchain import get_rag_chain
+from django.shortcuts import render
 
 class ChatView(APIView):
     def get(self, request, session_id):
@@ -28,3 +29,7 @@ class ChatView(APIView):
                         status=status.HTTP_201_CREATED
                     )
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+class HomeView(APIView):
+    def home_view(request):
+        return render(request, 'langchain_api/home.html')
