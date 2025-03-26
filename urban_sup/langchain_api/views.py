@@ -5,10 +5,10 @@ from .serializers import ChatExchangeSerializer, UserSerializer
 from rest_framework_simplejwt.tokens import RefreshToken
 from django.contrib.auth.models import User
 from .models import ChatExchange, get_chat_history
+from django.db.models import Subquery, OuterRef
 from .langchain import get_rag_chain
 from rest_framework import permissions
 from rest_framework.permissions import IsAuthenticated
-from rest_framework.authentication import TokenAuthentication
 from rest_framework_simplejwt.authentication import JWTAuthentication
 import uuid
 
@@ -52,10 +52,34 @@ class ChatListView(APIView):
 
     def get(self, request):
         user = request.user
-        # Retrieve distinct session_ids for the current user
-        sessions = ChatExchange.objects.filter(user=user).values('session_id').distinct()
-        session_ids = [session['session_id'] for session in sessions]
-        return Response({"session_ids": session_ids}, status=status.HTTP_200_OK)
+        
+        # Get distinct sessions with their first message
+        sessions = (
+            ChatExchange.objects
+            .filter(user=user)
+            .values('session_id')
+            .distinct()
+            .annotate(
+                first_message=Subquery(
+                    ChatExchange.objects
+                    .filter(session_id=OuterRef('session_id'))
+                    .order_by('created_at')
+                    .values('user_query')[:1]
+                )
+            )
+            .order_by('-session_id')
+        )
+
+        # Format the response
+        session_data = [
+            {
+                "session_id": session['session_id'],
+                "first_message": session['first_message']
+            } 
+            for session in sessions
+        ]
+
+        return Response({"sessions": session_data}, status=status.HTTP_200_OK)
 
 class UserRegisterView(APIView):
     permission_classes = [permissions.AllowAny]
