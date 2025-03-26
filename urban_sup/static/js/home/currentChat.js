@@ -15,7 +15,9 @@ function sendMessage() {
 
     addMessageToChat('user-message', message);
     input.value = '';
-    scrollToBottom();
+
+    // 🚀 Ждём рендеринг, затем скроллим
+    setTimeout(scrollToBottom, 50);
 
     // Отправка на сервер
     fetch('/your-api-endpoint', {
@@ -28,14 +30,13 @@ function sendMessage() {
     })
         .then(response => response.json())
         .then(data => {
-            // Добавляем ответ бота
             addMessageToChat('bot-message', data.response);
-            scrollToBottom(); // Прокручиваем после получения ответа
+            setTimeout(scrollToBottom, 50); // 🔥 Ждём перед скроллом
         })
         .catch(error => {
             console.error('Error:', error);
             addMessageToChat('bot-message', 'Произошла ошибка');
-            scrollToBottom();
+            setTimeout(scrollToBottom, 50);
         });
 }
 
@@ -83,6 +84,7 @@ async function loadChatHistory(chatId) {
 
         // Комбинированный подход к прокрутке
         scrollToBottomSmooth(chatHistory);
+        setTimeout(scrollToBottom, 50);
 
     } catch (error) {
         console.error('Ошибка загрузки истории:', error);
@@ -95,6 +97,7 @@ async function loadChatHistory(chatId) {
                 </div>
             `;
             scrollToBottomImmediate(chatHistory);
+            setTimeout(scrollToBottom, 50);
         }
     }
 }
@@ -122,6 +125,7 @@ async function renderMessages(messages) {
     setTimeout(() => {
         scrollToBottomSmooth(chatHistory);
     }, 50);
+    setTimeout(scrollToBottom, 10);
 }
 
 async function scrollToBottomImmediate(element = document.getElementById('chatHistory')) {
@@ -159,6 +163,9 @@ async function scrollToBottom() {
 
     await scrollToBottomImmediate(chatHistory);
     await scrollToBottomSmooth(chatHistory);
+
+    // 🚀 Дополнительно скроллим всю страницу вниз
+    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
 }
 
 function showWelcomeMessage() {
