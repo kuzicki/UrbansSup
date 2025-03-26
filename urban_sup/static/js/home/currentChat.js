@@ -7,11 +7,6 @@ document.getElementById('chatInput').addEventListener('keypress', (e) => {
     }
 });
 
-function scrollToBottom() {
-    const chatHistory = document.getElementById('chatHistory');
-    chatHistory.scrollTop = chatHistory.scrollHeight;
-}
-
 function sendMessage() {
     const input = document.getElementById('chatInput');
     const message = input.value.trim();
@@ -60,6 +55,9 @@ async function loadChatHistory(chatId) {
         // Показываем индикатор загрузки
         chatHistory.innerHTML = '<div class="loading-message">Загрузка сообщений...</div>';
 
+        // Принудительная прокрутка вниз для индикатора загрузки
+        scrollToBottomImmediate(chatHistory);
+
         const response = await fetch(`/langchain_api/get-chat-history/${chatId}/`, {
             headers: {
                 'Authorization': `Bearer ${jwtToken}`,
@@ -68,7 +66,6 @@ async function loadChatHistory(chatId) {
         });
 
         if (!response.ok) {
-            // Если чат не найден (404) - показываем приветственное сообщение
             if (response.status === 404) {
                 showWelcomeMessage();
                 return;
@@ -81,22 +78,87 @@ async function loadChatHistory(chatId) {
         if (messages.length === 0) {
             showWelcomeMessage();
         } else {
-            renderMessages(messages);
+            await renderMessages(messages); // Делаем функцию асинхронной
         }
+
+        // Комбинированный подход к прокрутке
+        scrollToBottomSmooth(chatHistory);
 
     } catch (error) {
         console.error('Ошибка загрузки истории:', error);
         const chatHistory = document.getElementById('chatHistory');
         if (chatHistory) {
-            // Для других ошибок показываем сообщение с возможностью повторить
             chatHistory.innerHTML = `
                 <div class="error-message">
                     Ошибка загрузки истории<br>
                     <button onclick="loadChatHistory(${chatId})">Повторить</button>
                 </div>
             `;
+            scrollToBottomImmediate(chatHistory);
         }
     }
+}
+
+async function renderMessages(messages) {
+    const chatHistory = document.getElementById('chatHistory');
+    if (!chatHistory) return;
+
+    const fragment = document.createDocumentFragment();
+    messages.forEach(msg => {
+        const msgDiv = document.createElement('div');
+        msgDiv.className = `message ${msg.sender}-message`;
+        msgDiv.textContent = msg.text;
+        fragment.appendChild(msgDiv);
+    });
+
+    chatHistory.innerHTML = ''; // Очистка вызывает сброс скролла вверх
+    chatHistory.appendChild(fragment);
+
+    // Ждём обновления DOM
+    await new Promise(requestAnimationFrame);
+    await new Promise(resolve => setTimeout(resolve, 10));
+
+    // 🚀 Запускаем скролл с небольшой задержкой
+    setTimeout(() => {
+        scrollToBottomSmooth(chatHistory);
+    }, 50);
+}
+
+async function scrollToBottomImmediate(element = document.getElementById('chatHistory')) {
+    if (!element) return;
+
+    return new Promise(resolve => {
+        // 1. Принудительный reflow
+        void element.offsetHeight;
+
+        // 2. Установка позиции
+        element.scrollTop = element.scrollHeight;
+
+        // 3. Проверка через микротаск
+        Promise.resolve().then(() => {
+            element.scrollTop = element.scrollHeight;
+            resolve();
+        });
+    });
+}
+
+async function scrollToBottomSmooth(element) {
+    if (!element) return;
+
+    return new Promise(resolve => {
+        requestAnimationFrame(() => {
+            element.scrollTo({ top: element.scrollHeight, behavior: 'smooth' });
+            setTimeout(resolve, 300);
+        });
+    });
+}
+
+async function scrollToBottom() {
+    const chatHistory = document.getElementById('chatHistory');
+    if (!chatHistory) return;
+
+    await scrollToBottomImmediate(chatHistory);
+    await scrollToBottomSmooth(chatHistory);
 }
 
 function showWelcomeMessage() {
@@ -122,48 +184,21 @@ function showWelcomeMessage() {
         </div>
     `;
 
-    // Добавляем обработчики клика на примеры вопросов
     document.querySelectorAll('.suggestion-item').forEach(item => {
-        item.addEventListener('click', () => {
-            const inputField = document.getElementById('chatInput');
-            inputField.value = item.textContent;
-            inputField.focus();
-        });
+    item.addEventListener('click', () => {
+        const inputField = document.getElementById('chatInput');
+        inputField.value = item.textContent;
+        inputField.focus();
+
+        // Активируем кнопку отправки
+        const sendBtn = document.getElementById('sendBtn');
+        if (sendBtn) {
+            sendBtn.disabled = false;
+        }
+
+        // Имитируем ввод для активации кнопки
+        const event = new Event('input', { bubbles: true });
+        inputField.dispatchEvent(event);
     });
-}
-
-function renderMessages(messages) {
-    const chatHistory = document.getElementById('chatHistory');
-    if (!chatHistory) return;
-
-    // Очищаем чат
-    chatHistory.innerHTML = '';
-
-    // Если нет сообщений
-    if (messages.length === 0) {
-        chatHistory.innerHTML = '<div class="empty-message">Нет сообщений</div>';
-        return;
-    }
-
-    // Создаем контейнер для сообщений
-    const messagesContainer = document.createElement('div');
-    messagesContainer.className = 'messages-container';
-
-    // Добавляем сообщения
-    messages.forEach(msg => {
-        const messageDiv = document.createElement('div');
-        messageDiv.className = `message ${msg.sender === 'user' ? 'user-message' : 'bot-message'}`;
-
-        const bubble = document.createElement('div');
-        bubble.className = 'message-bubble';
-        bubble.textContent = msg.text;
-
-        messageDiv.appendChild(bubble);
-        messagesContainer.appendChild(messageDiv);
-    });
-
-    chatHistory.appendChild(messagesContainer);
-
-    // Прокручиваем вниз
-    chatHistory.scrollTop = chatHistory.scrollHeight;
+});
 }

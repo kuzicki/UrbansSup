@@ -126,7 +126,7 @@ class UserLoginView(APIView):
 
 class ChatController(APIView):
     _chats = [{'id': 1,
-            'title': f"Чат {1}"}]
+            'title': f"Чвыыыыы ыыыыыыыы ыыыыыыыыыы ыыыыыыыыыыывв вввввввввввввв вввввввввввввват {1}"}]
     _last_id = 1
 
     def get(self, request):
@@ -243,7 +243,23 @@ fake_chat_history = {
             {"sender": "user", "text": "Как создать View в Django?", "timestamp": "2025-03-26T11:00:00Z"},
             {"sender": "bot", "text": "Вы можете создать View, унаследовавшись от View или APIView...", "timestamp": "2025-03-26T11:02:00Z"},
             {"sender": "user", "text": "А как добавить его в urls.py?", "timestamp": "2025-03-26T11:03:00Z"},
-            {"sender": "bot", "text": "Нужно добавить path() в urlpatterns...", "timestamp": "2025-03-26T11:04:00Z"}
+            {"sender": "bot", "text": "Нужно добавить path() в urlpatterns...", "timestamp": "2025-03-26T11:04:00Z"},{"sender": "user", "text": "Как работает list comprehension?", "timestamp": "2025-03-25T10:00:00Z"},
+            {"sender": "bot", "text": "List comprehension - это компактный способ создания списков...", "timestamp": "2025-03-25T10:01:00Z"},
+            {"sender": "user", "text": "Спасибо, понятно!", "timestamp": "2025-03-25T10:02:00Z"},
+{"sender": "bot", "text": "Привет! Конечно, задавай свой вопрос.", "timestamp": "2025-03-25T09:55:30Z"},
+            {"sender": "user", "text": "Как работает list comprehension?", "timestamp": "2025-03-25T10:00:00Z"},
+            {"sender": "bot", "text": "List comprehension - это компактный способ создания списков...", "timestamp": "2025-03-25T10:01:00Z"},
+            {"sender": "user", "text": "Спасибо, понятно!", "timestamp": "2025-03-25T10:02:00Z"},{"sender": "bot", "text": "Привет! Конечно, задавай свой вопрос.", "timestamp": "2025-03-25T09:55:30Z"},
+            {"sender": "user", "text": "Как работает list comprehension?", "timestamp": "2025-03-25T10:00:00Z"},
+            {"sender": "bot", "text": "List comprehension - это компактный способ создания списков...", "timestamp": "2025-03-25T10:01:00Z"},
+            {"sender": "user", "text": "Спасибо, понятно!", "timestamp": "2025-03-25T10:02:00Z"},
+{"sender": "bot", "text": "Привет! Конечно, задавай свой вопрос.", "timestamp": "2025-03-25T09:55:30Z"},
+            {"sender": "user", "text": "Как работает list comprehension?", "timestamp": "2025-03-25T10:00:00Z"},
+            {"sender": "bot", "text": "List comprehension - это компактный способ создания списков...", "timestamp": "2025-03-25T10:01:00Z"},
+            {"sender": "user", "text": "Спасибо, понятно!", "timestamp": "2025-03-25T10:02:00Z"},{"sender": "bot", "text": "Привет! Конечно, задавай свой вопрос.", "timestamp": "2025-03-25T09:55:30Z"},
+            {"sender": "user", "text": "Как работает list comprehension?", "timestamp": "2025-03-25T10:00:00Z"},
+            {"sender": "bot", "text": "List comprehension - это компактный способ создания списков...", "timestamp": "2025-03-25T10:01:00Z"},
+            {"sender": "user", "text": "Спасибо, понятно!", "timestamp": "2025-03-25T10:02:00Z"}
         ],
         "created_at": "2025-03-26T10:45:00Z"
     }

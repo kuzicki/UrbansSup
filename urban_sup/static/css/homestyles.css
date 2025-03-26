@@ -59,9 +59,21 @@ body {
 .chat-history {
     flex-grow: 1;
     overflow-y: auto;
+    max-height: 100vh;
     padding: 20px 0;
     display: flex;
     flex-direction: column;
+}
+
+
+#chatHistory {
+    overflow-y: auto;
+    height: 100%;
+    scroll-behavior: smooth;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    padding: 20px;
 }
 
 /* Приветственное сообщение */
@@ -137,22 +149,21 @@ body {
 
 /* Элементы чата */
 .message {
+    margin-bottom: 12px;
+    max-width: 80%;
     padding: 12px 16px;
-    margin-bottom: 16px;
     border-radius: 8px;
-    max-width: 85%;
-    line-height: 1.5;
-    width: fit-content;
+    word-break: break-word;
 }
 
 .user-message {
-    background-color: var(--message-bg-user);
-    margin-left: auto;
+    align-self: flex-end;
+    background-color: #f0f7ff;
 }
 
 .bot-message {
-    background-color: var(--message-bg-bot);
-    margin-right: auto;
+    align-self: flex-start;
+    background-color: #f8f9fa;
 }
 
 /* Поле ввода */
@@ -223,6 +234,17 @@ body {
     cursor: pointer;
     transition: background-color 0.2s;
     position: relative;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+
+@media (max-width: 768px) {
+    .chat-item {
+        padding: 10px 12px;
+        font-size: 14px;
+    }
 }
 
 .chat-item:hover {
@@ -231,6 +253,26 @@ body {
 
 .chat-item.active {
     background-color: rgba(16, 163, 127, 0.1);
+}
+
+.message-bubble {
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 15px;
+    line-height: 1.4;
+    word-break: break-word;
+    max-width: 100%;
+    overflow-wrap: break-word;
+}
+
+.user-message .message-bubble {
+    background-color: var(--message-bg-user);
+    color: #333;
+}
+
+.bot-message .message-bubble {
+    background-color: var(--message-bg-bot);
+    color: #333;
 }
 
 /* Адаптивность */
@@ -328,4 +370,153 @@ body {
     border-radius: 4px;
     cursor: pointer;
     font-size: 14px;
+}
+
+.sidebar {
+    /* существующие стили */
+    padding: 10px 0; /* Изменяем padding */
+}
+
+.chat-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1px; /* Минимальный отступ между элементами */
+}
+
+.chat-item {
+    padding: 12px 15px;
+    margin: 0 10px; /* Отступы по бокам */
+    border-radius: 4px; /* Уменьшаем скругление */
+    position: relative;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background-color: var(--sidebar-bg);
+    transition: all 0.2s ease;
+}
+
+/* Линия-разделитель после каждого элемента (кроме последнего) */
+.chat-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 15px;
+    right: 15px;
+    bottom: -1px;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.08);
+}
+
+.chat-item:hover {
+    background-color: rgba(0, 0, 0, 0.03);
+}
+
+.chat-item.active {
+    background-color: rgba(16, 163, 127, 0.1);
+    box-shadow: inset 3px 0 0 var(--primary-color);
+}
+
+.chat-item.active::after {
+    display: none; /* Убираем линию для активного элемента */
+}
+
+/* Для мобильных устройств */
+@media (max-width: 768px) {
+    .chat-item {
+        padding: 10px 12px;
+        margin: 0 8px;
+    }
+
+    .chat-item:not(:last-child)::after {
+        left: 8px;
+        right: 8px;
+    }
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 15px;
+    margin: 10px 0;
+    font-size: 15px;
+    font-weight: 600;
+    color: #555;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    position: relative;
+    text-align: center;
+}
+
+.sidebar-header::before,
+.sidebar-header::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: rgba(0, 0, 0, 0.1);
+    margin: 0 10px;
+}
+
+.new-chat-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 20px;
+    margin: 0 auto 20px;
+    width: calc(100% - 30px); /* Ширина с отступами */
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.new-chat-btn:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.new-chat-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+}
+
+.new-chat-btn::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        to bottom right,
+        rgba(255, 255, 255, 0.3),
+        rgba(255, 255, 255, 0)
+    );
+    transform: rotate(30deg);
+    transition: all 0.3s ease;
+}
+
+.new-chat-btn:hover::before {
+    left: 100%;
+}
+
+/* Иконка плюса */
+.new-chat-btn::after {
+    content: "+";
+    font-size: 18px;
+    font-weight: bold;
+    display: inline-block;
+    transition: transform 0.2s ease;
+}
+
+.new-chat-btn:hover::after {
+    transform: scale(1.2);
 }
