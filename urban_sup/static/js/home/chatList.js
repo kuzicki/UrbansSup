@@ -167,57 +167,6 @@ function setActiveChat(chatId) {
     currentActiveChatId = chatId;
 }
 
-// 4. Функции работы с историей сообщений
-async function loadChatHistory(chatId) {
-    try {
-        const chatHistory = document.getElementById('chatHistory');
-        if (!chatHistory) return;
-
-        chatHistory.innerHTML = '<div class="loading-message">Загрузка сообщений...</div>';
-
-        const response = await fetch(`/get-chat-history/${chatId}/`, {
-            headers: {
-                'Authorization': `Bearer ${jwtToken}`,
-                'Accept': 'application/json'
-            }
-        });
-
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-
-        const messages = await response.json();
-        renderMessages(messages);
-    } catch (error) {
-        console.error('Ошибка загрузки истории:', error);
-        const chatHistory = document.getElementById('chatHistory');
-        if (chatHistory) {
-            chatHistory.innerHTML = '<div class="error-message">Не удалось загрузить историю чата</div>';
-        }
-    }
-}
-
-function renderMessages(messages) {
-    const chatHistory = document.getElementById('chatHistory');
-    if (!chatHistory) return;
-
-    chatHistory.innerHTML = '';
-
-    if (messages.length === 0) {
-        chatHistory.innerHTML = '<div class="empty-message">Нет сообщений</div>';
-        return;
-    }
-
-    messages.forEach(msg => {
-        const msgDiv = document.createElement('div');
-        msgDiv.className = `message ${msg.sender}`;
-        msgDiv.textContent = msg.text;
-        chatHistory.appendChild(msgDiv);
-    });
-
-    // Прокручиваем вниз
-    chatHistory.scrollTop = chatHistory.scrollHeight;
-}
 
 // 5. Инициализация приложения
 function initializeChatApp() {
