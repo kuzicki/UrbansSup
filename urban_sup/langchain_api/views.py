@@ -11,6 +11,7 @@ from rest_framework import permissions
 from rest_framework.permissions import IsAuthenticated
 from rest_framework_simplejwt.authentication import JWTAuthentication
 import uuid
+import time
 
 
 class ChatView(APIView):
@@ -120,4 +121,138 @@ class UserLoginView(APIView):
         except User.DoesNotExist:
             return Response(
                 {"message": "User not found."}, status=status.HTTP_404_NOT_FOUND
+            )
+
+
+class ChatController(APIView):
+    _chats = []
+    _last_id = 0
+
+    def get(self, request):
+        return Response(sorted(self._chats, key=lambda x: x['id'], reverse=True))
+
+    def post(self, request):
+        self.__class__._last_id += 1
+        new_chat = {
+            'id': self.__class__._last_id,
+            'title': f"Чат {self.__class__._last_id}"
+        }
+        self.__class__._chats.append(new_chat)
+        return Response(new_chat, status=status.HTTP_201_CREATED)
+
+    fake_chat_history = {
+        1: {
+            "id": 1,
+            "title": "Чат о Python",
+            "messages": [
+                {"sender": "user", "text": "Как работает list comprehension?", "timestamp": "2025-03-25T10:00:00Z"},
+                {"sender": "bot", "text": "List comprehension - это компактный способ создания списков...",
+                 "timestamp": "2025-03-25T10:01:00Z"}
+            ],
+            "created_at": "2025-03-25T09:55:00Z"
+        },
+        2: {
+            "id": 2,
+            "title": "Чат о Django",
+            "messages": [
+                {"sender": "user", "text": "Как создать View в Django?", "timestamp": "2025-03-26T11:00:00Z"},
+                {"sender": "bot", "text": "Вы можете создать View, унаследовавшись от View или APIView...",
+                 "timestamp": "2025-03-26T11:02:00Z"}
+            ],
+            "created_at": "2025-03-26T10:45:00Z"
+        },
+        3: {
+            "id": 3,
+            "title": "Чат о REST API",
+            "messages": [
+                {"sender": "user", "text": "Какие методы HTTP используются в REST?",
+                 "timestamp": "2025-03-27T12:00:00Z"},
+                {"sender": "bot", "text": "Основные методы: GET, POST, PUT, PATCH, DELETE...",
+                 "timestamp": "2025-03-27T12:01:30Z"}
+            ],
+            "created_at": "2025-03-27T11:50:00Z"
+        }
+    }
+
+    class ChatHistoryView(APIView):
+        """
+        Контроллер для получения истории чата по ID
+        GET /get-chat-history/<id>/
+        """
+
+        def get(self, request, chat_id):
+            try:
+                chat_id = int(chat_id)
+                chat_data = fake_chat_history.get(chat_id)
+
+                if not chat_data:
+                    return Response(
+                        {"error": f"Чат с ID {chat_id} не найден"},
+                        status=status.HTTP_404_NOT_FOUND
+                    )
+
+                return Response(chat_data, status=status.HTTP_200_OK)
+
+            except ValueError:
+                return Response(
+                    {"error": "ID чата должен быть числом"},
+                    status=status.HTTP_400_BAD_REQUEST
+                )
+
+
+
+
+fake_chat_history = {
+    1: {
+        "id": 1,
+        "title": "Чат о Python",
+        "messages": [
+            {"sender": "user", "text": "Привет! У меня вопрос по Python", "timestamp": "2025-03-25T09:55:00Z"},
+            {"sender": "bot", "text": "Привет! Конечно, задавай свой вопрос.", "timestamp": "2025-03-25T09:55:30Z"},
+            {"sender": "user", "text": "Как работает list comprehension?", "timestamp": "2025-03-25T10:00:00Z"},
+            {"sender": "bot", "text": "List comprehension - это компактный способ создания списков...", "timestamp": "2025-03-25T10:01:00Z"},
+            {"sender": "user", "text": "Спасибо, понятно!", "timestamp": "2025-03-25T10:02:00Z"}
+        ],
+        "created_at": "2025-03-25T09:55:00Z"
+    },
+    2: {
+        "id": 2,
+        "title": "Чат о Django",
+        "messages": [
+            {"sender": "user", "text": "Здравствуйте, нужна помощь с Django", "timestamp": "2025-03-26T10:45:00Z"},
+            {"sender": "bot", "text": "Здравствуйте! Чем могу помочь?", "timestamp": "2025-03-26T10:45:30Z"},
+            {"sender": "user", "text": "Как создать View в Django?", "timestamp": "2025-03-26T11:00:00Z"},
+            {"sender": "bot", "text": "Вы можете создать View, унаследовавшись от View или APIView...", "timestamp": "2025-03-26T11:02:00Z"},
+            {"sender": "user", "text": "А как добавить его в urls.py?", "timestamp": "2025-03-26T11:03:00Z"},
+            {"sender": "bot", "text": "Нужно добавить path() в urlpatterns...", "timestamp": "2025-03-26T11:04:00Z"}
+        ],
+        "created_at": "2025-03-26T10:45:00Z"
+    }
+}
+
+
+class ChatHistoryView(APIView):
+    """
+    Контроллер для получения истории чата по ID
+    GET /get-chat-history/<id>/
+    """
+
+    def get(self, request, chat_id):
+        try:
+            chat_id = int(chat_id)
+            chat_data = fake_chat_history.get(chat_id)
+
+            if not chat_data:
+                return Response(
+                    {"error": f"Чат с ID {chat_id} не найден"},
+                    status=status.HTTP_404_NOT_FOUND
+                )
+
+            # Возвращаем только массив сообщений, как ожидает фронтенд
+            return Response(chat_data["messages"], status=status.HTTP_200_OK)
+
+        except ValueError:
+            return Response(
+                {"error": "ID чата должен быть числом"},
+                status=status.HTTP_400_BAD_REQUEST
             )

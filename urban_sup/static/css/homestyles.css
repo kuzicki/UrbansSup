@@ -141,6 +141,22 @@ body {
     background-color: rgba(16, 163, 127, 0.1);
 }
 
+.chat-item {
+    position: relative;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.chat-timestamp {
+    font-size: 0.8em;
+    color: #777;
+    margin-top: 3px;
+}
+
+.chat-item.active {
+    background-color: #f0f0f0;
+}
+
 .sidebar-header {
     font-weight: bold;
     margin: 10px 0 15px;
@@ -232,6 +248,14 @@ body {
 
 .typing-dot:nth-child(3) {
     animation-delay: 0.4s;
+}
+
+.empty-chat-message {
+    text-align: center;
+    color: #666;
+    font-size: 1.2em;
+    margin-top: 50px;
+    padding: 20px;
 }
 
 @keyframes typingAnimation {
