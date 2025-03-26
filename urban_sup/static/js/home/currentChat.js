@@ -68,16 +68,27 @@ async function loadChatHistory(chatId) {
         });
 
         if (!response.ok) {
+            // Если чат не найден (404) - показываем приветственное сообщение
+            if (response.status === 404) {
+                showWelcomeMessage();
+                return;
+            }
             throw new Error(`Ошибка загрузки: ${response.status}`);
         }
 
         const messages = await response.json();
-        renderMessages(messages);
+
+        if (messages.length === 0) {
+            showWelcomeMessage();
+        } else {
+            renderMessages(messages);
+        }
 
     } catch (error) {
         console.error('Ошибка загрузки истории:', error);
         const chatHistory = document.getElementById('chatHistory');
         if (chatHistory) {
+            // Для других ошибок показываем сообщение с возможностью повторить
             chatHistory.innerHTML = `
                 <div class="error-message">
                     Ошибка загрузки истории<br>
@@ -86,6 +97,39 @@ async function loadChatHistory(chatId) {
             `;
         }
     }
+}
+
+function showWelcomeMessage() {
+    const chatHistory = document.getElementById('chatHistory');
+    if (!chatHistory) return;
+
+    chatHistory.innerHTML = `
+        <div class="welcome-message">
+            <div class="welcome-header">
+                <h3>Добро пожаловать в чат!</h3>
+                <p>Я ваш виртуальный помощник. Давайте начнём общение!</p>
+            </div>
+            
+            <div class="suggestions-container">
+                <p class="suggestion-title">Выберите один из примеров вопросов:</p>
+                <div class="suggestion-items">
+                    <div class="suggestion-item">Как мне начать работу с системой?</div>
+                    <div class="suggestion-item">Какие основные функции доступны?</div>
+                    <div class="suggestion-item">Можешь показать пример использования?</div>
+                    <div class="suggestion-item">Как я могу решить свою задачу?</div>
+                </div>
+            </div>
+        </div>
+    `;
+
+    // Добавляем обработчики клика на примеры вопросов
+    document.querySelectorAll('.suggestion-item').forEach(item => {
+        item.addEventListener('click', () => {
+            const inputField = document.getElementById('chatInput');
+            inputField.value = item.textContent;
+            inputField.focus();
+        });
+    });
 }
 
 function renderMessages(messages) {
