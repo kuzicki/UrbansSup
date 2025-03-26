@@ -1,8 +1,11 @@
 from django.db import models
+from django.contrib.auth.models import User
+import uuid
 
 
 class ChatExchange(models.Model):
-    session_id = models.CharField(max_length=255)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    session_id = models.CharField(max_length=255, editable=True)
     user_query = models.TextField()
     model_response = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
@@ -14,12 +17,10 @@ class ChatExchange(models.Model):
         return f"Log {id} for session {self.session_id}"
 
 
-def get_chat_history(session_id: str):
-    exchanges = ChatExchange.objects.filter(session_id=session_id).order_by(
+def get_chat_history(session_id: str, user):
+    exchanges = ChatExchange.objects.filter(session_id=session_id, user=user).order_by(
         "created_at"
     )
-
-
 
     messages = []
     for exchange in exchanges:

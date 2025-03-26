@@ -10,12 +10,13 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 import os
+import datetime
 from pathlib import Path
 import environ
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = Path(__file__).resolve().parent.parent
 env = environ.Env()
-environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
+environ.Env.read_env()
 
 
 # Quick-start development settings - unsuitable for production
@@ -28,6 +29,20 @@ SECRET_KEY = 'django-insecure-pv%k^l$$(ryyoprx)sb@brx89n7w76-*&*e&gg!34*8jkgdx)9
 DEBUG = True
 
 ALLOWED_HOSTS = []
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ],
+    # ... other settings ...
+}
+
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': datetime.timedelta(days=1000),
+    'REFRESH_TOKEN_LIFETIME': datetime.timedelta(days=700),
+    'ROTATE_REFRESH_TOKENS': True,
+    # ... other JWT settings ...
+}
 
 
 # Application definition
@@ -58,7 +73,7 @@ ROOT_URLCONF = 'urban_sup.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / "home" / "templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
