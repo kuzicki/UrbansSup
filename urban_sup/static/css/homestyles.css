@@ -5,8 +5,8 @@
     --border-color: #d9d9e3;
     --primary-color: #10a37f;
     --primary-hover: #0d8a6a;
-    --message-bg-user: #f0f7ff;
-    --message-bg-bot: #f8f9fa;
+    --message-bg-human: #f0f7ff;
+    --message-bg-ai: #f8f9fa;
     --suggestion-bg: #f5f5f5;
     --suggestion-hover: #ebebeb;
 }
@@ -147,23 +147,43 @@ body {
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
-/* Элементы чата */
 .message {
-    margin-bottom: 12px;
-    max-width: 80%;
-    padding: 12px 16px;
-    border-radius: 8px;
-    word-break: break-word;
+    max-width: 80%; /* Ограничиваем ширину сообщений */
+    width: fit-content;
+    margin: 8px 0;
+    padding: 10px 15px;
+    border-radius: 18px;
 }
 
+/* Сообщение от человека (бывший user-message) */
 .human-message {
-    align-self: flex-end;
-    background-color: #f0f7ff;
+    align-self: flex-end; /* Справа */
+    background-color: #007bff; /* Синий цвет (можно изменить) */
+    color: white;
 }
 
+/* Сообщение от ИИ (бывший bot-message) */
 .ai-message {
-    align-self: flex-start;
+    align-self: flex-start; /* Слева */
+    background-color: #f1f1f1; /* Светло-серый фон */
+    color: #333; /* Темный текст */
+}
+
+.empty-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 8px;
     background-color: #f8f9fa;
+    margin: 1rem;
+    border: 1px dashed #ddd;
+    min-height: 150px;
 }
 
 /* Поле ввода */
@@ -265,13 +285,13 @@ body {
     overflow-wrap: break-word;
 }
 
-.user-message .message-bubble {
-    background-color: var(--message-bg-user);
+.human-message .message-bubble {
+    background-color: var(--message-bg-human);
     color: #333;
 }
 
-.bot-message .message-bubble {
-    background-color: var(--message-bg-bot);
+.ai-message .message-bubble {
+    background-color: var(--message-bg-ai);
     color: #333;
 }
 
@@ -312,7 +332,7 @@ body {
     display: flex;
     padding: 12px 16px;
     margin-bottom: 16px;
-    background-color: var(--message-bg-bot);
+    background-color: var(--message-bg-ai);
     border-radius: 8px;
     max-width: 85%;
     margin-right: auto;

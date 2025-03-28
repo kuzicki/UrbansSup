@@ -36,83 +36,123 @@ function showError(message) {
 // 2. Функции работы с чатами
 async function loadChats() {
     try {
-        const response = await fetch(SESSIONS_API, {
+        showLoadingState(true);
+        const response = await fetch('/langchain_api/chat/sessions/', {
             headers: {
+                'Accept': 'application/json',
                 'Authorization': `Bearer ${jwtToken}`
             }
         });
-        
-        const data = await response.json();
-        chats = data.sessions.map(session => ({
-            id: session.session_id,
-            title: session.first_message || 'Новый диалог'
-        }));
-        
+
+        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+
+        // Получаем данные и сохраняем как есть (объект с sessions)
+        chats = await response.json();
+        console.log("Server response:", chats);
+
         updateChatListUI();
+
+        if (chats.sessions && chats.sessions.length > 0) {
+            currentActiveChatId = chats.sessions[0].session_id;
+            setActiveChat(currentActiveChatId);
+            chat_id = currentActiveChatId;
+            console.log("ACTIVE CHAT");
+            console.log(currentActiveChatId);
+            await loadChatHistory(currentActiveChatId);
+        } else {
+            showEmptyChatMessage();
+        }
     } catch (error) {
-        showError('Ошибка загрузки диалогов');
+        console.error('Ошибка загрузки чатов:', error);
+        showError('Не удалось загрузить список чатов');
+        showWelcomeMessage();
+    } finally {
+        showLoadingState(false);
     }
 }
 
-async function createNewChat() {
-    try {
-        const response = await fetch(CHAT_API, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${jwtToken}`
-            },
-            body: JSON.stringify({ user_query: "Начнём диалог" })
-        });
-        
-        const data = await response.json();
-        const newChat = {
-            id: data.session_id,
-            title: data.response.substring(0, 50)  // Обрезаем длинный текст
-        };
-        
-        chats.unshift(newChat);
-        updateChatListUI();
-        setActiveChat(newChat.id);
-    } catch (error) {
-        showError('Ошибка создания диалога');
-    }
-}
-
-// 3. Функции работы с UI
+// Функции работы с UI
 function updateChatListUI() {
     const chatList = document.getElementById('chatList');
-    if (!chatList) return;
+    if (!chatList) {
+        console.error('Chat list element not found');
+        return;
+    }
 
+    console.log("Raw chats data:", chats); // Логируем исходные данные
+
+    // Получаем массив сессий из объекта
+    const sessionsArray = chats?.sessions || [];
+    console.log("Sessions array:", sessionsArray);
+
+    // Очищаем список перед обновлением
     chatList.innerHTML = '';
 
-    chats.forEach(chat => {
-        const chatItem = document.createElement('div');
-        chatItem.className = `chat-item ${chat.error ? 'error' : ''} ${chat.isTemp ? 'temp' : ''} ${chat.id === currentActiveChatId ? 'active' : ''}`;
-        chatItem.textContent = chat.title;
-        chatItem.dataset.chatId = chat.id;
+    if (sessionsArray.length === 0) {
+        chatList.innerHTML = '<div class="no-chats">Нет активных чатов</div>';
+        return;
+    }
 
-        if (chat.isTemp) {
-            chatItem.innerHTML += ' <span class="loading-dots">...</span>';
-        }
+    // Создаем элементы для каждой сессии
+    sessionsArray.forEach(session => {
+        const chatItem = document.createElement('div');
+        chatItem.className = `chat-item ${session.session_id === currentActiveChatId ? 'active' : ''}`;
+        chatItem.textContent = session.first_message || "Новый чат";
+        chatItem.dataset.sessionId = session.session_id;
 
         chatItem.addEventListener('click', () => {
-            if (!chat.error && !chat.isTemp) {
-                currentActiveChatId = chat.id;
-                setActiveChat(chat.id);
-                loadChatHistory(chat.id);
-            }
+            currentActiveChatId = session.session_id;
+            setActiveChat(session.session_id);
+            loadChatHistory(session.session_id);
+            chat_id = session.session_id;
         });
 
         chatList.appendChild(chatItem);
     });
 }
 
-function setActiveChat(chatId) {
+async function createNewChat() {
+    if (!jwtToken) {
+        showError('Требуется авторизация');
+        return;
+    }
+
+    // Создаем временный объект чата
+    const tempId = 'temp-' + Date.now(); // Генерируем уникальный временный ID
+    const newChat = {
+        session_id: tempId,  // Используем session_id вместо id
+        first_message: 'Новый чат',  // Используем first_message вместо title
+        isTemp: true
+    };
+
+    // Оптимистичное обновление UI
+    if (!chats.sessions) {
+        chats.sessions = []; // Инициализируем sessions, если его нет
+    }
+    chats.sessions.unshift(newChat); // Добавляем в начало массива sessions
+
+    updateChatListUI();
+    currentActiveChatId = tempId;
+    setActiveChat(tempId);
+    chat_id = '';
+
+    // Очищаем историю чата и показываем приветствие
+    document.getElementById('chatHistory').innerHTML = '';
+    showWelcomeMessage();
+    showLoadingState(false);
+}
+
+function setActiveChat(sessionId) {
+    // Убираем класс active у всех элементов
     document.querySelectorAll('.chat-item').forEach(item => {
-        item.classList.toggle('active', item.dataset.chatId == chatId);
+        item.classList.remove('active');
     });
-    currentActiveChatId = chatId;
+
+    // Добавляем класс active к выбранному чату
+    const selectedChat = document.querySelector(`.chat-item[data-session-id="${sessionId}"]`);
+    if (selectedChat) {
+        selectedChat.classList.add('active');
+    }
 }
 
 
