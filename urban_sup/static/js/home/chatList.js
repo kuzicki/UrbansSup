@@ -36,98 +36,46 @@ function showError(message) {
 // 2. Функции работы с чатами
 async function loadChats() {
     try {
-        showLoadingState(true);
-        const response = await fetch('/langchain_api/chats/', {
+        const response = await fetch(SESSIONS_API, {
             headers: {
-                'Accept': 'application/json',
                 'Authorization': `Bearer ${jwtToken}`
             }
         });
-
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-
-        chats = await response.json();
+        
+        const data = await response.json();
+        chats = data.sessions.map(session => ({
+            id: session.session_id,
+            title: session.first_message || 'Новый диалог'
+        }));
+        
         updateChatListUI();
-
-        if (chats.length > 0) {
-            // Активируем первый чат
-            currentActiveChatId = chats[0].id;
-            setActiveChat(currentActiveChatId);
-            await loadChatHistory(currentActiveChatId);
-        } else {
-            showEmptyChatMessage();
-        }
     } catch (error) {
-        console.error('Ошибка загрузки чатов:', error);
-        showError('Не удалось загрузить список чатов');
-    } finally {
-        showLoadingState(false);
+        showError('Ошибка загрузки диалогов');
     }
 }
 
 async function createNewChat() {
-    if (!jwtToken) {
-        showError('Требуется авторизация');
-        return;
-    }
-
-    // Создаем временный объект чата
-    const tempId = nextTempId--;
-    const newChat = {
-        id: tempId,
-        title: 'Новый чат',
-        isTemp: true
-    };
-
-    // Оптимистичное обновление UI
-    chats.unshift(newChat);
-    updateChatListUI();
-    setActiveChat(tempId);
-    showLoadingState(true);
-
     try {
-        const response = await fetch('/langchain_api/chats/', {
+        const response = await fetch(CHAT_API, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${jwtToken}`
             },
-            body: JSON.stringify({ title: 'Новый чат' })
+            body: JSON.stringify({ user_query: "Начнём диалог" })
         });
-
-        if (!response.ok) {
-            const errorData = await response.json().catch(() => ({}));
-            throw new Error(errorData.message || 'Ошибка сервера');
-        }
-
-        const serverChat = await response.json();
-
-        // Заменяем временный чат на серверный
-        const index = chats.findIndex(c => c.id === tempId);
-        if (index !== -1) {
-            chats[index] = serverChat;
-            chats[index].isTemp = false;
-        }
-
-        // Обновляем UI
+        
+        const data = await response.json();
+        const newChat = {
+            id: data.session_id,
+            title: data.response.substring(0, 50)  // Обрезаем длинный текст
+        };
+        
+        chats.unshift(newChat);
         updateChatListUI();
-        currentActiveChatId = serverChat.id;
-        setActiveChat(serverChat.id);
-        await loadChatHistory(serverChat.id);
-
+        setActiveChat(newChat.id);
     } catch (error) {
-        console.error('Ошибка создания чата:', error);
-        const index = chats.findIndex(c => c.id === tempId);
-        if (index !== -1) {
-            chats[index].error = true;
-            chats[index].title = 'Ошибка создания';
-            updateChatListUI();
-        }
-        showError('Не удалось создать чат');
-    } finally {
-        showLoadingState(false);
+        showError('Ошибка создания диалога');
     }
 }
 

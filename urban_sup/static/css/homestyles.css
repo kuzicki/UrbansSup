@@ -156,12 +156,12 @@ body {
     word-break: break-word;
 }
 
-.user-message {
+.human-message {
     align-self: flex-end;
     background-color: #f0f7ff;
 }
 
-.bot-message {
+.ai-message {
     align-self: flex-start;
     background-color: #f8f9fa;
 }

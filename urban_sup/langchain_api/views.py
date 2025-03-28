@@ -175,34 +175,6 @@ class ChatController(APIView):
         }
     }
 
-    class ChatHistoryView(APIView):
-        """
-        Контроллер для получения истории чата по ID
-        GET /get-chat-history/<id>/
-        """
-
-        def get(self, request, chat_id):
-            try:
-                chat_id = int(chat_id)
-                chat_data = fake_chat_history.get(chat_id)
-
-                if not chat_data:
-                    return Response(
-                        {"error": f"Чат с ID {chat_id} не найден"},
-                        status=status.HTTP_404_NOT_FOUND
-                    )
-
-                return Response(chat_data, status=status.HTTP_200_OK)
-
-            except ValueError:
-                return Response(
-                    {"error": "ID чата должен быть числом"},
-                    status=status.HTTP_400_BAD_REQUEST
-                )
-
-
-
-
 fake_chat_history = {
     1: {
         "id": 1,

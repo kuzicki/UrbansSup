@@ -13,14 +13,14 @@ function sendMessage() {
 
     if (!message) return;
 
-    addMessageToChat('user-message', message);
+    addMessageToChat('human-message', message);
     input.value = '';
 
     // 🚀 Ждём рендеринг, затем скроллим
     setTimeout(scrollToBottom, 50);
 
     // Отправка на сервер
-    fetch('/your-api-endpoint', {
+    fetch('', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -30,15 +30,16 @@ function sendMessage() {
     })
         .then(response => response.json())
         .then(data => {
-            addMessageToChat('bot-message', data.response);
+            addMessageToChat('ai-message', data.response);
             setTimeout(scrollToBottom, 50); // 🔥 Ждём перед скроллом
         })
         .catch(error => {
             console.error('Error:', error);
-            addMessageToChat('bot-message', 'Произошла ошибка');
+            addMessageToChat('ai-message', 'Произошла ошибка');
             setTimeout(scrollToBottom, 50);
         });
 }
+
 
 function addMessageToChat(className, text) {
     const chatHistory = document.getElementById('chatHistory');
@@ -48,84 +49,35 @@ function addMessageToChat(className, text) {
     chatHistory.appendChild(messageDiv);
 }
 
-async function loadChatHistory(chatId) {
+async function loadChatHistory(sessionId) { 
     try {
-        const chatHistory = document.getElementById('chatHistory');
-        if (!chatHistory) return;
-
-        // Показываем индикатор загрузки
-        chatHistory.innerHTML = '<div class="loading-message">Загрузка сообщений...</div>';
-
-        // Принудительная прокрутка вниз для индикатора загрузки
-        scrollToBottomImmediate(chatHistory);
-
-        const response = await fetch(`/langchain_api/get-chat-history/${chatId}/`, {
+        const response = await fetch(`${CHAT_API}${sessionId}/`, {
             headers: {
-                'Authorization': `Bearer ${jwtToken}`,
-                'Accept': 'application/json'
+                'Authorization': `Bearer ${jwtToken}`
             }
         });
-
-        if (!response.ok) {
-            if (response.status === 404) {
-                showWelcomeMessage();
-                return;
-            }
-            throw new Error(`Ошибка загрузки: ${response.status}`);
-        }
-
-        const messages = await response.json();
-
-        if (messages.length === 0) {
-            showWelcomeMessage();
-        } else {
-            await renderMessages(messages); // Делаем функцию асинхронной
-        }
-
-        // Комбинированный подход к прокрутке
-        scrollToBottomSmooth(chatHistory);
-        setTimeout(scrollToBottom, 50);
-
+        
+        const data = await response.json();
+        renderMessages(data.messages);
     } catch (error) {
-        console.error('Ошибка загрузки истории:', error);
-        const chatHistory = document.getElementById('chatHistory');
-        if (chatHistory) {
-            chatHistory.innerHTML = `
-                <div class="error-message">
-                    Ошибка загрузки истории<br>
-                    <button onclick="loadChatHistory(${chatId})">Повторить</button>
-                </div>
-            `;
-            scrollToBottomImmediate(chatHistory);
-            setTimeout(scrollToBottom, 50);
-        }
+        showError('Ошибка загрузки истории');
     }
 }
 
-async function renderMessages(messages) {
+function renderMessages(messages) {
+    console.log(messages);
+    
     const chatHistory = document.getElementById('chatHistory');
-    if (!chatHistory) return;
-
-    const fragment = document.createDocumentFragment();
+    chatHistory.innerHTML = '';
+    
     messages.forEach(msg => {
-        const msgDiv = document.createElement('div');
-        msgDiv.className = `message ${msg.sender}-message`;
-        msgDiv.textContent = msg.text;
-        fragment.appendChild(msgDiv);
+        const div = document.createElement('div');
+        div.className = `message ${msg.role}-message`;
+        div.textContent = msg.content;
+        chatHistory.appendChild(div);
     });
-
-    chatHistory.innerHTML = ''; // Очистка вызывает сброс скролла вверх
-    chatHistory.appendChild(fragment);
-
-    // Ждём обновления DOM
-    await new Promise(requestAnimationFrame);
-    await new Promise(resolve => setTimeout(resolve, 10));
-
-    // 🚀 Запускаем скролл с небольшой задержкой
-    setTimeout(() => {
-        scrollToBottomSmooth(chatHistory);
-    }, 50);
-    setTimeout(scrollToBottom, 10);
+    
+    scrollToBottom();
 }
 
 async function scrollToBottomImmediate(element = document.getElementById('chatHistory')) {
