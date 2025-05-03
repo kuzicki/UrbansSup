@@ -1,3 +1,4 @@
+import re
 from langchain_community.document_loaders import (
     TextLoader,
     PyPDFLoader,
@@ -18,8 +19,33 @@ vectorstore = Chroma(
     persist_directory="./chroma_db", embedding_function=embedding_function
 )
 
-text_splitter = RecursiveCharacterTextSplitter(
-    chunk_size=1000, chunk_overlap=200, length_function=len
+
+class ConceptAwareTextSplitter(RecursiveCharacterTextSplitter):
+    def split_text(self, text: str) -> List[str]:
+        # Split on concept boundaries
+        concepts = re.split(r"(=== concept_.*? ===)", text)
+        chunks = []
+        current_chunk = ""
+
+        for part in concepts:
+            if part.startswith("==="):
+                if current_chunk:
+                    chunks.append(current_chunk.strip())
+                current_chunk = part
+            else:
+                current_chunk += part
+                if len(current_chunk) > self._chunk_size:
+                    chunks.append(current_chunk.strip())
+                    current_chunk = ""
+
+        if current_chunk:
+            chunks.append(current_chunk.strip())
+        return chunks
+
+
+# Replace original splitter
+text_splitter = ConceptAwareTextSplitter(
+    chunk_size=10000, chunk_overlap=0, separators=[]
 )
 
 
