@@ -1,19 +1,19 @@
-=== concept_0.1_MPascal ===
+=== 0.1 MPascal ===
 Not Found
 
-=== concept_0.2_kg ===
+=== 0.2 kg ===
 Not Found
 
-=== concept_0.2_meter ===
+=== 0.2 meter ===
 Not Found
 
-=== concept_0.4_kg ===
+=== 0.4 kg ===
 Not Found
 
-=== concept_0.75_kg ===
+=== 0.75 kg ===
 Not Found
 
-=== concept_0.85_g ===
+=== 0.85 g ===
 Not Found
 
 === concept_0_m3 ===
@@ -22,10 +22,10 @@ Not Found
 === concept_0_percent ===
 Not Found
 
-=== concept_1.2_g ===
+=== 1.2 g ===
 Not Found
 
-=== concept_1.5_meters ===
+=== 1.5 meters ===
 Not Found
 
 === concept_1000_kg ===
@@ -145,7 +145,7 @@ Not Found
 === concept_4_meters ===
 Not Found
 
-=== concept_5.6_g ===
+=== 5.6 g ===
 Not Found
 
 === concept_50_watt ===
@@ -182,142 +182,142 @@ Not Found
 Not Found
 
 === concept_COC ===
-concept_COC
+COC
 
 ∍not maximum class of explored objects':
-	subject_domain_of_facilities_for_biological_treatment_in_activated_sludge_systems
+	subject domain of facilities for biological treatment in activated sludge systems
 =>whole-part:
-	concept_mixer
+	mixer
 
 
 === concept_COH ===
-concept_COH
+COH
 
 ∍not maximum class of explored objects':
-	subject_domain_of_biological_wastewater_treatment_facility
+	subject domain of biological wastewater treatment facility
 <=sc-text translation*:
 ...
 	показатель содержания органических веществ в воде.
 <=second domain*:
-	nrel_COH
-∊ concept_parameter
+	COH
+∊ parameter
 
 
 === concept_SBR_reactor ===
-concept_SBR_reactor
+SBR reactor
 
 ∍not maximum class of explored objects':
-	subject_domain_of_facilities_for_biological_treatment_in_activated_sludge_systems
+	subject domain of facilities for biological treatment in activated sludge systems
 =>whole-part:
-	* concept_instrumentation
-	* concept_device_for_removing_excess_activated_sludge
-	* concept_decanting_device
-	* concept_pneumatic_aerator
+	* instrumentation
+	* device for removing excess activated sludge
+	* decanting device
+	* pneumatic aerator
 	* ...
 
 
 === concept_activate_sludge_recycling ===
-concept_activate_sludge_recycling
+activate sludge recycling
 
 ∍not maximum class of explored objects':
-	subject_domain_of_facilities_for_biological_treatment_in_activated_sludge_systems
+	subject domain of facilities for biological treatment in activated sludge systems
 
 
 === concept_activated_sludge ===
-concept_activated_sludge
+activated sludge
 
-∍section_subject_domain_of_secondary_settling_tanks:
-	subject_domain_of_secondary_settling_tanks
+∍section subject domain of secondary settling tanks:
+	subject domain of secondary settling tanks
 =>whole-part:
-	concept_activated_sludge_tank
-∊ section_subject_domain_of_secondary_settling_tanks
-∊ section_subject_domain_of_secondary_settling_tanks
-∊ concept_sludge
+	activated sludge tank
+∊ section subject domain of secondary settling tanks
+∊ section subject domain of secondary settling tanks
+∊ sludge
 
 
 === concept_activated_sludge_level_control_system ===
-concept_activated_sludge_level_control_system
+activated sludge level control system
 
 <=whole-part:
-	concept_instrumentation
+	instrumentation
 
 
 === concept_activated_sludge_system ===
-concept_activated_sludge_system
+activated sludge system
 
 ∍maximum class of explored objects':
-	subject_domain_of_facilities_for_biological_treatment_in_activated_sludge_systems
+	subject domain of facilities for biological treatment in activated sludge systems
 <=sc-text translation*:
 ...
 	Выбор технологической схемы, состава и типа сооружений следует производить с учетом: концентрации соединений азота в исходной сточной воде; 
 		отношения концентрации органических веществ, подверженных биохимическому разложению, оцениваемой по БПК5, к концентрации соединений азота БПК5/N; 
 		требуемой степени очистки; расхода сточных вод и неравномерности их поступления на очистные сооружения; технико-экономических требований
 <=whole-part:
-	concept_activated_sludge_tank
+	activated sludge tank
 <=subdividing*:
 {
-	* concept_aeration_tank
-	* concept_cyclic_bioreactor
-	* concept_flow_bioreactor
+	* aeration tank
+	* cyclic bioreactor
+	* flow bioreactor
 }
-=>nrel_use:
-	* concept_aeration
-	* concept_mixing_device
-	* concept_biological_wastewater_cleaning
+=>use:
+	* aeration
+	* mixing device
+	* biological wastewater cleaning
 
 
 === concept_activated_sludge_tank ===
-concept_activated_sludge_tank
+activated sludge tank
 
 ∍not maximum class of explored objects':
-	subject_domain_of_facilities_for_biological_treatment_in_activated_sludge_systems
+	subject domain of facilities for biological treatment in activated sludge systems
 <=whole-part:
-	concept_activated_sludge
+	activated sludge
 =>whole-part:
-	concept_activated_sludge_system
+	activated sludge system
 
 
 === concept_active_sludge ===
 Not Found
 
 === concept_active_sludge_recycling ===
-concept_active_sludge_recycling
+active sludge recycling
 
 
 
 === concept_aeration ===
-concept_aeration
+aeration
 
 ∍not maximum class of explored objects':
-	* subject_domain_of_biological_ponds
-	* subject_domain_of_sewage_sludge_treatment_facilities
+	* subject domain of biological ponds
+	* subject domain of sewage sludge treatment facilities
 <=subdividing*:
 {
-	* concept_artificial_aeration
-	* concept_natural_aeration
+	* artificial aeration
+	* natural aeration
 }
-<=nrel_use:
-	concept_activated_sludge_system
+<=use:
+	activated sludge system
 
 
 === concept_aeration_control_system_based_on_oxygen_content ===
-concept_aeration_control_system_based_on_oxygen_content
+aeration control system based on oxygen content
 
 <=whole-part:
-	concept_instrumentation
+	instrumentation
 
 
 === concept_aeration_tank ===
-concept_aeration_tank
+aeration tank
 
 ∍not maximum class of explored objects':
-	subject_domain_of_facilities_for_biological_treatment_in_activated_sludge_systems
+	subject domain of facilities for biological treatment in activated sludge systems
 <=sc-text translation*:
 ...
 	* При очистке сточных вод в системах с активным илом с целью удаления биохимически разлагаемых 
-		органических веществ без <sc_element sys_idtf="concept_nitrification">нитрификации</sc_element> вместимость аэротенков допускается определять с учетом массы
+		органических веществ без нитрификации вместимость аэротенков допускается определять с учетом массы
 		органических загрязняющих веществ, максимального часового расхода сточных 
-		вод, требуемой степени <sc_element sys_idtf="concept_wastewater_cleaning">очистки</sc_element>, допустимой нагрузки на активный ил, дозы активного ила в смеси
+		вод, требуемой степени очистки, допустимой нагрузки на активный ил, дозы активного ила в смеси
 	* Конструкция и режим эксплуатации аэротенков и других емкостных сооружений с активным илом должны обеспечивать:
      		достаточную дозу активного ила, регулируемую подачу кислорода в иловую смесь, достаточную для восполнения его потребления, 
 			достаточную интенсивность перемешивания иловой смеси с целью предотвращения отложений
@@ -325,594 +325,594 @@ concept_aeration_tank
 
 
 === concept_aerator ===
-concept_aerator
+aerator
 
 ∍not maximum class of explored objects':
-	subject_domain_of_facilities_for_biological_treatment_in_activated_sludge_systems
+	subject domain of facilities for biological treatment in activated sludge systems
 <=subdividing*:
 {
-	* concept_pneumatic_aerator
-	* concept_jet_aerator
-	* concept_pneumomechanical_aerator
-	* concept_mechanical_aerator
+	* pneumatic aerator
+	* jet aerator
+	* pneumomechanical aerator
+	* mechanical aerator
 }
 
 
 === concept_aerobic_condition ===
-concept_aerobic_condition
+aerobic condition
 
 ∍not maximum class of explored objects':
-	subject_domain_of_facilities_for_biological_treatment_in_activated_sludge_systems
+	subject domain of facilities for biological treatment in activated sludge systems
 
 
 === concept_aerofilter ===
-concept_aerofilter
+aerofilter
 
 ∍not maximum class of explored objects':
-	subject_domain_of_biological_wastewater_treatment_facility
+	subject domain of biological wastewater treatment facility
 
 
 === concept_air_supply_equipment ===
-concept_air_supply_equipment
+air supply equipment
 
 ∍not maximum class of explored objects':
-	subject_domain_of_facilities_for_biological_treatment_in_activated_sludge_systems
-=>nrel_use:
-	* concept_blower
-	* concept_gas_blower
-	* concept_supercharger
-	* concept_airlift
-	* concept_mechanical_aerator
-	* concept_pneumomechanical_aerator
+	subject domain of facilities for biological treatment in activated sludge systems
+=>use:
+	* blower
+	* gas blower
+	* supercharger
+	* airlift
+	* mechanical aerator
+	* pneumomechanical aerator
 
 
 === concept_air_supply_method ===
-concept_air_supply_method
+air supply method
 
 ∍not maximum class of explored objects':
-	subject_domain_of_biological_filters
+	subject domain of biological filters
 <=second domain*:
-	nrel_air_supply_method
-∊ concept_natural_aeration
-∊ concept_artificial_aeration
+	air supply method
+∊ natural aeration
+∊ artificial aeration
 
 
 === concept_airlift ===
-concept_airlift
+airlift
 
 ∍not maximum class of explored objects':
-	subject_domain_of_facilities_for_biological_treatment_in_activated_sludge_systems
-<=nrel_use:
-	concept_air_supply_equipment
+	subject domain of facilities for biological treatment in activated sludge systems
+<=use:
+	air supply equipment
 
 
 === concept_amount_of_excess_biofilm ===
-concept_amount_of_excess_biofilm
+amount of excess biofilm
 
 ∍not maximum class of explored objects':
-	subject_domain_of_biological_filters
+	subject domain of biological filters
 <=sc-text translation*:
 ...
 	разность фактической массы биологического слоя, который превышает оптимальные уровни для эффективной очистки сточных вод,с оптимальной массой для конкретных условий очистки.
 <=second domain*:
-	nrel_amount_of_excess_biofilm
-∊ concept_1_kg
-∊ concept_1_kg
-∊ concept_parameter
+	amount of excess biofilm
+∊ 1 kg
+∊ 1 kg
+∊ parameter
 
 
 === concept_anaerobic_condition ===
-concept_anaerobic_condition
+anaerobic condition
 
 ∍not maximum class of explored objects':
-	subject_domain_of_facilities_for_biological_treatment_in_activated_sludge_systems
+	subject domain of facilities for biological treatment in activated sludge systems
 
 
 === concept_anoxide_condition ===
-concept_anoxide_condition
+anoxide condition
 
 ∍not maximum class of explored objects':
-	subject_domain_of_facilities_for_biological_treatment_in_activated_sludge_systems
+	subject domain of facilities for biological treatment in activated sludge systems
 
 
 === concept_artificial_aeration ===
-concept_artificial_aeration
+artificial aeration
 
 ∍not maximum class of explored objects':
-	* subject_domain_of_biological_wastewater_treatment_facility
-	* subject_domain_of_biological_ponds
-<=nrel_air_supply_method:
-	concept_highly_loaded_biological_filter
+	* subject domain of biological wastewater treatment facility
+	* subject domain of biological ponds
+<=air_supply_method:
+	highly loaded biological filter
 <=subdividing*:
 {
-	* concept_mechanical_aeration
-	* concept_pneumatic_aeration
+	* mechanical aeration
+	* pneumatic aeration
 }
-∊ concept_air_supply_method
+∊ air supply method
 
 
 === concept_assembly_device ===
-concept_assembly_device
+assembly device
 
 ∍not maximum class of explored objects':
-	subject_domain_of_biological_ponds
+	subject domain of biological ponds
 <=whole-part:
-	concept_biological_pond
+	biological pond
 
 
 === concept_backfill_filter ===
-concept_backfill_filter
+backfill filter
 
 
 
 === concept_backup_card ===
-concept_backup_card
+backup card
 
 ∍not maximum class of explored objects':
-	subject_domain_of_low_capacity_biological_wastewater_treatment_facilities
+	subject domain of low capacity biological wastewater treatment facilities
 <=sc-text translation*:
 ...
 	дополнительный участок, предназначенный для отвода сточных вод в сезонные периоды, когда основная площадь поля фильтрации может быть загружена из-за увеличения объема сточных вод
-<=nrel_component:
-	concept_filter_field
-∊ sc_node_class
+<=component:
+	filter field
+∊ sc node class
 
 
 === concept_biodegradable_organic_compound ===
-concept_biodegradable_organic_compound
+biodegradable organic compound
 
 
 
 === concept_biodegradable_substance ===
-concept_biodegradable_substance
+biodegradable substance
 
 ∍not maximum class of explored objects':
-	subject_domain_of_biological_wastewater_treatment_facility
-<=nrel_contaminator:
-	* concept_rotary_biological_filter
-	* concept_plastic_loading_biological_filter
-	* concept_biological_wastewater_treatment_facility
-	* concept_mineral_loaded_biological_filter
+	subject domain of biological wastewater treatment facility
+<=contaminator:
+	* rotary biological filter
+	* plastic loading biological filter
+	* biological wastewater treatment facility
+	* mineral loaded biological filter
 
 
 === concept_biofilm ===
-concept_biofilm
+biofilm
 
-∍section_subject_domain_of_secondary_settling_tanks:
-	subject_domain_of_secondary_settling_tanks
+∍section subject domain of secondary settling tanks:
+	subject domain of secondary settling tanks
 ∍not maximum class of explored objects':
-	subject_domain_of_biological_filters
+	subject domain of biological filters
 <=sc-text translation*:
 ...
 	слой микроорганизмов, который образуется на поверхности загрузочного материала внутри биофильтра.
-∊ section_subject_domain_of_secondary_settling_tanks
-∊ section_subject_domain_of_secondary_settling_tanks
+∊ section subject domain of secondary settling tanks
+∊ section subject domain of secondary settling tanks
 
 
 === concept_biofilm_moisture ===
-concept_biofilm_moisture
+biofilm moisture
 
 ∍not maximum class of explored objects':
-	subject_domain_of_biological_filters
+	subject domain of biological filters
 <=sc-text translation*:
 ...
 	процентное содержание воды в биологическом слое (биопленке), который находится на поверхности загрузочного материала внутри биофильтра.
 <=second domain*:
-	nrel_biofilm_mosture
-∊ concept_1_percent
-∊ concept_parameter
+	biofilm mosture
+∊ 1 percent
+∊ parameter
 
 
 === concept_biofilter ===
-concept_biofilter
+biofilter
 
 
 
 === concept_biological_filter ===
-concept_biological_filter
+biological filter
 
 ∍not maximum class of explored objects':
-	subject_domain_of_biological_wastewater_treatment_facility
-=>nrel_biofilm_mosture:
+	subject domain of biological wastewater treatment facility
+=>biofilm_mosture:
 	...
-=>nrel_test_for_loading_material:
+=>test_for_loading_material:
 	* ...
 	* ...
-=>nrel_loading:
+=>loading:
 	...
-=>nrel_subsystem:
-	* concept_drainage_system
-	* concept_distribution_system
-=>nrel_loading_material:
+=>subsystem:
+	* drainage system
+	* distribution system
+=>loading_material:
 	* _x
-	* concept_expanded_clay
-	* concept_crushed_stone
-	* concept_durable_rock_pebbles
-=>nrel_natural_aeration:
+	* expanded clay
+	* crushed stone
+	* durable rock pebbles
+=>natural_aeration:
 	...
-=>nrel_component:
-	* concept_bottom_washing_device
-	* concept_device_of_lower_supporting_layer
-	* concept_bottom_washing_device
-	* concept_emptying_device
-=>nrel_contaminator:
-	concept_organic_impurity
-=>nrel_number_of_sections:
+=>component:
+	* bottom washing device
+	* device of lower supporting layer
+	* bottom washing device
+	* emptying device
+=>contaminator:
+	organic impurity
+=>number_of_sections:
 	...
 <=first domain*:
-	* nrel_filter_disk
-	* nrel_volumetric_load
-	* nrel_specific_air_flow
-	* nrel_amount_of_excess_biofilm
-	* nrel_design_surface_loading
-	* nrel_working_height
-	* nrel_biofilm_mosture
-	* nrel_air_supply_method
+	* filter disk
+	* volumetric load
+	* specific air flow
+	* amount of excess biofilm
+	* design surface loading
+	* working height
+	* biofilm mosture
+	* air supply method
 ∍maximum class of explored objects':
-	subject_domain_of_biological_filters
-∊ concept_flooded_biological_filter
-∊ concept_rotary_biological_filter
-∊ concept_irrigated_biological_filter
+	subject domain of biological filters
+∊ flooded biological filter
+∊ rotary biological filter
+∊ irrigated biological filter
 
 
 === concept_biological_method_for_removing_phosphorus_compounds ===
-concept_biological_method_for_removing_phosphorus_compounds
+biological method for removing phosphorus compounds
 
 ∍not maximum class of explored objects':
-	subject_domain_of_facilities_for_biological_treatment_in_activated_sludge_systems
+	subject domain of facilities for biological treatment in activated sludge systems
 
 
 === concept_biological_pond ===
-concept_biological_pond
+biological pond
 
 ∍second domain*:
-	nrel_water_movement_direction
+	water movement direction
 ∍maximum class of explored objects':
-	subject_domain_of_biological_ponds
+	subject domain of biological ponds
 <=sc-text translation*:
 ...
-	* Биологические пруды следует устраивать на <sc_element sys_idtf="concept_low_filtration_soil">слабофильтрующих грунтах</sc_element> и 
+	* Биологические пруды следует устраивать на слабофильтрующих грунтах и 
 		с подветренной по отношению к жилой застройке стороны преобладающего направления ветра в теплое время года
 	* В пруды для глубокой очистки допускается направлять сточную воду после биологической или физико-химической очистки 
-		с БПК5 не более 25 мг/дм3 — для <sc_element sys_idtf="concept_pond_with_artificial_aeration">прудов с естественной аэрацией</sc_element>
-		и не более 50 мг/дм3 — для <sc_element sys_idtf="concept_artificial_aeration">прудов с искусственной аэрацией</sc_element>
-	* Биологические пруды следует проектировать с <sc_element sys_idtf="concept_natural_aeration">естественной</sc_element>
-		или  <sc_element sys_idtf="concept_artificial_aeration">искусственной</sc_element> аэрацией (пневматической или механической).
+		с БПК5 не более 25 мг/дм3 — для прудов с естественной аэрацией
+		и не более 50 мг/дм3 — для прудов с искусственной аэрацией
+	* Биологические пруды следует проектировать с естественной
+		или  искусственной аэрацией (пневматической или механической).
 	* Биологические пруды следует применять для очистки и доочистки городских,
 		хозяйственно-бытовых, производственных и поверхностных сточных вод, содержащих органические вещества
 =>whole-part:
-	* concept_assembly_device
-	* concept_lattice
-	* concept_section
-	* concept_bypass_pipe
-	* concept_section
-∊ concept_pond_with_natural_aeration
-∊ concept_pond_with_artificial_aeration
+	* assembly device
+	* lattice
+	* section
+	* bypass pipe
+	* section
+∊ pond with natural aeration
+∊ pond with artificial aeration
 
 
 === concept_biological_wastewater_cleaning ===
-concept_biological_wastewater_cleaning
+biological wastewater cleaning
 
 ∍not maximum class of explored objects':
-	subject_domain_of_facilities_for_biological_treatment_in_activated_sludge_systems
+	subject domain of facilities for biological treatment in activated sludge systems
 <=subdividing*:
 {
-	* concept_purification_from_specific_impurities
-	* concept_removal_of_phosphorus_compounds
-	* concept_denitrification
-	* concept_nitrification
-	* concept_partial_wastewater_cleaning_of_biodegradable_substances
-	* concept_complete_wastewater_cleaning_of_biodegradable_substances
+	* purification from specific impurities
+	* removal of phosphorus compounds
+	* denitrification
+	* nitrification
+	* partial wastewater cleaning of biodegradable substances
+	* complete wastewater cleaning of biodegradable substances
 }
-<=nrel_use:
-	concept_activated_sludge_system
-∊ concept_wastewater_cleaning
+<=use:
+	activated sludge system
+∊ wastewater cleaning
 
 
 === concept_biological_wastewater_treatment_facilities ===
-concept_biological_wastewater_treatment_facilities
+biological wastewater treatment facilities
 
-∊ concept_secondary_settling_tank
+∊ secondary settling tank
 
 
 === concept_biological_wastewater_treatment_facility ===
-concept_biological_wastewater_treatment_facility
+biological wastewater treatment facility
 
 ∍maximum class of explored objects':
-	subject_domain_of_biological_wastewater_treatment_facility
+	subject domain of biological wastewater treatment facility
 <=first domain*:
-	* nrel_natural_aeration
-	* nrel_number_of_sections
-	* nrel_loading
-	* nrel_test_for_loading_material
-	* nrel_recirculation_ratio
-	* nrel_wastewater_distribution
-	* nrel_specific_air_flow
-	* nrel_contaminator
-	* nrel_waste_water_flow
-	* nrel_COH
-	* nrel_BOC5
-	* nrel_hydraulic_load
-	* nrel_loading_height
-	* nrel_loading_material
-	* nrel_degree_of_purification
-=>nrel_contaminator:
-	* concept_inorganic_impurity
-	* concept_organic_impurity
-	* concept_biodegradable_substance
-	* concept_nitrifying_substance
+	* natural aeration
+	* number of sections
+	* loading
+	* test for loading material
+	* recirculation ratio
+	* wastewater distribution
+	* specific air flow
+	* contaminator
+	* waste water flow
+	* COH
+	* BOC5
+	* hydraulic load
+	* loading height
+	* loading material
+	* degree of purification
+=>contaminator:
+	* inorganic impurity
+	* organic impurity
+	* biodegradable substance
+	* nitrifying substance
 
 
 === concept_biopond ===
-concept_biopond
+biopond
 
 
 
 === concept_bioreactor ===
-concept_bioreactor
+bioreactor
 
 
 
 === concept_blower ===
-concept_blower
+blower
 
 ∍not maximum class of explored objects':
-	subject_domain_of_facilities_for_biological_treatment_in_activated_sludge_systems
-<=nrel_use:
-	concept_air_supply_equipment
+	subject domain of facilities for biological treatment in activated sludge systems
+<=use:
+	air supply equipment
 
 
 === concept_boiling ===
-concept_boiling
+boiling
 
 ∊ Subject domain of semantic neighbourhoods
 
 
 === concept_bottom ===
-concept_bottom
+bottom
 
 ∍not maximum class of explored objects':
-	subject_domain_of_low_capacity_biological_wastewater_treatment_facilities
+	subject domain of low capacity biological wastewater treatment facilities
 <=sc-text translation*:
 ...
 	нижняя часть конструкции, которая обеспечивает её устойчивость
-<=nrel_component:
-	* concept_filter_well
-	* concept_drainage_device
+<=component:
+	* filter well
+	* drainage device
 <=first domain*:
-	nrel_layer
+	layer
 
 
 === concept_bottom_washing_device ===
-concept_bottom_washing_device
+bottom washing device
 
 ∍not maximum class of explored objects':
-	subject_domain_of_biological_filters
-<=nrel_component:
-	* concept_biological_filter
-	* concept_biological_filter
+	subject domain of biological filters
+<=component:
+	* biological filter
+	* biological filter
 <=sc-text translation*:
 ...
 	система, которая обеспечивает очистку нижней части фильтра от накопившихся загрязнений.
-=>nrel_component:
-	* concept_drainage_system
-	* concept_distribution_system
+=>component:
+	* drainage system
+	* distribution system
 
 
 === concept_brightener ===
-concept_brightener
+brightener
 
-∍section_subject_domain_of_secondary_settling_tanks:
-	subject_domain_of_secondary_settling_tanks
-∊ section_subject_domain_of_secondary_settling_tanks
-∊ section_subject_domain_of_secondary_settling_tanks
+∍section subject domain of secondary settling tanks:
+	subject domain of secondary settling tanks
+∊ section subject domain of secondary settling tanks
+∊ section subject domain of secondary settling tanks
 
 
 === concept_bulk_density ===
-concept_bulk_density
+bulk density
 
 ∍not maximum class of explored objects':
-	subject_domain_of_biological_filters
+	subject domain of biological filters
 <=sc-text translation*:
 ...
 	Отношение массы гранулированных или порошкообразных материалов к объему, который они занимают, включая пространство между частицами.
-∊ concept_parameter
+∊ parameter
 
 
 === concept_bypass_pipe ===
-concept_bypass_pipe
+bypass pipe
 
 ∍not maximum class of explored objects':
-	subject_domain_of_biological_ponds
+	subject domain of biological ponds
 <=whole-part:
-	concept_biological_pond
+	biological pond
 
 
 === concept_calm_terrain ===
-concept_calm_terrain
+calm terrain
 
-<=nrel_acceptable_parameter:
+<=acceptable_parameter:
 	...
 ∊ Subject domain of semantic neighbourhoods
 
 
 === concept_clarifier ===
-concept_clarifier
+clarifier
 
 
 
 === concept_coefficient ===
-concept_coefficient
+coefficient
 
 => 20
 
 
 === concept_combined_method_for_removing_phosphorus_compounds ===
-concept_combined_method_for_removing_phosphorus_compounds
+combined method for removing phosphorus compounds
 
 ∍not maximum class of explored objects':
-	subject_domain_of_facilities_for_biological_treatment_in_activated_sludge_systems
+	subject domain of facilities for biological treatment in activated sludge systems
 
 
 === concept_complete_treatment ===
-concept_complete_treatment
+complete treatment
 
 ∍not maximum class of explored objects':
-	subject_domain_of_biological_wastewater_treatment_facility
+	subject domain of biological wastewater treatment facility
 <=sc-text translation*:
 ...
 	достижение высокого уровня удаления загрязнений и органических веществ из сточных вод, что делает их безопасными для возвращения в окружающую среду или повторного использования.
-<=nrel_degree_of_purification:
+<=degree_of_purification:
 	* ...
-	* concept_plastic_loading_biological_filter
-	* concept_mineral_loaded_biological_filter
-∊ concept_degree_of_purification
+	* plastic loading biological filter
+	* mineral loaded biological filter
+∊ degree of purification
 
 
 === concept_complete_wastewater_cleaning_of_biodegradable_substances ===
-concept_complete_wastewater_cleaning_of_biodegradable_substances
+complete wastewater cleaning of biodegradable substances
 
 ∍not maximum class of explored objects':
-	subject_domain_of_facilities_for_biological_treatment_in_activated_sludge_systems
+	subject domain of facilities for biological treatment in activated sludge systems
 
 
 === concept_concentration ===
-concept_concentration
+concentration
 
 ∍not maximum class of explored objects':
 	Subject domain of parameters and values
-∊ concept_parameter
+∊ parameter
 
 
 === concept_concentration_pollutants_wastewater ===
-concept_concentration_pollutants_wastewater
+concentration pollutants wastewater
 
 ∍not maximum class of explored objects':
-	subject_domain_of_deep_wastewater_treatment_facilities
+	subject domain of deep wastewater treatment facilities
 <=sc-text translation*:
 ...
 	* по общему железу – 3,0
 	* по БПК5 – 20
 	* 50 – в поступающих сточных водах в течение периода, не превышающего 3 сут
 	* 20 – в среднем за инфильтрационный цикл
-=>nrel_used_in:
-	concept_soil_filtration_platform
-∊ concept_mg_on_dm_cubed
+=>used_in:
+	soil filtration platform
+∊ mg on dm cubed
 ∊ measurable parameter
 
 
 === concept_consumption ===
-concept_consumption
+consumption
 
 ∍not maximum class of explored objects':
-	subject_domain_of_facilities_for_biological_treatment_in_activated_sludge_systems
+	subject domain of facilities for biological treatment in activated sludge systems
 
 
 === concept_contaminator ===
-concept_contaminator
+contaminator
 
 ∍not maximum class of explored objects':
-	subject_domain_of_biological_wastewater_treatment_facility
+	subject domain of biological wastewater treatment facility
 <=sc-text translation*:
 ...
 	вещество или частица, которые присутствуют в сточных водах и могут быть нежелательными или опасными для конечного использования.
 <=second domain*:
-	nrel_contaminator
-=>nrel_example:
-	* concept_substance_susceptible_to_denitrification
-	* concept_denitrifying_substance
-	* concept_nitrifying_substance
-	* concept_substance_susceptible_to_denitrification
-	* concept_denitrifying_substance
-	* concept_nitrifying_substance
-	* concept_substance_susceptible_to_denitrification
-	* concept_denitrifying_substance
-	* concept_nitrifying_substance
-∊ concept_organic_impurity
-∊ concept_inorganic_impurity
-∊ concept_substance_susceptible_to_biochemical_decomposition
-∊ concept_substance_susceptible_to_nitrification
-∊ concept_substance_susceptible_to_denitrification
+	contaminator
+=>example:
+	* substance susceptible to denitrification
+	* denitrifying substance
+	* nitrifying substance
+	* substance susceptible to denitrification
+	* denitrifying substance
+	* nitrifying substance
+	* substance susceptible to denitrification
+	* denitrifying substance
+	* nitrifying substance
+∊ organic impurity
+∊ inorganic impurity
+∊ substance susceptible to biochemical decomposition
+∊ substance susceptible to nitrification
+∊ substance susceptible to denitrification
 
 
 === concept_content ===
-concept_content
+content
 
 ∊ parameter
 
 
 === concept_content_of_suspended_metter ===
-concept_content_of_suspended_metter
+content of suspended metter
 
 ∍not maximum class of explored objects':
-	subject_domain_of_biological_ponds
+	subject domain of biological ponds
 ∊ parameter
 ∊ parameter
 
 
 === concept_correlation ===
-concept_correlation
+correlation
 
 
 
 === concept_count_of_cycles ===
-concept_count_of_cycles
+count of cycles
 
 ∍not maximum class of explored objects':
 	Subject domain of parameters and values
-∊ concept_parameter
+∊ parameter
 
 
 === concept_count_of_days ===
-concept_count_of_days
+count of days
 
 ∍not maximum class of explored objects':
 	Subject domain of parameters and values
-∊ concept_parameter
+∊ parameter
 
 
 === concept_count_of_sections ===
-concept_count_of_sections
+count of sections
 
-∊ sc_node_class
+∊ sc node class
 
 
 === concept_count_of_times ===
-concept_count_of_times
+count of times
 
 ∍not maximum class of explored objects':
 	Subject domain of parameters and values
-∊ concept_parameter
+∊ parameter
 
 
 === concept_crushed_stone ===
-concept_crushed_stone
+crushed stone
 
 ∍not maximum class of explored objects':
 	Subject domain of semantic neighbourhoods
-<=nrel_loading_material:
-	concept_biological_filter
+<=loading_material:
+	biological filter
 
 
 === concept_cyclic_bioreactor ===
-concept_cyclic_bioreactor
+cyclic bioreactor
 
 ∍not maximum class of explored objects':
-	subject_domain_of_facilities_for_biological_treatment_in_activated_sludge_systems
+	subject domain of facilities for biological treatment in activated sludge systems
 
 
 === concept_decanting_device ===
-concept_decanting_device
+decanting device
 
 <=whole-part:
-	concept_SBR_reactor
+	SBR reactor
 
 
 === concept_deep_wastewater_treatment_facility ===
-concept_deep_wastewater_treatment_facility
+deep wastewater treatment facility
 
 ∍maximum class of explored objects':
-	subject_domain_of_deep_wastewater_treatment_facilities
+	subject domain of deep wastewater treatment facilities
 <=sc-text translation*:
 ...
 	* при обработке сточных вод флотацией следует учитывать выпадение в осадок от 7 % до 10 %
@@ -928,225 +928,225 @@ concept_deep_wastewater_treatment_facility
                 (биологической и (или) физико-химической) очистке
 <=subdividing*:
 {
-	* concept_facility_deep_oxidation_organic_and_nitrogen_compounds
-	* concept_facility_removing_suspended_solids_and_phosphorus_compounds
+	* facility deep oxidation organic and nitrogen compounds
+	* facility removing suspended solids and phosphorus compounds
 }
 
 
 === concept_definition ===
-concept_definition
+definition
 
 
 
 === concept_degree_of_purification ===
-concept_degree_of_purification
+degree of purification
 
 ∍not maximum class of explored objects':
-	subject_domain_of_biological_wastewater_treatment_facility
+	subject domain of biological wastewater treatment facility
 <=sc-text translation*:
 ...
 	уровень удаления загрязнений из сточных вод в процессе их обработки.
 <=second domain*:
-	nrel_degree_of_purification
-∊ concept_partial_treatment
-∊ concept_complete_treatment
+	degree of purification
+∊ partial treatment
+∊ complete treatment
 
 
 === concept_denitrification ===
-concept_denitrification
+denitrification
 
 ∍not maximum class of explored objects':
-	subject_domain_of_facilities_for_biological_treatment_in_activated_sludge_systems
+	subject domain of facilities for biological treatment in activated sludge systems
 
 
 === concept_denitrifier_volume ===
-concept_denitrifier_volume
+denitrifier volume
 
 ∍not maximum class of explored objects':
-	subject_domain_of_facilities_for_biological_treatment_in_activated_sludge_systems
-=> concept_volume_of_technological_facility
+	subject domain of facilities for biological treatment in activated sludge systems
+=> volume of technological facility
 
 
 === concept_denitrifying_substance ===
-concept_denitrifying_substance
+denitrifying substance
 
 ∍not maximum class of explored objects':
-	subject_domain_of_biological_wastewater_treatment_facility
-<=nrel_example:
-	* concept_contaminator
-	* concept_contaminator
-	* concept_contaminator
+	subject domain of biological wastewater treatment facility
+<=example:
+	* contaminator
+	* contaminator
+	* contaminator
 
 
 === concept_design_surface_loading ===
-concept_design_surface_loading
+design surface loading
 
 ∍not maximum class of explored objects':
-	subject_domain_of_biological_filters
+	subject domain of biological filters
 <=sc-text translation*:
 ...
 	количество загрязняющих веществ, которые могут быть обработаны на единицу поверхности биофильтра за единицу времени.
 <=second domain*:
-	nrel_design_surface_loading
-<=nrel_parameter_taken_into_account:
+	design surface loading
+<=parameter_taken_into_account:
 	...
-=>nrel_parameter_taken_into_account:
-	* concept_BOC5
-	* concept_BOC5
-∊ concept_parameter
+=>parameter_taken_into_account:
+	* BOC5
+	* BOC5
+∊ parameter
 
 
 === concept_device ===
 Not Found
 
 === concept_device_for_removing_excess_activated_sludge ===
-concept_device_for_removing_excess_activated_sludge
+device for removing excess activated sludge
 
 <=whole-part:
-	concept_SBR_reactor
+	SBR reactor
 
 
 === concept_device_of_lower_supporting_layer ===
-concept_device_of_lower_supporting_layer
+device of lower supporting layer
 
 ∍not maximum class of explored objects':
-	subject_domain_of_biological_filters
-<=nrel_component:
-	concept_biological_filter
+	subject domain of biological filters
+<=component:
+	biological filter
 <=sc-text translation*:
 ...
 	Часть фильтровальной установки, которая обеспечивает равномерное распределение воды на днище фильтра и предотвращает вымывание фильтрующего материала
-=>nrel_component:
-	concept_distribution_system
+=>component:
+	distribution system
 
 
 === concept_diameter ===
-concept_diameter
+diameter
 
 ∍not maximum class of explored objects':
 	Subject domain of parameters and values
-<=nrel_parameter_taken_into_account:
-	concept_filter_disk
-∊ concept_parameter
+<=parameter_taken_into_account:
+	filter disk
+∊ parameter
 
 
 === concept_direction ===
-concept_direction
+direction
 
 ∍first domain*:
-	nrel_water_movement_direction
+	water movement direction
 ∍not maximum class of explored objects':
-	subject_domain_of_biological_ponds
+	subject domain of biological ponds
 
 
 === concept_disk ===
-concept_disk
+disk
 
 
 
 === concept_disk_biological_filter ===
-concept_disk_biological_filter
+disk biological filter
 
 ∍not maximum class of explored objects':
-	subject_domain_of_biological_filters
-=>nrel_filter_disk:
+	subject domain of biological filters
+=>filter_disk:
 	...
-∊ concept_rotary_biological_filter
+∊ rotary biological filter
 
 
 === concept_disk_insight ===
-concept_disk_insight
+disk insight
 
 ∍not maximum class of explored objects':
-	subject_domain_of_biological_filters
-<=nrel_parameter_taken_into_account:
-	concept_filter_disk
+	subject domain of biological filters
+<=parameter_taken_into_account:
+	filter disk
 <=sc-text translation*:
 ...
 	Представляют собой отверстия или каналы, которые образуются при плотном прижатии дисков друг к другу. Эти прозоры служат для прохождения воды через фильтрующую поверхность дисков и обеспечивают механическую очистку воды от твердых примесей.
 <=second domain*:
-	nrel_disk_insight
+	disk insight
 
 
 === concept_disk_material ===
-concept_disk_material
+disk material
 
 ∍not maximum class of explored objects':
-	subject_domain_of_biological_filters
-<=nrel_parameter_taken_into_account:
-	concept_filter_disk
+	subject domain of biological filters
+<=parameter_taken_into_account:
+	filter disk
 <=sc-text translation*:
 ...
 	Материал диска в дисковом фильтре
 <=second domain*:
-	nrel_disk_material
+	disk material
 
 
 === concept_disk_rotation_drive ===
-concept_disk_rotation_drive
+disk rotation drive
 
 
 
 === concept_distance ===
-concept_distance
+distance
 
 ∊ Subject domain of parameters and values
-∊ concept_parameter
+∊ parameter
 
 
 === concept_distance_from_water_level ===
-concept_distance_from_water_level
+distance from water level
 
 ∍not maximum class of explored objects':
-	subject_domain_of_biological_ponds
+	subject domain of biological ponds
 ∊ m
 
 
 === concept_distribution_system ===
-concept_distribution_system
+distribution system
 
 ∍not maximum class of explored objects':
-	subject_domain_of_biological_filters
-<=nrel_subsystem:
-	concept_biological_filter
+	subject domain of biological filters
+<=subsystem:
+	biological filter
 <=sc-text translation*:
 ...
 	Cеть трубопроводов и отверстий, расположенных на днище фильтра. Через них подается вода для промывки
-<=nrel_component:
-	* concept_device_of_lower_supporting_layer
-	* concept_bottom_washing_device
+<=component:
+	* device of lower supporting layer
+	* bottom washing device
 ∊ Subject domain of semantic neighbourhoods
 
 
 === concept_double_layer_filter ===
-concept_double_layer_filter
+double layer filter
 
 
 
 === concept_drainage_device ===
-concept_drainage_device
+drainage device
 
 ∍not maximum class of explored objects':
-	subject_domain_of_low_capacity_biological_wastewater_treatment_facilities
+	subject domain of low capacity biological wastewater treatment facilities
 <=sc-text translation*:
 ...
 	 система искусственно созданных каналов, труб и других приспособлений, предназначенных для организованного отвода грунтовых и поверхностных вод с участка.
-<=nrel_component:
-	concept_filter_field
-=>nrel_component:
-	* concept_hole
-	* concept_bottom
+<=component:
+	filter field
+=>component:
+	* hole
+	* bottom
 
 
 === concept_drainage_system ===
-concept_drainage_system
+drainage system
 
 ∍not maximum class of explored objects':
-	subject_domain_of_biological_filters
-<=nrel_subsystem:
-	concept_biological_filter
-<=nrel_component:
-	concept_bottom_washing_device
+	subject domain of biological filters
+<=subsystem:
+	biological filter
+<=component:
+	bottom washing device
 <=sc-text translation*:
 ...
 	Трубопровод нижнего дренажа, служащий для отвода промывной воды и регенерационного раствора из фильтра.
@@ -1154,600 +1154,600 @@ concept_drainage_system
 
 
 === concept_drip_biological_filter ===
-concept_drip_biological_filter
+drip biological filter
 
 ∍not maximum class of explored objects':
-	subject_domain_of_biological_filters
-=>nrel_air_supply_method:
-	concept_natural_aeration
-=>nrel_amount_of_excess_biofilm:
+	subject domain of biological filters
+=>air_supply_method:
+	natural aeration
+=>amount_of_excess_biofilm:
 	...
-=>nrel_BOC5:
+=>BOC5:
 	...
-∊ concept_mineral_loaded_biological_filter
+∊ mineral loaded biological filter
 
 
 === concept_drum_biological_filter ===
-concept_drum_biological_filter
+drum biological filter
 
 ∍not maximum class of explored objects':
-	subject_domain_of_biological_filters
-=>nrel_design_surface_loading:
+	subject domain of biological filters
+=>design_surface_loading:
 	* ...
 	* ...
 	* ...
 	* ...
-∊ concept_rotary_biological_filter
+∊ rotary biological filter
 
 
 === concept_drum_mesh_grid ===
-concept_drum_mesh_grid
+drum mesh grid
 
 
 
 === concept_dry_matter ===
-concept_dry_matter
+dry matter
 
 ∍not maximum class of explored objects':
-	subject_domain_of_biological_filters
+	subject domain of biological filters
 <=sc-text translation*:
 ...
 	масса остаточных веществ, которая остается после удаления воды.
-<=nrel_parameter_taken_into_account:
+<=parameter_taken_into_account:
 	...
-∊ concept_parameter
+∊ parameter
 
 
 === concept_durable_rock_pebbles ===
-concept_durable_rock_pebbles
+durable rock pebbles
 
 ∍not maximum class of explored objects':
 	Subject domain of semantic neighbourhoods
-<=nrel_loading_material:
-	concept_biological_filter
+<=loading_material:
+	biological filter
 
 
 === concept_duration ===
-concept_duration
+duration
 
-∊ concept_1_hour
+∊ 1 hour
 
 
 === concept_effective_area ===
-concept_effective_area
+effective area
 
 ∍not maximum class of explored objects':
-	subject_domain_of_low_capacity_biological_wastewater_treatment_facilities
+	subject domain of low capacity biological wastewater treatment facilities
 <=sc-text translation*:
 ...
 	расчетная площадь, необходимая для обеспечения полной биологической очистки сточных вод путем их фильтрации через почвенные горизонты
-<=nrel_area:
-	concept_filter_field
+<=area:
+	filter field
 
 
 === concept_emptying_device ===
-concept_emptying_device
+emptying device
 
 ∍not maximum class of explored objects':
-	subject_domain_of_biological_filters
-<=nrel_component:
-	concept_biological_filter
+	subject domain of biological filters
+<=component:
+	biological filter
 <=sc-text translation*:
 ...
 	система, которая обеспечивает выведение рабочей среды из фильтра
 
 
 === concept_exact_value ===
-concept_exact_value
+exact value
 
-∊ concept_square
-∊ param_m_on_sut
-∊ param_mg_on_l
-∊ concept_mg_on_dm_cubed
-∊ param_BPK5
+∊ square
+∊ param m on sut
+∊ param mg on l
+∊ mg on dm cubed
+∊ param BPK5
 
 
 === concept_expanded_clay ===
-concept_expanded_clay
+expanded clay
 
 ∍not maximum class of explored objects':
 	Subject domain of semantic neighbourhoods
-<=nrel_loading_material:
-	concept_biological_filter
+<=loading_material:
+	biological filter
 
 
 === concept_facility_deep_oxidation_organic_and_nitrogen_compounds ===
-concept_facility_deep_oxidation_organic_and_nitrogen_compounds
+facility deep oxidation organic and nitrogen compounds
 
 ∍not maximum class of explored objects':
-	subject_domain_of_deep_wastewater_treatment_facilities
+	subject domain of deep wastewater treatment facilities
 <=subdividing*:
 {
-	* concept_oxidizer_treatment_facilitie
-	* concept_biopond
-	* concept_bioreactor
-	* concept_biofilter
+	* oxidizer treatment facilitie
+	* biopond
+	* bioreactor
+	* biofilter
 }
 
 
 === concept_facility_removing_suspended_solids_and_phosphorus_compounds ===
-concept_facility_removing_suspended_solids_and_phosphorus_compounds
+facility removing suspended solids and phosphorus compounds
 
 ∍not maximum class of explored objects':
-	subject_domain_of_deep_wastewater_treatment_facilities
+	subject domain of deep wastewater treatment facilities
 <=subdividing*:
 {
-	* concept_soil_filtration_platform
-	* concept_wastewater_oxygenation_plant
-	* concept_membrane_separator
-	* concept_clarifier
-	* concept_filter
-	* concept_microfilter
-	* concept_strainer
-	* concept_drum_mesh_grid
+	* soil filtration platform
+	* wastewater oxygenation plant
+	* membrane separator
+	* clarifier
+	* filter
+	* microfilter
+	* strainer
+	* drum mesh grid
 }
 
 
 === concept_filter ===
-concept_filter
+filter
 
 <=subdividing*:
 {
-	* concept_backfill_filter
-	* concept_double_layer_filter
-	* concept_single_layer_filter
+	* backfill filter
+	* double layer filter
+	* single layer filter
 }
 
 
 === concept_filter_disk ===
-concept_filter_disk
+filter disk
 
 ∍not maximum class of explored objects':
-	subject_domain_of_biological_filters
+	subject domain of biological filters
 <=sc-text translation*:
 ...
 	Основной элемент конструкции дискового фильтра, используемого для механической очистки воды.
 <=second domain*:
-	nrel_filter_disk
+	filter disk
 <=first domain*:
-	* nrel_disk_rotation_drive
-	* nrel_disk_material
-	* nrel_disk_insight
-=>nrel_parameter_taken_into_account:
-	* concept_filter_disk_rotation_drive
-	* concept_surface_area
-	* concept_disk_material
-	* concept_disk_insight
-	* concept_diameter
+	* disk rotation drive
+	* disk material
+	* disk insight
+=>parameter_taken_into_account:
+	* filter disk rotation drive
+	* surface area
+	* disk material
+	* disk insight
+	* diameter
 
 
 === concept_filter_disk_rotation_drive ===
-concept_filter_disk_rotation_drive
+filter disk rotation drive
 
 ∍not maximum class of explored objects':
-	subject_domain_of_biological_filters
-<=nrel_parameter_taken_into_account:
-	concept_filter_disk
+	subject domain of biological filters
+<=parameter_taken_into_account:
+	filter disk
 <=sc-text translation*:
 ...
 	Механизм, который обеспечивает вращение дисков в дисковом фильтре
 <=second domain*:
-	nrel_disk_rotation_drive
+	disk rotation drive
 
 
 === concept_filter_field ===
-concept_filter_field
+filter field
 
 ∍not maximum class of explored objects':
-	subject_domain_of_low_capacity_biological_wastewater_treatment_facilities
-=>nrel_acceptable_parameter:
+	subject domain of low capacity biological wastewater treatment facilities
+=>acceptable_parameter:
 	...
-=>nrel_area:
-	* concept_effective_area
-	* concept_working_area
-=>nrel_operation:
-	* concept_wastewater_freezing
+=>area:
+	* effective area
+	* working area
+=>operation:
+	* wastewater freezing
 	* ...
-=>nrel_replacement:
-	* concept_light_loam
-	* concept_sandy_loam
-	* concept_sand
+=>replacement:
+	* light loam
+	* sandy loam
+	* sand
 	* ...
-=>nrel_reduction_factor:
+=>reduction_factor:
 	0.3
 <=sc-text translation*:
 ...
 	земельный участок, предназначенный для биологической очистки сточных вод путем их фильтрации через почвенные горизонты.
-=>nrel_component:
+=>component:
 	* ...
 	* ...
 	* ...
 	* ...
-	* concept_receiving_waterhouse
-	* concept_backup_card
-	* concept_filter_well
-	* concept_filtering_fields_map
-	* concept_drainage_device
+	* receiving waterhouse
+	* backup card
+	* filter well
+	* filtering fields map
+	* drainage device
 	* ...
 	* ...
 	* ...
-∊ concept_low_capacity_biological_wastewater_treatment_facility
+∊ low capacity biological wastewater treatment facility
 
 
 === concept_filter_well ===
-concept_filter_well
+filter well
 
 ∍not maximum class of explored objects':
-	subject_domain_of_low_capacity_biological_wastewater_treatment_facilities
+	subject domain of low capacity biological wastewater treatment facilities
 <=sc-text translation*:
 ...
 	сооружение, которое используется для приема и обработки сточных вод, прошедших предварительную очистку в септике.
-<=nrel_component:
-	concept_filter_field
-=>nrel_component:
-	concept_bottom
-∊ sc_node_class
-∊ concept_low_capacity_biological_wastewater_treatment_facility
+<=component:
+	filter field
+=>component:
+	bottom
+∊ sc node class
+∊ low capacity biological wastewater treatment facility
 
 
 === concept_filtering_fields_map ===
-concept_filtering_fields_map
+filtering fields map
 
 ∍not maximum class of explored objects':
-	subject_domain_of_low_capacity_biological_wastewater_treatment_facilities
+	subject domain of low capacity biological wastewater treatment facilities
 <=sc-text translation*:
 ...
 	графическое представление системы полей фильтрации, которая используется для биологической очистки сточных вод
-<=nrel_component:
-	concept_filter_field
+<=component:
+	filter field
 
 
 === concept_fixed_unit_measurement ===
-concept_fixed_unit_measurement
+fixed unit measurement
 
 
 
 === concept_flooded_biological_filter ===
-concept_flooded_biological_filter
+flooded biological filter
 
 ∍not maximum class of explored objects':
-	subject_domain_of_biological_filters
-∊ concept_biological_filter
+	subject domain of biological filters
+∊ biological filter
 
 
 === concept_flow_bioreactor ===
-concept_flow_bioreactor
+flow bioreactor
 
 ∍not maximum class of explored objects':
-	subject_domain_of_facilities_for_biological_treatment_in_activated_sludge_systems
+	subject domain of facilities for biological treatment in activated sludge systems
 
 
 === concept_frost_resistance_test ===
-concept_frost_resistance_test
+frost resistance test
 
 ∊ Subject domain of semantic neighbourhoods
 
 
 === concept_gas_blower ===
-concept_gas_blower
+gas blower
 
 ∍not maximum class of explored objects':
-	subject_domain_of_facilities_for_biological_treatment_in_activated_sludge_systems
-<=nrel_use:
-	concept_air_supply_equipment
+	subject domain of facilities for biological treatment in activated sludge systems
+<=use:
+	air supply equipment
 
 
 === concept_heavy_metal_salt ===
-concept_heavy_metal_salt
+heavy metal salt
 
 
 
 === concept_highly_loaded_biological_filter ===
-concept_highly_loaded_biological_filter
+highly loaded biological filter
 
 ∍not maximum class of explored objects':
-	subject_domain_of_biological_filters
-=>nrel_air_supply_method:
-	* concept_artificial_aeration
-	* concept_natural_aeration
-=>nrel_natural_aeration:
+	subject domain of biological filters
+=>air_supply_method:
+	* artificial aeration
+	* natural aeration
+=>natural_aeration:
 	...
-∊ concept_mineral_loaded_biological_filter
+∊ mineral loaded biological filter
 
 
 === concept_hole ===
-concept_hole
+hole
 
 ∍not maximum class of explored objects':
-	subject_domain_of_low_capacity_biological_wastewater_treatment_facilities
+	subject domain of low capacity biological wastewater treatment facilities
 <=sc-text translation*:
 ...
 	специально созданное отверстие, предназначенное для отвода воды из системы дренажа
-<=nrel_component:
-	concept_drainage_device
+<=component:
+	drainage device
 <=first domain*:
-	nrel_adjacent
+	adjacent
 <=second domain*:
-	nrel_adjacent
+	adjacent
 
 
 === concept_horizontal_secondary_settling_tank ===
-concept_horizontal_secondary_settling_tank
+horizontal secondary settling tank
 
-∍section_subject_domain_of_secondary_settling_tanks:
-	subject_domain_of_secondary_settling_tanks
-∊ section_subject_domain_of_secondary_settling_tanks
-∊ section_subject_domain_of_secondary_settling_tanks
+∍section subject domain of secondary settling tanks:
+	subject domain of secondary settling tanks
+∊ section subject domain of secondary settling tanks
+∊ section subject domain of secondary settling tanks
 
 
 === concept_hydraulic_load ===
-concept_hydraulic_load
+hydraulic load
 
 ∍not maximum class of explored objects':
-	subject_domain_of_biological_wastewater_treatment_facility
+	subject domain of biological wastewater treatment facility
 <=sc-text translation*:
 ...
 	объем сточных вод, протекающий в интервал времени, отнесенный к единице поверхности или объема очистных сооружений.
 <=second domain*:
-	nrel_hydraulic_load
-∊ concept_parameter
+	hydraulic load
+∊ parameter
 
 
 === concept_hydrochlolic_acid_solution ===
-concept_hydrochlolic_acid_solution
+hydrochlolic acid solution
 
 ∊ Subject domain of semantic neighbourhoods
 ∊ Subject domain of semantic neighbourhoods
 
 
 === concept_hydrochloric_acid_solution ===
-concept_hydrochloric_acid_solution
+hydrochloric acid solution
 
-<=nrel_solution:
+<=solution:
 	...
-=>nrel_acceptable_parameter:
+=>acceptable_parameter:
 	...
 
 
 === concept_impregnation ===
-concept_impregnation
+impregnation
 
 ∊ Subject domain of semantic neighbourhoods
 
 
 === concept_increase_in_activated_sludge ===
-concept_increase_in_activated_sludge
+increase in activated sludge
 
 ∍not maximum class of explored objects':
-	subject_domain_of_facilities_for_biological_treatment_in_activated_sludge_systems
+	subject domain of facilities for biological treatment in activated sludge systems
 <=subdividing*:
 {
-	* concept_combined_method_for_removing_phosphorus_compounds
-	* concept_biological_method_for_removing_phosphorus_compounds
-	* concept_reagent_precipitation_method
+	* combined method for removing phosphorus compounds
+	* biological method for removing phosphorus compounds
+	* reagent precipitation method
 }
 
 
 === concept_inorganic_impurity ===
-concept_inorganic_impurity
+inorganic impurity
 
 ∍not maximum class of explored objects':
-	subject_domain_of_biological_wastewater_treatment_facility
-<=nrel_contaminator:
-	concept_biological_wastewater_treatment_facility
+	subject domain of biological wastewater treatment facility
+<=contaminator:
+	biological wastewater treatment facility
 <=sc-text translation*:
 ...
 	примесь, не содержащая в своей основе углерод, а также некоторые углеродсодержащие соединения, которые традиционно относят к неорганическим.
-∊ concept_contaminator
+∊ contaminator
 
 
 === concept_instrumentation ===
-concept_instrumentation
+instrumentation
 
 <=whole-part:
-	concept_SBR_reactor
+	SBR reactor
 =>whole-part:
-	* concept_aeration_control_system_based_on_oxygen_content
-	* system_for_measuring_nitrate_in_sludge_mixture
-	* concept_system_for_measuring_the_redox_potential_of_the_sludge_mixture
-	* concept_system_for_measuring_oxygen_content_in_sludge_mixture
-	* concept_activated_sludge_level_control_system
-	* concept_liquid_level_control_system
+	* aeration control system based on oxygen content
+	* system for measuring nitrate in sludge mixture
+	* system for measuring the redox potential of the sludge mixture
+	* system for measuring oxygen content in sludge mixture
+	* activated sludge level control system
+	* liquid level control system
 
 
 === concept_irrigated_biological_filter ===
-concept_irrigated_biological_filter
+irrigated biological filter
 
 ∍not maximum class of explored objects':
-	subject_domain_of_biological_filters
-∊ concept_polymer_loaded_biological_filter
-∊ concept_mineral_loaded_biological_filter
-∊ concept_biological_filter
+	subject domain of biological filters
+∊ polymer loaded biological filter
+∊ mineral loaded biological filter
+∊ biological filter
 
 
 === concept_jet_aerator ===
-concept_jet_aerator
+jet aerator
 
 ∍not maximum class of explored objects':
-	subject_domain_of_facilities_for_biological_treatment_in_activated_sludge_systems
+	subject domain of facilities for biological treatment in activated sludge systems
 
 
 === concept_lattice ===
-concept_lattice
+lattice
 
 ∍not maximum class of explored objects':
-	subject_domain_of_biological_ponds
+	subject domain of biological ponds
 <=whole-part:
-	concept_biological_pond
+	biological pond
 
 
 === concept_lenght_pond_with_natural_aeration ===
-concept_lenght_pond_with_natural_aeration
+lenght pond with natural aeration
 
-=> concept_width_pond_with_natural_aeration
+=> width pond with natural aeration
 
 
 === concept_length ===
-concept_length
+length
 
 ∊ Subject domain of parameters and values
-∊ concept_parameter
+∊ parameter
 
 
 === concept_length_pond_with_natural_aeration ===
-concept_length_pond_with_natural_aeration
+length pond with natural aeration
 
 ∍not maximum class of explored objects':
-	subject_domain_of_biological_ponds
+	subject domain of biological ponds
 
 
 === concept_length_to_width_ratio ===
-concept_length_to_width_ratio
+length to width ratio
 
 ∍not maximum class of explored objects':
-	subject_domain_of_biological_ponds
+	subject domain of biological ponds
 
 
 === concept_light_loam ===
-concept_light_loam
+light loam
 
-<=nrel_replacement:
-	concept_filter_field
-=>nrel_reduction_factor:
+<=replacement:
+	filter field
+=>reduction_factor:
 	0.45
 ∊ Subject domain of semantic neighbourhoods
 
 
 === concept_liquid_level_control_system ===
-concept_liquid_level_control_system
+liquid level control system
 
 <=whole-part:
-	concept_instrumentation
+	instrumentation
 
 
 === concept_loading ===
-concept_loading
+loading
 
 ∍not maximum class of explored objects':
-	subject_domain_of_biological_wastewater_treatment_facility
+	subject domain of biological wastewater treatment facility
 <=sc-text translation*:
 ...
 	абстрактное понятие,которое включает в себя материал и высоту загрузки биологического фильтра
 <=second domain*:
-	nrel_loading
-=>nrel_parameter_taken_into_account:
-	* concept_loading_height
-	* concept_loading_material
+	loading
+=>parameter_taken_into_account:
+	* loading height
+	* loading material
 
 
 === concept_loading_height ===
-concept_loading_height
+loading height
 
 ∍not maximum class of explored objects':
-	subject_domain_of_biological_wastewater_treatment_facility
+	subject domain of biological wastewater treatment facility
 <=sc-text translation*:
 ...
 	расстояние от дна биофильтра до верхнего уровня загрузочного материала внутри него.
-<=nrel_parameter_taken_into_account:
-	concept_loading
+<=parameter_taken_into_account:
+	loading
 <=second domain*:
-	nrel_loading_height
-∊ concept_parameter
+	loading height
+∊ parameter
 
 
 === concept_loading_material ===
-concept_loading_material
+loading material
 
 ∍not maximum class of explored objects':
-	subject_domain_of_biological_wastewater_treatment_facility
+	subject domain of biological wastewater treatment facility
 <=sc-text translation*:
 ...
 	материал, который используется внутри биофильтра для обеспечения поверхности, на которой микроорганизмы могут жить и активно обрабатывать загрязнения.
-<=nrel_parameter_taken_into_account:
-	concept_loading
+<=parameter_taken_into_account:
+	loading
 <=second domain*:
-	nrel_loading_material
+	loading material
 <=first domain*:
-	nrel_material_size
-=>nrel_parameter:
-	concept_loading_material_size
-∊ concept_polymer_loading_material
-∊ concept_mineral_loading_material
+	material size
+=>parameter:
+	loading material size
+∊ polymer loading material
+∊ mineral loading material
 
 
 === concept_loading_material_size ===
-concept_loading_material_size
+loading material size
 
 ∍not maximum class of explored objects':
-	subject_domain_of_biological_wastewater_treatment_facility
-<=nrel_parameter:
-	concept_loading_material
+	subject domain of biological wastewater treatment facility
+<=parameter:
+	loading material
 <=sc-text translation*:
 ...
 	размер частиц загрузочного материала
-∊ concept_parameter
+∊ parameter
 
 
 === concept_low_capacity_biological_wastewater_treatment_facility ===
-concept_low_capacity_biological_wastewater_treatment_facility
+low capacity biological wastewater treatment facility
 
 ∍maximum class of explored objects':
-	subject_domain_of_low_capacity_biological_wastewater_treatment_facilities
-∊ concept_filter_well
-∊ concept_underground_filtration_field
-∊ concept_filter_field
+	subject domain of low capacity biological wastewater treatment facilities
+∊ filter well
+∊ underground filtration field
+∊ filter field
 
 
 === concept_low_filtration_soil ===
-concept_low_filtration_soil
+low filtration soil
 
 ∍not maximum class of explored objects':
-	subject_domain_of_biological_ponds
+	subject domain of biological ponds
 
 
 === concept_material_size ===
-concept_material_size
+material size
 
 <=second domain*:
-	nrel_material_size
+	material size
 
 
 === concept_mechanical_aerator ===
-concept_mechanical_aerator
+mechanical aerator
 
 ∍not maximum class of explored objects':
-	subject_domain_of_facilities_for_biological_treatment_in_activated_sludge_systems
-<=nrel_use:
-	concept_air_supply_equipment
+	subject domain of facilities for biological treatment in activated sludge systems
+<=use:
+	air supply equipment
 
 
 === concept_membrane_filter ===
-concept_membrane_filter
+membrane filter
 
 ∍not maximum class of explored objects':
-	subject_domain_of_facilities_for_biological_treatment_in_activated_sludge_systems
+	subject domain of facilities for biological treatment in activated sludge systems
 
 
 === concept_membrane_separator ===
-concept_membrane_separator
+membrane separator
 
 
 
 === concept_mg_on_dm_cubed ===
-concept_mg_on_dm_cubed
+mg on dm cubed
 
-<=nrel_unit:
+<=unit:
 	...
-∊ concept_exact_value
-∊ concept_dose_of_active_chlorine
-∊ concept_concentration_pollutants_wastewater
+∊ exact value
+∊ dose of active chlorine
+∊ concentration pollutants wastewater
 
 
 === concept_microfilter ===
-concept_microfilter
+microfilter
 
 ∍not maximum class of explored objects':
-	subject_domain_of_deep_wastewater_treatment_facilities
+	subject domain of deep wastewater treatment facilities
 <=sc-text translation*:
 ...
 	* количество резервных микрофильтров следует принимать: при количестве рабочих
@@ -1763,58 +1763,58 @@ concept_microfilter
 
 
 === concept_mineral_loaded_biological_filter ===
-concept_mineral_loaded_biological_filter
+mineral loaded biological filter
 
 ∍not maximum class of explored objects':
-	subject_domain_of_biological_filters
-=>nrel_loading_material:
-	concept_mineral_loading_material
-=>nrel_degree_of_purification:
-	* concept_partial_treatment
-	* concept_complete_treatment
-=>nrel_contaminator:
-	* concept_nitrifying_substance
-	* concept_biodegradable_substance
-∊ concept_tower_biological_filter
-∊ concept_highly_loaded_biological_filter
-∊ concept_drip_biological_filter
-∊ concept_irrigated_biological_filter
+	subject domain of biological filters
+=>loading_material:
+	mineral loading material
+=>degree_of_purification:
+	* partial treatment
+	* complete treatment
+=>contaminator:
+	* nitrifying substance
+	* biodegradable substance
+∊ tower biological filter
+∊ highly loaded biological filter
+∊ drip biological filter
+∊ irrigated biological filter
 
 
 === concept_mineral_loading_filter ===
-concept_mineral_loading_filter
+mineral loading filter
 
 
 
 === concept_mineral_loading_material ===
-concept_mineral_loading_material
+mineral loading material
 
 ∍not maximum class of explored objects':
-	subject_domain_of_biological_wastewater_treatment_facility
-<=nrel_loading_material:
-	concept_mineral_loaded_biological_filter
+	subject domain of biological wastewater treatment facility
+<=loading_material:
+	mineral loaded biological filter
 <=sc-text translation*:
 ...
 	материал, обычно неорганический, который используется в качестве поддерживающей структуры внутри биофильтра.
-=>nrel_component:
+=>component:
 	...
-∊ concept_loading_material
+∊ loading material
 
 
 === concept_mixer ===
-concept_mixer
+mixer
 
 ∍not maximum class of explored objects':
-	subject_domain_of_facilities_for_biological_treatment_in_activated_sludge_systems
+	subject domain of facilities for biological treatment in activated sludge systems
 <=whole-part:
-	concept_COC
+	COC
 
 
 === concept_mixing_device ===
-concept_mixing_device
+mixing device
 
 ∍not maximum class of explored objects':
-	subject_domain_of_facilities_for_biological_treatment_in_activated_sludge_systems
+	subject domain of facilities for biological treatment in activated sludge systems
 <=sc-text translation*:
 ...
 	* Выбор перемешивающих устройств следует осуществлять по рекомендациям производителей перемешивающего
@@ -1822,213 +1822,213 @@ concept_mixing_device
 		иловой смеси от 0,1 до 0,25 м/с. Удельная мощность перемешивающих устройств для обеспечения требуемой скорости иловой смеси должна составлять
 		не менее 1,5 Вт на 1 м3 объема емкостного сооружения.
 	* Перемешивание в аэротенках необходимо предусматривать за счет применения
-аэрации или аэрации и перемешивающих устройств, в емкостях с активным илом с <sc_element sys_idtf="concept_anaerobic_condition">анаэробными</sc_element> или
-<sc_element sys_idtf="concept_anoxide_condition">аноксичными</sc_element> условиями — только за счет использования перемешивающих устройств
-<=nrel_use:
-	concept_activated_sludge_system
+аэрации или аэрации и перемешивающих устройств, в емкостях с активным илом с анаэробными или
+<sc_element sys idtf="anoxide condition">аноксичными</sc element> условиями — только за счет использования перемешивающих устройств
+<=use:
+	activated sludge system
 
 
 === concept_natural_aeration ===
-concept_natural_aeration
+natural aeration
 
 ∍not maximum class of explored objects':
-	* subject_domain_of_biological_wastewater_treatment_facility
-	* subject_domain_of_biological_ponds
-<=nrel_air_supply_method:
-	* concept_drip_biological_filter
-	* concept_highly_loaded_biological_filter
+	* subject domain of biological wastewater treatment facility
+	* subject domain of biological ponds
+<=air_supply_method:
+	* drip biological filter
+	* highly loaded biological filter
 <=second domain*:
-	nrel_natural_aeration
-∊ concept_air_supply_method
+	natural aeration
+∊ air supply method
 
 
 === concept_nitrate_nitrogen_concentration ===
-concept_nitrate_nitrogen_concentration
+nitrate nitrogen concentration
 
 ∍not maximum class of explored objects':
-	subject_domain_of_facilities_for_biological_treatment_in_activated_sludge_systems
+	subject domain of facilities for biological treatment in activated sludge systems
 
 
 === concept_nitrification ===
-concept_nitrification
+nitrification
 
 ∍not maximum class of explored objects':
-	subject_domain_of_facilities_for_biological_treatment_in_activated_sludge_systems
+	subject domain of facilities for biological treatment in activated sludge systems
 
 
 === concept_nitrifying_substance ===
-concept_nitrifying_substance
+nitrifying substance
 
 ∍not maximum class of explored objects':
-	subject_domain_of_biological_wastewater_treatment_facility
-<=nrel_example:
-	* concept_contaminator
-	* concept_contaminator
-	* concept_contaminator
-<=nrel_contaminator:
-	* concept_rotary_biological_filter
-	* concept_plastic_loading_biological_filter
-	* concept_biological_wastewater_treatment_facility
-	* concept_mineral_loaded_biological_filter
+	subject domain of biological wastewater treatment facility
+<=example:
+	* contaminator
+	* contaminator
+	* contaminator
+<=contaminator:
+	* rotary biological filter
+	* plastic loading biological filter
+	* biological wastewater treatment facility
+	* mineral loaded biological filter
 
 
 === concept_notation ===
-concept_notation
+notation
 
 
 
 === concept_note ===
-concept_note
+note
 
 
 
 === concept_number ===
-concept_number
+number
 
 ∊ 2
 
 
 === concept_organic_impurity ===
-concept_organic_impurity
+organic impurity
 
 ∍not maximum class of explored objects':
-	subject_domain_of_biological_wastewater_treatment_facility
-<=nrel_contaminator:
-	* concept_biological_filter
-	* concept_biological_wastewater_treatment_facility
+	subject domain of biological wastewater treatment facility
+<=contaminator:
+	* biological filter
+	* biological wastewater treatment facility
 <=sc-text translation*:
 ...
 	примесь, в состав которой входят атомы углерода, связанные с атомами других химических элементов.
-∊ concept_contaminator
+∊ contaminator
 
 
 === concept_oxidizer_treatment_facilitie ===
-concept_oxidizer_treatment_facilitie
+oxidizer treatment facilitie
 
 
 
 === concept_oxygen_concentration ===
-concept_oxygen_concentration
+oxygen concentration
 
 ∍not maximum class of explored objects':
-	subject_domain_of_facilities_for_biological_treatment_in_activated_sludge_systems
+	subject domain of facilities for biological treatment in activated sludge systems
 
 
 === concept_oxygen_demand_for_wastewater_treatment ===
-concept_oxygen_demand_for_wastewater_treatment
+oxygen demand for wastewater treatment
 
 ∍not maximum class of explored objects':
-	subject_domain_of_facilities_for_biological_treatment_in_activated_sludge_systems
+	subject domain of facilities for biological treatment in activated sludge systems
 
 
 === concept_parameter ===
-concept_parameter
+parameter
 
 ∊ Subject domain of parameters and values
 ∊ Subject domain of parameters and values
-∊ concept_distance
-∊ concept_width
-∊ concept_length
-∊ concept_count_of_days
-∊ concept_count_of_cycles
-∊ concept_count_of_times
-∊ concept_surface_area
-∊ concept_concentration
-∊ concept_pressure_whistand
-∊ concept_weigth
-∊ concept_temperature
-∊ concept_diameter
-∊ concept_bulk_density
-∊ concept_loading_material_size
-∊ concept_recirculation_ratio
-∊ concept_volumetric_load
-∊ concept_amount_of_excess_biofilm
-∊ concept_biofilm_moisture
-∊ concept_specific_air_flow
-∊ concept_design_surface_loading
-∊ concept_loading_height
-∊ concept_working_height
-∊ concept_hydraulic_load
-∊ concept_BOC5
-∊ concept_dry_matter
-∊ concept_total_nitrogen
-∊ concept_removed_BOC5
-∊ concept_waste_water_flow
-∊ concept_COH
+∊ distance
+∊ width
+∊ length
+∊ count of days
+∊ count of cycles
+∊ count of times
+∊ surface area
+∊ concentration
+∊ pressure whistand
+∊ weigth
+∊ temperature
+∊ diameter
+∊ bulk density
+∊ loading material size
+∊ recirculation ratio
+∊ volumetric load
+∊ amount of excess biofilm
+∊ biofilm moisture
+∊ specific air flow
+∊ design surface loading
+∊ loading height
+∊ working height
+∊ hydraulic load
+∊ BOC5
+∊ dry matter
+∊ total nitrogen
+∊ removed BOC5
+∊ waste water flow
+∊ COH
 
 
 === concept_partial_treatment ===
-concept_partial_treatment
+partial treatment
 
 ∍not maximum class of explored objects':
-	subject_domain_of_biological_wastewater_treatment_facility
-<=nrel_degree_of_purification:
-	* concept_plastic_loading_biological_filter
-	* concept_mineral_loaded_biological_filter
+	subject domain of biological wastewater treatment facility
+<=degree_of_purification:
+	* plastic loading biological filter
+	* mineral loaded biological filter
 <=sc-text translation*:
 ...
 	процесс удаления только определенных типов загрязнений или органических веществ из сточных вод, не достигая полного удаления всех видов загрязнений.
-∊ concept_degree_of_purification
+∊ degree of purification
 
 
 === concept_partial_wastewater_cleaning_of_biodegradable_substances ===
-concept_partial_wastewater_cleaning_of_biodegradable_substances
+partial wastewater cleaning of biodegradable substances
 
 ∍not maximum class of explored objects':
-	subject_domain_of_facilities_for_biological_treatment_in_activated_sludge_systems
+	subject domain of facilities for biological treatment in activated sludge systems
 
 
 === concept_phosphorus_compounds_removal ===
-concept_phosphorus_compounds_removal
+phosphorus compounds removal
 
 ∍not maximum class of explored objects':
-	subject_domain_of_facilities_for_biological_treatment_in_activated_sludge_systems
+	subject domain of facilities for biological treatment in activated sludge systems
 
 
 === concept_plastic ===
-concept_plastic
+plastic
 
 ∍not maximum class of explored objects':
 	Subject domain of semantic neighbourhoods
 
 
 === concept_plastic_loading_biological_filter ===
-concept_plastic_loading_biological_filter
+plastic loading biological filter
 
 ∍not maximum class of explored objects':
-	subject_domain_of_biological_filters
-=>nrel_degree_of_purification:
-	* concept_partial_treatment
-	* concept_complete_treatment
-=>nrel_contaminator:
-	* concept_biodegradable_substance
-	* concept_nitrifying_substance
-∊ concept_polymer_loaded_biological_filter
+	subject domain of biological filters
+=>degree_of_purification:
+	* partial treatment
+	* complete treatment
+=>contaminator:
+	* biodegradable substance
+	* nitrifying substance
+∊ polymer loaded biological filter
 
 
 === concept_pneumatic_aerator ===
-concept_pneumatic_aerator
+pneumatic aerator
 
 ∍not maximum class of explored objects':
-	subject_domain_of_facilities_for_biological_treatment_in_activated_sludge_systems
+	subject domain of facilities for biological treatment in activated sludge systems
 <=whole-part:
-	concept_SBR_reactor
+	SBR reactor
 
 
 === concept_pneumomechanical_aerator ===
-concept_pneumomechanical_aerator
+pneumomechanical aerator
 
 ∍not maximum class of explored objects':
-	subject_domain_of_facilities_for_biological_treatment_in_activated_sludge_systems
-<=nrel_use:
-	concept_air_supply_equipment
+	subject domain of facilities for biological treatment in activated sludge systems
+<=use:
+	air supply equipment
 
 
 === concept_pollutant ===
-concept_pollutant
+pollutant
 
 ∍not maximum class of explored objects':
-	subject_domain_of_facilities_for_biological_treatment_in_activated_sludge_systems
+	subject domain of facilities for biological treatment in activated sludge systems
 <=sc-text translation*:
 ...
 	Концентрацию загрязняющих веществ в поступающей на аэротенки сточной воде следует принимать с учетом
@@ -2040,156 +2040,156 @@ concept_pollutant
 Not Found
 
 === concept_polymer_loaded_biological_filter ===
-concept_polymer_loaded_biological_filter
+polymer loaded biological filter
 
 ∍not maximum class of explored objects':
-	subject_domain_of_biological_filters
-=>nrel_loading_material:
-	concept_polymer_loading_material
-∊ concept_plastic_loading_biological_filter
-∊ concept_irrigated_biological_filter
+	subject domain of biological filters
+=>loading_material:
+	polymer loading material
+∊ plastic loading biological filter
+∊ irrigated biological filter
 
 
 === concept_polymer_loading_material ===
-concept_polymer_loading_material
+polymer loading material
 
 ∍not maximum class of explored objects':
-	subject_domain_of_biological_wastewater_treatment_facility
-<=nrel_loading_material:
-	concept_polymer_loaded_biological_filter
+	subject domain of biological wastewater treatment facility
+<=loading_material:
+	polymer loaded biological filter
 <=sc-text translation*:
 ...
 	материал из полимеров, который используется в качестве носителя для биопленки и поддержания поверхности для адсорбции и размножения бактерий и других микроорганизмов внутри биофильтра.
-=>nrel_component:
+=>component:
 	...
-∊ concept_loading_material
+∊ loading material
 
 
 === concept_pond_with_artificial_aeration ===
-concept_pond_with_artificial_aeration
+pond with artificial aeration
 
 ∍not maximum class of explored objects':
-	subject_domain_of_biological_ponds
-∊ concept_biological_pond
+	subject domain of biological ponds
+∊ biological pond
 
 
 === concept_pond_with_natural_aeration ===
-concept_pond_with_natural_aeration
+pond with natural aeration
 
 ∍not maximum class of explored objects':
-	subject_domain_of_biological_ponds
-∊ concept_biological_pond
+	subject domain of biological ponds
+∊ biological pond
 
 
 === concept_power ===
-concept_power
+power
 
 
 
 === concept_pressure ===
-concept_pressure
+pressure
 
-∊ concept_1_MPascal
+∊ 1 MPascal
 
 
 === concept_pressure_whistand ===
-concept_pressure_whistand
+pressure whistand
 
 ∍not maximum class of explored objects':
 	Subject domain of parameters and values
-∊ concept_parameter
+∊ parameter
 
 
 === concept_purification_from_specific_impurities ===
-concept_purification_from_specific_impurities
+purification from specific impurities
 
 ∍not maximum class of explored objects':
-	subject_domain_of_facilities_for_biological_treatment_in_activated_sludge_systems
+	subject domain of facilities for biological treatment in activated sludge systems
 
 
 === concept_quantity ===
-concept_quantity
+quantity
 
 ∍not maximum class of explored objects':
-	subject_domain_of_biological_ponds
+	subject domain of biological ponds
 ∍Library component. scp-program of getting value:
 	scp-program of finding value
 =>whole-part:
-	concept_step
+	step
 => 2
 ∊ agent scp-program of finding condition and solution sc-text for the given task
 ∊ Library component. scp-program of getting value
 
 
 === concept_radial_secondary_settling_tank ===
-concept_radial_secondary_settling_tank
+radial secondary settling tank
 
-∍section_subject_domain_of_secondary_settling_tanks:
-	subject_domain_of_secondary_settling_tanks
-∊ section_subject_domain_of_secondary_settling_tanks
-∊ section_subject_domain_of_secondary_settling_tanks
+∍section subject domain of secondary settling tanks:
+	subject domain of secondary settling tanks
+∊ section subject domain of secondary settling tanks
+∊ section subject domain of secondary settling tanks
 
 
 === concept_reagent_precipitation_method ===
-concept_reagent_precipitation_method
+reagent precipitation method
 
 ∍not maximum class of explored objects':
-	subject_domain_of_facilities_for_biological_treatment_in_activated_sludge_systems
+	subject domain of facilities for biological treatment in activated sludge systems
 
 
 === concept_receiving_watercourse ===
-concept_receiving_watercourse
+receiving watercourse
 
 
 
 === concept_receiving_waterhouse ===
-concept_receiving_waterhouse
+receiving waterhouse
 
 ∍not maximum class of explored objects':
-	subject_domain_of_low_capacity_biological_wastewater_treatment_facilities
+	subject domain of low capacity biological wastewater treatment facilities
 <=sc-text translation*:
 ...
 	водный объект, в который осуществляется сброс очищенных сточных вод
-<=nrel_component:
-	concept_filter_field
+<=component:
+	filter field
 
 
 === concept_recirculation_ratio ===
-concept_recirculation_ratio
+recirculation ratio
 
 ∍not maximum class of explored objects':
-	subject_domain_of_biological_wastewater_treatment_facility
+	subject domain of biological wastewater treatment facility
 <=sc-text translation*:
 ...
 	параметр, который определяет степень возвращения очищенной воды на сооружения станции очистки сточных вод для разбавления или поддержания определенного расхода.
 <=second domain*:
-	nrel_recirculation_ratio
-∊ concept_parameter
+	recirculation ratio
+∊ parameter
 
 
 === concept_relief ===
-concept_relief
+relief
 
-<=nrel_parameter_taken_into_account:
+<=parameter_taken_into_account:
 	...
 ∊ Subject domain of semantic neighbourhoods
 
 
 === concept_removal_of_nitrogen_compounds ===
-concept_removal_of_nitrogen_compounds
+removal of nitrogen compounds
 
 ∍not maximum class of explored objects':
-	subject_domain_of_facilities_for_biological_treatment_in_activated_sludge_systems
+	subject domain of facilities for biological treatment in activated sludge systems
 <=sc-text translation*:
 ...
-	Для обеспечения <sc_element sys_idtf="concept_denitrification">денитрификации</sc_element> следует предусматривать рециркуляцию в зоны с 
-		<sc_element sys_idtf="concept_anoxide_condition">аноксидными условиями</sc_element> иловой смеси и (или) возвратного ила,
-		содержащих нитраты, полученные в аэробных зонах, либо периодическое чередование <sc_element sys_idtf="concept_aerobic_condition">аэробных</sc_element> и 
-			<sc_element sys_idtf="concept_anoxide_condition">аноксидных условий</sc_element>
+	Для обеспечения денитрификации следует предусматривать рециркуляцию в зоны с 
+		аноксидными условиями иловой смеси и (или) возвратного ила,
+		содержащих нитраты, полученные в аэробных зонах, либо периодическое чередование аэробных и 
+			аноксидных условий
 
 
 === concept_removal_of_phosphorus_compounds ===
-concept_removal_of_phosphorus_compounds
+removal of phosphorus compounds
 
 
 
@@ -2200,223 +2200,223 @@ ERROR: HTTPConnectionPool(host='127.0.0.1', port=5000): Read timed out. (read ti
 Not Found
 
 === concept_requirment_for_value ===
-concept_requirment
+requirment
 
 
 
 === concept_reserve_useful_area_soil_filtration_platform ===
-concept_requirment_for_value
+requirment for value
 
 
 
 === concept_rotary_biological_filter ===
-concept_reserve_useful_area_soil_filtration_platform
+reserve useful area soil filtration platform
 
 ∍not maximum class of explored objects':
-	subject_domain_of_deep_wastewater_treatment_facilities
+	subject domain of deep wastewater treatment facilities
 <=sc-text translation*:
 ...
 	* 20 % – при гидравлической нагрузке qa > 0,10 м3/(м2·сут)
 	* 30 % – при гидравлической нагрузке qa < 0,10 м3/(м2·сут)
-=>nrel_used_in:
-	concept_useful_area_soil_filtration_platform
+=>used_in:
+	useful area soil filtration platform
 
 
 === concept_sand ===
-concept_rotary_biological_filter
+rotary biological filter
 
 ∍not maximum class of explored objects':
-	subject_domain_of_biological_filters
-=>nrel_acceptable_parameter:
+	subject domain of biological filters
+=>acceptable_parameter:
 	...
-=>nrel_design_surface_loading:
+=>design_surface_loading:
 	...
-=>nrel_contaminator:
-	* concept_nitrifying_substance
-	* concept_biodegradable_substance
-∊ concept_disk_biological_filter
-∊ concept_drum_biological_filter
-∊ concept_biological_filter
+=>contaminator:
+	* nitrifying substance
+	* biodegradable substance
+∊ disk biological filter
+∊ drum biological filter
+∊ biological filter
 
 
 === concept_sandy_loam ===
-concept_sand
+sand
 
 ∍not maximum class of explored objects':
-	subject_domain_of_sand_catcher
+	subject domain of sand catcher
 <=whole-part:
-	concept_sewage
-<=nrel_replacement:
+	sewage
+<=replacement:
 	* ...
-	* concept_filter_field
+	* filter field
 <=second domain*:
-	* nrel_sand_at_output
-	* nrel_entrance_sand
-	* nrel_sand_removal
-=>nrel_reduction_factor:
+	* sand at output
+	* entrance sand
+	* sand removal
+=>reduction_factor:
 	0.55
-=>nrel_order:
+=>order:
 	2
-<=nrel_layer:
+<=layer:
 	...
-=>nrel_height:
+=>height:
 	...
-∊ sand_after_manual_removal
-∊ sand_at_output_in_sand_catcher
-∊ concept_removed_substances
+∊ sand after manual removal
+∊ sand at output in sand catcher
+∊ removed substances
 ∊ Subject domain of semantic neighbourhoods
 
 
 === concept_secondary_settling_tank ===
-concept_sandy_loam
+sandy loam
 
-<=nrel_replacement:
+<=replacement:
 	* ...
-	* concept_filter_field
-=>nrel_reduction_factor:
+	* filter field
+=>reduction_factor:
 	0.45
 ∊ Subject domain of semantic neighbourhoods
 
 
 === concept_section ===
-concept_secondary_settling_tank
+secondary settling tank
 
-∍section_subject_domain_of_secondary_settling_tanks:
-	* subject_domain_of_secondary_settling_tanks
-	* subject_domain_of_secondary_settling_tanks
+∍section subject domain of secondary settling tanks:
+	* subject domain of secondary settling tanks
+	* subject domain of secondary settling tanks
 <=sc-text translation*:
 ...
-	* При расчетах содержание <sc_element sys_idtf="concept_active_sludge">активного ила/sc_element> на выходе из 
-		   <sc_element sys_idtf="concept_secondary_settling_tank">отстойников</sc_element> должно приниматься не более
-           чем допустимое содержание взвешенных веществ в очищенной <sc_element sys_idtf="nconcept_wastewater">сточной воде/sc_element>
-	* При определении <sc_element sys_idtf="concept_square">площади</sc_element> отстойников после биофильтров необходимо учитывать
-		      <sc_element sys_idtf="nrel_recirculation_flow">рециркуляционный расход</sc_element>
-	* Вторичные отстойники после биофильтров и аэротенков следует рассчитывать по <sc_element sys_idtf="nrel_hydraulic_load">гидравлической нагрузке</sc_element> на поверхность 
-		   отстойника с учетом <sc_element sys_idtf="nrel_volume_utilization_factor">коэффициента использования объема</sc_element> сооружения, 
-		   <sc_element sys_idtf="nrel_sludge_index">илового индекса</sc_element>, <sc_element sys_idtf="nrel_dose">дозы</sc_element> ила и 
-		   <sc_element sys_idtf="concept_concentration">концентрации</sc_element> выносимой 
-		   <sc_element sys_idtf="concept_biofilm">биопленки</sc_element>
-	* Тип вторичного отстойника ( <sc_element sys_idtf="concept_vertical_secondary_settling_tank">вертикальный</sc_element>,
-		  <sc_element sys_idtf="concept_vertical_secondary_settling_tank">радиальный</sc_element>,
-          <sc_element sys_idtf="concept_vertical_secondary_settling_tank">горизонтальный</sc_element>) необходимо выбирать
-          с учетом <sc_element sys_idtf="nrel_station_productivity">производительности станции</sc_element>, 
-          <sc_element sys_idtf="nrel_layout">компоновки</sc_element> сооружений, количества эксплуатируемых единиц,
+	* При расчетах содержание активного ила на выходе из 
+		   отстойников должно приниматься не более
+           чем допустимое содержание взвешенных веществ в очищенной сточной воде
+	* При определении площади отстойников после биофильтров необходимо учитывать
+		      рециркуляционный расход
+	* Вторичные отстойники после биофильтров и аэротенков следует рассчитывать по гидравлической нагрузке на поверхность 
+		   отстойника с учетом коэффициента использования объема сооружения, 
+		   илового индекса, дозы ила и 
+		   концентрации выносимой 
+		   биопленки
+	* Тип вторичного отстойника ( вертикальный,
+		  радиальный,
+          горизонтальный) необходимо выбирать
+          с учетом производительности станции, 
+          компоновки сооружений, количества эксплуатируемых единиц,
           конфигурации и рельефа площадки, геологических условий, уровня грунтовых вод и т. п.
 	* Сооружение, входящее в состав линии биологической очистки
 <=subdividing*:
 {
-	* concept_horizontal_secondary_settling_tank
-	* concept_radial_secondary_settling_tank
-	* concept_vertical_secondary_settling_tank
+	* horizontal secondary settling tank
+	* radial secondary settling tank
+	* vertical secondary settling tank
 }
-∊ concept_biological_wastewater_treatment_facilities
-∊ section_subject_domain_of_secondary_settling_tanks
-∊ section_subject_domain_of_secondary_settling_tanks
+∊ biological wastewater treatment facilities
+∊ section subject domain of secondary settling tanks
+∊ section subject domain of secondary settling tanks
 
 
 === concept_settling_of_purified_water ===
-concept_section
+section
 
 ∍not maximum class of explored objects':
-	subject_domain_of_biological_ponds
+	subject domain of biological ponds
 <=whole-part:
-	* concept_biological_pond
-	* concept_biological_pond
+	* biological pond
+	* biological pond
 =>whole-part:
-	concept_step
+	step
 
 
 === concept_shaft_deformation ===
-concept_settling_of_purified_water
+settling of purified water
 
 ∍not maximum class of explored objects':
-	subject_domain_of_biological_ponds
+	subject domain of biological ponds
 
 
 === concept_shaft_length ===
-concept_shaft_deformation
+shaft deformation
 
 
 
 === concept_single_layer_filter ===
-concept_shaft_length
+shaft length
 
-∊ concept_1_meter
-∊ concept_1_meter
-∊ concept_1_meter
+∊ 1 meter
+∊ 1 meter
+∊ 1 meter
 
 
 === concept_slight_relief ===
-concept_single_layer_filter
+single layer filter
 
 
 
 === concept_slope ===
-concept_slight_relief
+slight relief
 
-<=nrel_acceptable_parameter:
+<=acceptable_parameter:
 	...
 ∊ Subject domain of semantic neighbourhoods
 
 
 === concept_sludge ===
-concept_slope
+slope
 
 ∊ Subject domain of parameters and values
-∊ concept_1_percent
+∊ 1 percent
 
 
 === concept_sludge_index ===
-concept_sludge
+sludge
 
-∊ concept_activated_sludge
+∊ activated sludge
 
 
 === concept_sludge_mixture_speed ===
-concept_sludge_index
+sludge index
 
-∍section_subject_domain_of_secondary_settling_tanks:
-	subject_domain_of_secondary_settling_tanks
-∊ section_subject_domain_of_secondary_settling_tanks
-∊ section_subject_domain_of_secondary_settling_tanks
+∍section subject domain of secondary settling tanks:
+	subject domain of secondary settling tanks
+∊ section subject domain of secondary settling tanks
+∊ section subject domain of secondary settling tanks
 
 
 === concept_sodium_sulfate ===
-concept_sodium_sulfate
+sodium sulfate
 
-<=nrel_solution:
+<=solution:
 	...
 
 
 === concept_sodium_sulfate_solution ===
-concept_sodium_sulfate_solution
+sodium sulfate solution
 
 ∊ Subject domain of semantic neighbourhoods
 ∊ Subject domain of semantic neighbourhoods
 
 
 === concept_soil_filtration_platform ===
-concept_soil_filtration_platform
+soil filtration platform
 
 ∍not maximum class of explored objects':
-	subject_domain_of_deep_wastewater_treatment_facilities
-<=nrel_used_in:
-	* concept_wastewater_treatment_efficiency
-	* concept_concentration_pollutants_wastewater
+	subject domain of deep wastewater treatment facilities
+<=used_in:
+	* wastewater treatment efficiency
+	* concentration pollutants wastewater
 
 
 === concept_soil_material ===
-concept_soil_material
+soil material
 
 <=second domain*:
-	nrel_layer
+	layer
 <=first domain*:
-	nrel_reduction_factor
+	reduction factor
 ∊ Subject domain of semantic neighbourhoods
 
 
 === concept_solution ===
-concept_solution
+solution
 
 ∍not maximum class of explored objects':
 	Subject domain of semantic neighbourhoods
@@ -2425,286 +2425,286 @@ concept_solution
 
 
 === concept_specific_air_flow ===
-concept_specific_air_flow
+specific air flow
 
 ∍not maximum class of explored objects':
-	* subject_domain_of_biological_filters
-	* subject_domain_of_biological_wastewater_treatment_facility
+	* subject domain of biological filters
+	* subject domain of biological wastewater treatment facility
 <=sc-text translation*:
 ...
 	количество воздуха, которое проходит через единицу площади поверхности биологического фильтра за единицу времени.
 <=second domain*:
-	* nrel_specific_air_flow
-	* nrel_specific_air_flow
-∊ concept_parameter
+	* specific air flow
+	* specific air flow
+∊ parameter
 
 
 === concept_specific_pollutants ===
-concept_specific_pollutants
+specific pollutants
 
 ∍not maximum class of explored objects':
-	subject_domain_of_deep_wastewater_treatment_facilities
+	subject domain of deep wastewater treatment facilities
 <=subdividing*:
 {
-	* concept_biodegradable_organic_compound
-	* concept_heavy_metal_salt
+	* biodegradable organic compound
+	* heavy metal salt
 }
 
 
 === concept_square ===
-concept_square
+square
 
-∍section_subject_domain_of_secondary_settling_tanks:
-	subject_domain_of_secondary_settling_tanks
-<=nrel_unit:
+∍section subject domain of secondary settling tanks:
+	subject domain of secondary settling tanks
+<=unit:
 	...
-∊ concept_exact_value
-∊ section_subject_domain_of_secondary_settling_tanks
-∊ section_subject_domain_of_secondary_settling_tanks
+∊ exact value
+∊ section subject domain of secondary settling tanks
+∊ section subject domain of secondary settling tanks
 
 
 === concept_step ===
-concept_step
+step
 
 ∍not maximum class of explored objects':
-	subject_domain_of_biological_ponds
+	subject domain of biological ponds
 <=whole-part:
-	* concept_section
-	* concept_quantity
+	* section
+	* quantity
 
 
 === concept_strainer ===
-concept_strainer
+strainer
 
 ∍not maximum class of explored objects':
-	subject_domain_of_treatment_facility_by_straining
+	subject domain of treatment facility by straining
 
 
 === concept_substance_susceptible_to_biochemical_decomposition ===
-concept_substance_susceptible_to_biochemical_decomposition
+substance susceptible to biochemical decomposition
 
 <=sc-text translation*:
 ...
 	сложное вещество,подверженное разрушению в результате деятельности живых организмов
-∊ concept_contaminator
+∊ contaminator
 
 
 === concept_substance_susceptible_to_denitrification ===
-concept_substance_susceptible_to_denitrification
+substance susceptible to denitrification
 
-<=nrel_example:
-	* concept_contaminator
-	* concept_contaminator
-	* concept_contaminator
+<=example:
+	* contaminator
+	* contaminator
+	* contaminator
 <=sc-text translation*:
 ...
 	соединение,претерпевающее процесс восстановления нитритов и нитратов до свободного азота, который выделяется в атмосферу.
-∊ concept_contaminator
+∊ contaminator
 
 
 === concept_substance_susceptible_to_nitrification ===
-concept_substance_susceptible_to_nitrification
+substance susceptible to nitrification
 
 <=sc-text translation*:
 ...
 	соединение,претерпевающее биохимический процесс окисления аммиака и его солей в соли азотной кислоты (нитраты) под влиянием почвенных бактерий.
-∊ concept_contaminator
+∊ contaminator
 
 
 === concept_supercharger ===
-concept_supercharger
+supercharger
 
 ∍not maximum class of explored objects':
-	subject_domain_of_facilities_for_biological_treatment_in_activated_sludge_systems
-<=nrel_use:
-	concept_air_supply_equipment
+	subject domain of facilities for biological treatment in activated sludge systems
+<=use:
+	air supply equipment
 
 
 === concept_surface_area ===
-concept_surface_area
+surface area
 
 ∍not maximum class of explored objects':
 	Subject domain of parameters and values
-<=nrel_parameter_taken_into_account:
-	concept_filter_disk
-∊ concept_parameter
+<=parameter_taken_into_account:
+	filter disk
+∊ parameter
 
 
 === concept_suspended_matter ===
-concept_suspended_matter
+suspended matter
 
 ∍not maximum class of explored objects':
-	subject_domain_of_biological_ponds
+	subject domain of biological ponds
 <=whole-part:
-	concept_wastewater_cleaning
+	wastewater cleaning
 
 
 === concept_system ===
-concept_system
+system
 
 ∊ Subject domain of semantic neighbourhoods
 
 
 === concept_system_for_measuring_oxygen_content_in_sludge_mixture ===
-concept_system_for_measuring_oxygen_content_in_sludge_mixture
+system for measuring oxygen content in sludge mixture
 
 <=whole-part:
-	concept_instrumentation
+	instrumentation
 
 
 === concept_system_for_measuring_the_redox_potential_of_the_sludge_mixture ===
-concept_system_for_measuring_the_redox_potential_of_the_sludge_mixture
+system for measuring the redox potential of the sludge mixture
 
 <=whole-part:
-	concept_instrumentation
+	instrumentation
 
 
 === concept_temperature ===
-concept_temperature
+temperature
 
 ∍not maximum class of explored objects':
 	Subject domain of parameters and values
-∊ concept_parameter
+∊ parameter
 
 
 === concept_total_nitrogen ===
-concept_total_nitrogen
+total nitrogen
 
 ∍not maximum class of explored objects':
-	subject_domain_of_biological_wastewater_treatment_facility
+	subject domain of biological wastewater treatment facility
 <=sc-text translation*:
 ...
 	суммарное содержание различных форм азота в воде.
-<=nrel_parameter_taken_into_account:
+<=parameter_taken_into_account:
 	* ...
 	* ...
-∊ concept_parameter
+∊ parameter
 
 
 === concept_tower_biological_filter ===
-concept_tower_biological_filter
+tower biological filter
 
 ∍not maximum class of explored objects':
-	subject_domain_of_biological_filters
-∊ concept_mineral_loaded_biological_filter
+	subject domain of biological filters
+∊ mineral loaded biological filter
 
 
 === concept_transportation ===
-concept_transportation
+transportation
 
 ∊ Subject domain of semantic neighbourhoods
 
 
 === concept_tray_mark ===
-concept_tray_mark
+tray mark
 
 ∍not maximum class of explored objects':
-	subject_domain_of_biological_ponds
+	subject domain of biological ponds
 ∊ m
 
 
 === concept_underground_filtration_field ===
-concept_underground_filtration_field
+underground filtration field
 
 ∍not maximum class of explored objects':
-	subject_domain_of_low_capacity_biological_wastewater_treatment_facilities
+	subject domain of low capacity biological wastewater treatment facilities
 <=sc-text translation*:
 ...
 	система подземных канав и оросительных труб, предназначенная для доочистки сточных вод, выходящих из септика, перед их попаданием в грунт
-=>nrel_application:
+=>application:
 	...
-∊ concept_low_capacity_biological_wastewater_treatment_facility
+∊ low capacity biological wastewater treatment facility
 
 
 === concept_uneven_flow_of_wastewater ===
-concept_uneven_flow_of_wastewater
+uneven flow of wastewater
 
 
 
 === concept_useful_area_soil_filtration_platform ===
-concept_useful_area_soil_filtration_platform
+useful area soil filtration platform
 
 ∍not maximum class of explored objects':
-	subject_domain_of_deep_wastewater_treatment_facilities
-<=nrel_used_in:
-	concept_reserve_useful_area_soil_filtration_platform
+	subject domain of deep wastewater treatment facilities
+<=used_in:
+	reserve useful area soil filtration platform
 <=sc-text translation*:
 ...
 	определяется
                 по среднесуточному расходу очищаемых сточных вод и гидравлической нагрузке,
                 определяемой на основании данных фильтрационных параметров грунтов оснований
 <=subdividing*:
-	concept_reserve_useful_area_soil_filtration_platform
+	reserve useful area soil filtration platform
 
 
 === concept_vertical_secondary_settling_tank ===
-concept_vertical_secondary_settling_tank
+vertical secondary settling tank
 
-∍section_subject_domain_of_secondary_settling_tanks:
-	subject_domain_of_secondary_settling_tanks
-∊ section_subject_domain_of_secondary_settling_tanks
-∊ section_subject_domain_of_secondary_settling_tanks
+∍section subject domain of secondary settling tanks:
+	subject domain of secondary settling tanks
+∊ section subject domain of secondary settling tanks
+∊ section subject domain of secondary settling tanks
 
 
 === concept_volume_of_technological_facility ===
-concept_volume_of_technological_facility
+volume of technological facility
 
 ∍not maximum class of explored objects':
-	subject_domain_of_facilities_for_biological_treatment_in_activated_sludge_systems
+	subject domain of facilities for biological treatment in activated sludge systems
 <=sc-text translation*:
 ...
 	Объем технологических сооружений с активным илом следует принимать равным суммарному
-			объему технологических сооружений, предназначенных для деструкции органических веществ, <sc_element sys_idtf="concept_nitrification">нитрификации</sc_element> 
-			и <sc_element sys_idtf="concept_denitrification">денитрификации</sc_element>. 
+			объему технологических сооружений, предназначенных для деструкции органических веществ, нитрификации 
+			и денитрификации. 
 			Объем анаэробной емкости для удаления фосфора следует определять отдельно
-=> concept_denitrifier_volume
+=> denitrifier volume
 
 
 === concept_volume_relation_of_deitrifier_and_tecnological_facility ===
-concept_volume_relation_of_deitrifier_and_tecnological_facility
+volume relation of deitrifier and tecnological facility
 
 ∍not maximum class of explored objects':
-	subject_domain_of_facilities_for_biological_treatment_in_activated_sludge_systems
+	subject domain of facilities for biological treatment in activated sludge systems
 
 
 === concept_volumetric_load ===
-concept_volumetric_load
+volumetric load
 
 ∍not maximum class of explored objects':
-	subject_domain_of_biological_filters
+	subject domain of biological filters
 <=sc-text translation*:
 ...
 	количество загрязнений, которые поступают в биофильтр за определенный период времени, выраженное в единицах загрязнений на объем биофильтра.
 <=second domain*:
-	nrel_volumetric_load
-∊ concept_parameter
+	volumetric load
+∊ parameter
 
 
 === concept_volumetric_loading ===
-concept_volumetric_loading
+volumetric loading
 
 
 
 === concept_waste_water_flow ===
-concept_waste_water_flow
+waste water flow
 
 ∍not maximum class of explored objects':
-	subject_domain_of_biological_wastewater_treatment_facility
+	subject domain of biological wastewater treatment facility
 <=sc-text translation*:
 ...
 	максимальный расход стоков, пропускать который должны все установленные в сети сооружения в течение всего своего расчётного периода действия.
 <=second domain*:
-	nrel_waste_water_flow
-∊ concept_parameter
+	waste water flow
+∊ parameter
 
 
 === concept_wastewater ===
-concept_wastewater
+wastewater
 
 ∍not maximum class of explored objects':
-	subject_domain_of_determination_of_loads_and_performance_of_sewege_treatment_facility
-∍section_subject_domain_of_secondary_settling_tanks:
-	subject_domain_of_secondary_settling_tanks
+	subject domain of determination of loads and performance of sewege treatment facility
+∍section subject domain of secondary settling tanks:
+	subject domain of secondary settling tanks
 <=sc-text translation*:
 ...
 	* при проектировании очистных сооружений необходимо предусматривать мероприятия по обработке
@@ -2714,127 +2714,127 @@ concept_wastewater
 			    до установленных нормативов с учетом местных требований
 <=subdividing*:
 {
-	* concept_domestic_wastewater
-	* concept_industrial_wastewater
+	* domestic wastewater
+	* industrial wastewater
 }
-∊ section_subject_domain_of_secondary_settling_tanks
-∊ section_subject_domain_of_secondary_settling_tanks
+∊ section subject domain of secondary settling tanks
+∊ section subject domain of secondary settling tanks
 
 
 === concept_wastewater_cleaning ===
-concept_wastewater_cleaning
+wastewater cleaning
 
 ∍not maximum class of explored objects':
-	subject_domain_of_facilities_for_biological_treatment_in_activated_sludge_systems
+	subject domain of facilities for biological treatment in activated sludge systems
 =>whole-part:
-	concept_suspended_matter
-∊ concept_biological_wastewater_cleaning
+	suspended matter
+∊ biological wastewater cleaning
 
 
 === concept_wastewater_flow ===
-concept_wastewater_flow
+wastewater flow
 
 
 
 === concept_wastewater_freezing ===
-concept_wastewater_freezing
+wastewater freezing
 
 ∍not maximum class of explored objects':
-	subject_domain_of_low_capacity_biological_wastewater_treatment_facilities
+	subject domain of low capacity biological wastewater treatment facilities
 <=sc-text translation*:
 ...
 	процесс замораживания сточных вод в зимний период для их временного хранения и последующей очистки
-<=nrel_operation:
-	concept_filter_field
+<=operation:
+	filter field
 
 
 === concept_wastewater_oxygenation_plant ===
-concept_wastewater_oxygenation_plant
+wastewater oxygenation plant
 
 
 
 === concept_wastewater_treatment_efficiency ===
-concept_wastewater_treatment_efficiency
+wastewater treatment efficiency
 
 ∍not maximum class of explored objects':
-	subject_domain_of_deep_wastewater_treatment_facilities
+	subject domain of deep wastewater treatment facilities
 <=sc-text translation*:
 ...
 	* – снижение содержания нефтепродуктов – до 90 %
 	* снижение содержания ПАВ – до 60 %
 	* снижение концентрации взвешенных веществ – до 3 мг/дм3
 	* снижение содержания органических веществ по БПК5 – до 90 %
-=>nrel_used_in:
-	concept_soil_filtration_platform
+=>used_in:
+	soil filtration platform
 ∊ measurable parameter
 
 
 === concept_water_speed ===
-concept_water_speed
+water speed
 
 ∍not maximum class of explored objects':
-	subject_domain_of_biological_ponds
+	subject domain of biological ponds
 
 
 === concept_way_for_removing_phosphorus_compounds ===
-concept_way_for_removing_phosphorus_compounds
+way for removing phosphorus compounds
 
 ∍not maximum class of explored objects':
-	subject_domain_of_facilities_for_biological_treatment_in_activated_sludge_systems
+	subject domain of facilities for biological treatment in activated sludge systems
 <=subdividing*:
 {
-	* concept_combined_method_for_removing_phosphorus_compounds
-	* concept_biological_method_for_removing_phosphorus_compounds
-	* concept_reagent_precipitation_method
+	* combined method for removing phosphorus compounds
+	* biological method for removing phosphorus compounds
+	* reagent precipitation method
 }
 
 
 === concept_weight ===
-concept_weight
+weight
 
 ∊ _ws
 
 
 === concept_width ===
-concept_width
+width
 
 ∊ Subject domain of parameters and values
-∊ concept_parameter
+∊ parameter
 
 
 === concept_width_pond_with_natural_aeration ===
-concept_width_pond_with_natural_aeration
+width pond with natural aeration
 
 ∍not maximum class of explored objects':
-	subject_domain_of_biological_ponds
-=> concept_lenght_pond_with_natural_aeration
+	subject domain of biological ponds
+=> lenght pond with natural aeration
 
 
 === concept_working_area ===
-concept_working_area
+working area
 
 ∍not maximum class of explored objects':
-	subject_domain_of_low_capacity_biological_wastewater_treatment_facilities
+	subject domain of low capacity biological wastewater treatment facilities
 <=sc-text translation*:
 ...
 	основная площадь, предназначенная для биологической очистки сточных вод путем их фильтрации через почвенные горизонты
-<=nrel_area:
-	concept_filter_field
-<=nrel_parameter_taken_into_account:
+<=area:
+	filter field
+<=parameter_taken_into_account:
 	...
 
 
 === concept_working_height ===
-concept_working_height
+working height
 
 ∍not maximum class of explored objects':
-	subject_domain_of_biological_filters
+	subject domain of biological filters
 <=sc-text translation*:
 ...
 	расстояние от поверхности фильтрующего материала до верхнего уровня жидкости или газа в биофильтре.
 <=second domain*:
-	nrel_working_height
-∊ concept_parameter
+	working height
+∊ parameter
 
 
 === nrel_1_min_measurement ===
@@ -2847,7 +2847,7 @@ Not Found
 Not Found
 
 === nrel_COH ===
-nrel_COH
+COH
 
 <=sc-text translation*:
 ...
@@ -2855,29 +2855,29 @@ nrel_COH
 =>domain*:
 	...
 =>first domain*:
-	concept_biological_wastewater_treatment_facility
-∍explored_relation':
-	subject_domain_of_biological_wastewater_treatment_facility
+	biological wastewater treatment facility
+∍explored relation':
+	subject domain of biological wastewater treatment facility
 =>second domain*:
-	concept_COH
+	COH
 
 
 === nrel_MPascal_measuremnt ===
-nrel_MPascal_measuremnt
+MPascal measuremnt
 
 =>rrel_unit:
-	concept_1_MPascal
+	1 MPascal
 
 
 === nrel_acceptable_parameter ===
-nrel_acceptable_parameter
+acceptable parameter
 
 <=second domain*:
 	Subject domain of parameters and values
 
 
 === nrel_adjacent ===
-nrel_adjacent
+adjacent
 
 <=sc-text translation*:
 ...
@@ -2885,28 +2885,28 @@ nrel_adjacent
 =>domain*:
 	...
 =>first domain*:
-	concept_hole
-∍explored_relation':
-	subject_domain_of_low_capacity_biological_wastewater_treatment_facilities
+	hole
+∍explored relation':
+	subject domain of low capacity biological wastewater treatment facilities
 =>second domain*:
-	concept_hole
+	hole
 
 
 === nrel_air_supply_method ===
-nrel_air_supply_method
+air supply method
 
 =>domain*:
 	...
 =>first domain*:
-	concept_biological_filter
-∍explored_relation':
-	subject_domain_of_biological_filters
+	biological filter
+∍explored relation':
+	subject domain of biological filters
 =>second domain*:
-	concept_air_supply_method
+	air supply method
 
 
 === nrel_amount_of_excess_biofilm ===
-nrel_amount_of_excess_biofilm
+amount of excess biofilm
 
 <=sc-text translation*:
 ...
@@ -2914,27 +2914,27 @@ nrel_amount_of_excess_biofilm
 =>domain*:
 	...
 =>first domain*:
-	concept_biological_filter
-∍explored_relation':
-	subject_domain_of_biological_filters
+	biological filter
+∍explored relation':
+	subject domain of biological filters
 =>second domain*:
-	concept_amount_of_excess_biofilm
+	amount of excess biofilm
 
 
 === nrel_application ===
-nrel_application
+application
 
 
 
 === nrel_area ===
-nrel_area
+area
 
 <=second domain*:
 	Subject domain of parameters and values
 
 
 === nrel_biofilm_mosture ===
-nrel_biofilm_mosture
+biofilm mosture
 
 <=sc-text translation*:
 ...
@@ -2942,32 +2942,32 @@ nrel_biofilm_mosture
 =>domain*:
 	...
 =>first domain*:
-	concept_biological_filter
-∍explored_relation':
-	subject_domain_of_biological_filters
+	biological filter
+∍explored relation':
+	subject domain of biological filters
 =>second domain*:
-	concept_biofilm_moisture
+	biofilm moisture
 
 
 === nrel_can_whistand ===
-nrel_can_whistand
+can whistand
 
 
 
 === nrel_can_withstand ===
-nrel_can_withstand
+can withstand
 
 
 
 === nrel_characteristic ===
-nrel_characteristic
+characteristic
 
 <=second domain*:
 	Subject domain of semantic neighbourhoods
 
 
 === nrel_cleaning_object ===
-nrel_cleaning_object
+cleaning object
 
 
 
@@ -2975,16 +2975,16 @@ nrel_cleaning_object
 combination*
 
 ∍Library component. scp-program of finding the definitional domain of relation:
-	proc_of_finding_definitional_domain
+	proc of finding definitional domain
 ∍Section. Subject domain of sheaves and relations:
 	integration relation
-∍section_subjdomain_sets:
+∍section subjdomain sets:
 	* ...
 	* ...
 	* ...
 	* oriented relation
 	* quasybinary relation
-	* sc_node_norole_relation
+	* sc node norole relation
 	* Subject domain of sets
 =>Section. Subject domain of parameters and values:
 	parameter definitional domain*
@@ -2992,16 +2992,16 @@ combination*
 ∊ Section. Subject domain of ostis-systems
 ∊ Section. Subject domain of logical formulas and logical ontologies
 ∊ Section. Subject domain of subject domains
-∊ section_subjdomain_knowledges
+∊ section subjdomain knowledges
 ∊ Section. Subject domain of signs that do not belong to SC-code texts
-∊ section_subjdomain_sets
-∊ section_subjdomain_sets
+∊ section subjdomain sets
+∊ section subjdomain sets
 ∊ Section. Subject domain of parameters and values
 ∊ Library component. scp-program of finding the definitional domain of relation
 ∊ Justification of development. Scs-code
 ∊ Section. Subject domain of informational structures that do not belong to SC-code
 ∊ Section. Subject domain of ontologies
-∊ agent scp-program of finding definitional_domain for relation
+∊ agent scp-program of finding definitional domain for relation
 ∊ agent scp-program of finding relations, defined for given concept
 ∊ Section. Subject domain of actions and action specifications of abstract scp-machine - base programming language SCP oriented on SC-code texts processing
 
@@ -3010,17 +3010,17 @@ combination*
 comment
 
 ∍Library component. scp-program of creating comment of validation error:
-	proc_of_generating_validation_comment
-∍section_subjdomain_knowledges:
+	proc of generating validation comment
+∍section subjdomain knowledges:
 	* ...
 	* binary relation
-	* sc_node_norole_relation
+	* sc node norole relation
 	* Subject domain of knowledges
 <=section_subjdomain_knowledges:
 	metaknowledge
 ∊ Section. Subject domain of sheaves and relations
-∊ section_subjdomain_knowledges
-∊ section_subjdomain_sets
+∊ section subjdomain knowledges
+∊ section subjdomain sets
 ∊ Section. SCs-code. Extension 1
 ∊ Section. SCs-code. Extension 4
 ∊ Section. SCs-code. Special sc.s-connectors
@@ -3031,20 +3031,20 @@ comment
 ∊ Section. SCs-code. Dividers, which are not sc.s-connectors images
 ∊ Section. SCs-code. Extension 3
 ∊ Justification of development. Scs-code
-∊ section_subjdomain_knowledges
+∊ section subjdomain knowledges
 ∊ agent scp-program of forming task of the verification result
 ∊ Library component. scp-program of creating comment of validation error
 
 
 === nrel_component ===
-nrel_component
+component
 
-∍nrel_can_whistand:
+∍can whistand:
 	Subject domain of semantic neighbourhoods
 
 
 === nrel_condition_of_application ===
-nrel_condition_of_application
+condition of application
 
 <=second domain*:
 	Subject domain of semantic neighbourhoods
@@ -3058,7 +3058,7 @@ conjunction*
 	* ...
 	* nonoriented relation
 	* logical operation
-	* sc_node_norole_relation
+	* sc node norole relation
 	* Subject domain of logical formulas and logical ontologies
 <=Section. Subject domain of logical formulas and logical ontologies:
 	class of sheaves with different cardinality
@@ -3073,7 +3073,7 @@ conjunction*
 
 
 === nrel_contaminator ===
-nrel_contaminator
+contaminator
 
 <=sc-text translation*:
 ...
@@ -3081,44 +3081,44 @@ nrel_contaminator
 =>domain*:
 	...
 =>first domain*:
-	concept_biological_wastewater_treatment_facility
-∍explored_relation':
-	subject_domain_of_biological_wastewater_treatment_facility
+	biological wastewater treatment facility
+∍explored relation':
+	subject domain of biological wastewater treatment facility
 =>second domain*:
-	concept_contaminator
+	contaminator
 
 
 === nrel_cooment ===
-nrel_cooment
+cooment
 
 
 
 === nrel_correaltion ===
-nrel_correaltion
+correaltion
 
 <=second domain*:
 	Subject domain of parameters and values
 
 
 === nrel_correlation ===
-nrel_correlation
+correlation
 
 
 
 === nrel_count_of_times ===
-nrel_count_of_times
+count of times
 
 
 
 === nrel_definition_of_parameters ===
-nrel_definition_of_parameters
+definition of parameters
 
 <=second domain*:
 	Subject domain of semantic neighbourhoods
 
 
 === nrel_degree_of_purification ===
-nrel_degree_of_purification
+degree of purification
 
 <=sc-text translation*:
 ...
@@ -3126,15 +3126,15 @@ nrel_degree_of_purification
 =>domain*:
 	...
 =>first domain*:
-	concept_biological_wastewater_treatment_facility
-∍explored_relation':
-	subject_domain_of_biological_wastewater_treatment_facility
+	biological wastewater treatment facility
+∍explored relation':
+	subject domain of biological wastewater treatment facility
 =>second domain*:
-	concept_degree_of_purification
+	degree of purification
 
 
 === nrel_design_surface_loading ===
-nrel_design_surface_loading
+design surface loading
 
 <=sc-text translation*:
 ...
@@ -3142,20 +3142,20 @@ nrel_design_surface_loading
 =>domain*:
 	...
 =>first domain*:
-	concept_biological_filter
-∍explored_relation':
-	subject_domain_of_biological_filters
+	biological filter
+∍explored relation':
+	subject domain of biological filters
 =>second domain*:
-	concept_design_surface_loading
+	design surface loading
 
 
 === nrel_devision ===
-nrel_devision
+devision
 
 
 
 === nrel_diameter ===
-nrel_diameter
+diameter
 
 
 
@@ -3167,7 +3167,7 @@ disjunction*
 	* ...
 	* nonoriented relation
 	* logical operation
-	* sc_node_norole_relation
+	* sc node norole relation
 	* Subject domain of logical formulas and logical ontologies
 <=Section. Subject domain of logical formulas and logical ontologies:
 	class of sheaves with different cardinality
@@ -3182,57 +3182,57 @@ disjunction*
 
 
 === nrel_disk ===
-nrel_disk
+disk
 
 
 
 === nrel_disk_insight ===
-nrel_disk_insight
+disk insight
 
 <=sc-text translation*:
 ...
 	Представляют собой отверстия или каналы, которые образуются при плотном прижатии дисков друг к другу. Эти прозоры служат для прохождения воды через фильтрующую поверхность дисков и обеспечивают механическую очистку воды от твердых примесей.
 =>first domain*:
-	concept_filter_disk
-∍explored_relation':
-	subject_domain_of_biological_filters
+	filter disk
+∍explored relation':
+	subject domain of biological filters
 =>second domain*:
-	concept_disk_insight
+	disk insight
 
 
 === nrel_disk_material ===
-nrel_disk_material
+disk material
 
 <=sc-text translation*:
 ...
 	Материал диска в дисковом фильтре
 =>first domain*:
-	concept_filter_disk
-∍explored_relation':
-	subject_domain_of_biological_filters
+	filter disk
+∍explored relation':
+	subject domain of biological filters
 =>second domain*:
-	concept_disk_material
+	disk material
 
 
 === nrel_disk_rotation_drive ===
-nrel_disk_rotation_drive
+disk rotation drive
 
 <=sc-text translation*:
 ...
 	Механизм, который обеспечивает вращение дисков в дисковом фильтре
 =>first domain*:
-	concept_filter_disk
-∍explored_relation':
-	subject_domain_of_biological_filters
+	filter disk
+∍explored relation':
+	subject domain of biological filters
 =>second domain*:
-	concept_filter_disk_rotation_drive
+	filter disk rotation drive
 
 
 === nrel_dose ===
 Not Found
 
 === nrel_duration ===
-nrel_duration
+duration
 
 <=second domain*:
 	Subject domain of parameters and values
@@ -3250,49 +3250,49 @@ equality*
 	* symmetric relation
 	* binary relation
 	* arithmetic operation
-	* sc_node_norole_relation
+	* sc node norole relation
 	* Subject domain of numbers and numeric structures
 ∊ Section. Subject domain of numbers and numeric structures
 ∊ Section. Subject domain of numbers and numeric structures
 
 
 === nrel_example ===
-nrel_example
+example
 
 <=second domain*:
 	Subject domain of semantic neighbourhoods
 
 
 === nrel_filter_disk ===
-nrel_filter_disk
+filter disk
 
 <=sc-text translation*:
 ...
 	Основной элемент конструкции дискового фильтра, используемого для механической очистки воды.
 =>first domain*:
-	concept_biological_filter
-∍explored_relation':
-	subject_domain_of_biological_filters
+	biological filter
+∍explored relation':
+	subject domain of biological filters
 =>second domain*:
-	concept_filter_disk
+	filter disk
 
 
 === nrel_first_domain ===
 first domain*
 
 ∍Library component. scp-program of finding the definitional domain of relation:
-	proc_of_finding_definitional_domain
+	proc of finding definitional domain
 ∍Section. Subject domain of sheaves and relations:
 	* ...
 	* ...
 	* binary relation
-	* sc_node_norole_relation
+	* sc node norole relation
 	* Subject domain of sheaves and relations
 ∊ Section. Subject domain of sheaves and relations
 ∊ Section. Subject domain of ostis-systems
 ∊ Section. Subject domain of logical formulas and logical ontologies
 ∊ Section. Subject domain of subject domains
-∊ section_subjdomain_knowledges
+∊ section subjdomain knowledges
 ∊ Section. Interdisciplinary concepts
 ∊ Section. Subject domain of sheaves and relations
 ∊ Section. Subject domain of signs that do not belong to SC-code texts
@@ -3303,7 +3303,7 @@ first domain*
 ∊ Section. Subject domain of informational structures that do not belong to SC-code
 ∊ Section. Subject domain of ontologies
 ∊ agent scp-program of сhecking availability of domains in relations within the given structure
-∊ agent scp-program of finding definitional_domain for relation
+∊ agent scp-program of finding definitional domain for relation
 ∊ agent scp-program of finding relations, defined for given concept
 ∊ Section. Subject domain of actions and action specifications of abstract scp-machine - base programming language SCP oriented on SC-code texts processing
 
@@ -3323,18 +3323,18 @@ format*
 ∊ Section. Subject domain of ostis-systems
 ∊ Section. Subject domain of situations and events in sc-memory
 ∊ Section. Subject domain of logical formulas and logical ontologies
-∊ section_subjdomain_actions_executing_in_sc_memory
+∊ section subjdomain actions executing in sc memory
 ∊ Section. Subject domain of subject domains
 ∊ Section. The structure of a unified semantic model of the knowledge base
-∊ section_subjdomain_knowledges
+∊ section subjdomain knowledges
 ∊ Section. Interdisciplinary concepts
 ∊ Section subject domain of semantic neighbourhoods
 ∊ Section. Subject domain of unified logical semantic models of computer systems
 ∊ Section. SCn-code. Extension 1
 ∊ Section. Subject domain of signs that do not belong to SC-code texts
-∊ section_subjdomain_actions_and_tasks
+∊ section subjdomain actions and tasks
 ∊ Section. Subject domain of temporary entity
-∊ section_subjdomain_sets
+∊ section subjdomain sets
 ∊ Section. Subject domain of numbers and numeric structures
 ∊ Section. Subject domain of structures
 ∊ Section. Subject domain of problematic knowledge base fragments
@@ -3362,14 +3362,14 @@ format*
 ∊ Section. Disadvantages of modern technologies of computer systems and, in particular, intelligent computer systems design
 ∊ Section. Semantic model of computer memory
 ∊ Section. Knowledge base of subsystem of support of programs of the basic programming language of OSTIS Technology designing
-∊ section_model_of_semantic_memory_unification
+∊ section model of semantic memory unification
 ∊ Justification of development. Scn-code
 ∊ Section. Subject domain of informational structures that do not belong to SC-code
 ∊ Section. SCs-code. Basic sc.s-connectors
 ∊ Section. Subject domain of ontologies
 ∊ Section. SCn-code. Extension 2
 ∊ Section. Concept of interpretation platform for sc-models of computer systems
-∊ section_subject_domain_of_sc_agents
+∊ section subject domain of sc agents
 ∊ Section. Objects and features of the project OSTIS
 ∊ Section. Graph programming languages, oriented on semantic networks processing
 ∊ Section. SCs-code. Additional sc.s-connectors
@@ -3391,24 +3391,24 @@ format*
 Not Found
 
 === nrel_height ===
-nrel_height
+height
 
 
 
 === nrel_hole ===
-nrel_hole
+hole
 
 
 
 === nrel_hour_measurement ===
-nrel_hour_measurement
+hour measurement
 
 =>rrel_unit:
-	concept_1_hour
+	1 hour
 
 
 === nrel_hydraulic_load ===
-nrel_hydraulic_load
+hydraulic load
 
 <=sc-text translation*:
 ...
@@ -3416,56 +3416,56 @@ nrel_hydraulic_load
 =>domain*:
 	...
 =>first domain*:
-	concept_biological_wastewater_treatment_facility
-∍explored_relation':
-	subject_domain_of_biological_wastewater_treatment_facility
+	biological wastewater treatment facility
+∍explored relation':
+	subject domain of biological wastewater treatment facility
 =>second domain*:
-	concept_hydraulic_load
+	hydraulic load
 
 
 === nrel_kg ===
 Not Found
 
 === nrel_kg_measurement ===
-nrel_kg_measurement
+kg measurement
 
 =>rrel_unit:
-	* concept_1_kg
-	* concept_1_kg
+	* 1 kg
+	* 1 kg
 
 
 === nrel_layer ===
-nrel_layer
+layer
 
 =>domain*:
 	...
 =>first domain*:
-	concept_bottom
-∍explored_relation':
-	subject_domain_of_low_capacity_biological_wastewater_treatment_facilities
+	bottom
+∍explored relation':
+	subject domain of low capacity biological wastewater treatment facilities
 =>second domain*:
-	concept_soil_material
+	soil material
 
 
 === nrel_layout ===
 Not Found
 
 === nrel_loading ===
-nrel_loading
+loading
 
 <=sc-text translation*:
 ...
 	абстрактное понятие,которое включает в себя материал и высоту загрузки биологического фильтра
 =>first domain*:
-	concept_biological_wastewater_treatment_facility
-∍explored_relation':
-	subject_domain_of_biological_wastewater_treatment_facility
+	biological wastewater treatment facility
+∍explored relation':
+	subject domain of biological wastewater treatment facility
 =>second domain*:
-	concept_loading
+	loading
 
 
 === nrel_loading_height ===
-nrel_loading_height
+loading height
 
 <=sc-text translation*:
 ...
@@ -3473,15 +3473,15 @@ nrel_loading_height
 =>domain*:
 	...
 =>first domain*:
-	concept_biological_wastewater_treatment_facility
-∍explored_relation':
-	subject_domain_of_biological_wastewater_treatment_facility
+	biological wastewater treatment facility
+∍explored relation':
+	subject domain of biological wastewater treatment facility
 =>second domain*:
-	concept_loading_height
+	loading height
 
 
 === nrel_loading_material ===
-nrel_loading_material
+loading material
 
 <=sc-text translation*:
 ...
@@ -3489,28 +3489,28 @@ nrel_loading_material
 =>domain*:
 	...
 =>first domain*:
-	concept_biological_wastewater_treatment_facility
-∍explored_relation':
-	subject_domain_of_biological_wastewater_treatment_facility
+	biological wastewater treatment facility
+∍explored relation':
+	subject domain of biological wastewater treatment facility
 =>second domain*:
-	concept_loading_material
+	loading material
 
 
 === nrel_main_idtf ===
 main identifier*
 
 ∍Library component. scp-program of identifiers search with the given context:
-	proc_of_finding_identifier_with_context
+	proc of finding identifier with context
 ∍Library component. Scp-program of finding identifiers and main identifiers:
-	proc_of_finding_identifier_extended
+	proc of finding identifier extended
 ∍Library component. scp-program of identifiers search:
-	proc_of_finding_identifier
+	proc of finding identifier
 ∍Library component. Scp-program of forming terminological ontology of given subject domain:
-	proc_of_forming_terminological_ontology
+	proc of forming terminological ontology
 ∍Section. Subject domain of signs that do not belong to SC-code texts:
 	* ...
 	* identification relation
-	* sc_node_norole_relation
+	* sc node norole relation
 	* subject domain of signs that are not the texts elements of sc-code
 <=Section. Subject domain of signs that do not belong to SC-code texts:
 	identifier*
@@ -3650,12 +3650,12 @@ main identifier*
 ∊ Section. Subject domain of situations and events in sc-memory
 ∊ Library component. User interface command of finding immediate connections between two objects
 ∊ Section. Subject domain of logical formulas and logical ontologies
-∊ section_subjdomain_actions_executing_in_sc_memory
+∊ section subjdomain actions executing in sc memory
 ∊ Library component. User interface command of assign user as manager
 ∊ Library component. User interface command of calculation the average value of different types of outbound connections of ontology vertexes
 ∊ Section. Subject domain of subject domains
 ∊ Section. The structure of a unified semantic model of the knowledge base
-∊ section_subjdomain_knowledges
+∊ section subjdomain knowledges
 ∊ Section. Library of sc-agents of logical inference
 ∊ Section. Interdisciplinary concepts
 ∊ Section subject domain of semantic neighbourhoods
@@ -3664,9 +3664,9 @@ main identifier*
 ∊ Library component. User interface command for checking subject domain accessory for classes in given structure
 ∊ Section. SCn-code. Extension 1
 ∊ Section. Subject domain of signs that do not belong to SC-code texts
-∊ section_subjdomain_actions_and_tasks
+∊ section subjdomain actions and tasks
 ∊ Section. Subject domain of temporary entity
-∊ section_subjdomain_sets
+∊ section subjdomain sets
 ∊ Section. Subject domain of numbers and numeric structures
 ∊ Section. Subject domain of structures
 ∊ Library component. User interface command for formation the proposal of editing knowlage base
@@ -3719,7 +3719,7 @@ main identifier*
 ∊ Section. Library of user interface control elements
 ∊ Justification of development. Scg-code
 ∊ Section. Type, purpose and structure of IMS
-∊ section_subject_domain_of_secondary_settling_tanks
+∊ section subject domain of secondary settling tanks
 ∊ Library component. User interface command of сhecking existence of main identifiers for sc-elements within the given structure for all external languages within the context
 ∊ Library component. User interface command of calculation dispersion of vertex degrees
 ∊ Section. SCs-code. Dividers, which are not sc.s-connectors images
@@ -3745,11 +3745,11 @@ main identifier*
 ∊ Library component. Evaluation metrics
 ∊ Section. Semantic model of computer memory
 ∊ Library component. User interface command of manager rejection proposals for editing the knowledge base
-∊ Library component. User interface command of finding definitional_domain for relation
+∊ Library component. User interface command of finding definitional domain for relation
 ∊ Section. Knowledge base of subsystem of support of programs of the basic programming language of OSTIS Technology designing
 ∊ Library component. Library component. User interface command of finding key sc-elements for given subject domain
 ∊ Library component. Ingwe-Miller metrics
-∊ section_model_of_semantic_memory_unification
+∊ section model of semantic memory unification
 ∊ Library component. User interface command for theorems search within the context
 ∊ Justification of development. Scn-code
 ∊ Section. Subject domain of informational structures that do not belong to SC-code
@@ -3771,7 +3771,7 @@ main identifier*
 ∊ Library component. User interface command of search the full semantic neighborhood of a given element
 ∊ Library component. Ontology forming
 ∊ Section. Concept of interpretation platform for sc-models of computer systems
-∊ section_subject_domain_of_sc_agents
+∊ section subject domain of sc agents
 ∊ Section. Library of translators to sc-memory
 ∊ Library component. User interface command for checking of cycle for given relation within a given structure
 ∊ Library component. User interface command of сhecking existence of maximum studied object class of subject domains within the given structure
@@ -3790,7 +3790,7 @@ main identifier*
 ∊ agent scp-program of checking existence of any main identifiers for sc-elements within the given structure
 ∊ Structure and organization of IMS project
 ∊ Library component. User interface command of search of relation links, connected with given sc-element
-∊ knowledge_base_ims_specification
+∊ knowledge base ims specification
 ∊ Section. Subject domain of signs that do not belong to SC-code texts
 ∊ Library component. Navigation
 ∊ Documentation. IMS user interface
@@ -3871,21 +3871,21 @@ main identifier*
 
 
 === nrel_material_size ===
-nrel_material_size
+material size
 
 <=sc-text translation*:
 ...
 	размер частиц загрузочного материала
 =>first domain*:
-	concept_loading_material
-∍explored_relation':
-	subject_domain_of_biological_wastewater_treatment_facility
+	loading material
+∍explored relation':
+	subject domain of biological wastewater treatment facility
 =>second domain*:
-	concept_material_size
+	material size
 
 
 === nrel_max_value ===
-nrel_max_value
+max value
 
 <=second domain*:
 	Subject domain of parameters and values
@@ -3897,7 +3897,7 @@ measure*
 ∍Section. Subject domain of parameters and values:
 	* ...
 	* binary relation
-	* sc_node_norole_relation
+	* sc node norole relation
 	* Subject domain of parameters and values
 =>Section. Subject domain of parameters and values:
 	* ...
@@ -3912,14 +3912,14 @@ measure*
 measurement*
 
 ∍Library component. scp-program of generating answer for agents of counting power of set:
-	proc_of_generation_answer_for_agents_of_calculating_power_of_set
+	proc of generation answer for agents of calculating power of set
 ∍Library component. scp-program of finding relation's arity value:
 	scp-program of finding relation's arity value
 =>measure*:
 	...
 ∍Section. Subject domain of parameters and values:
 	* ...
-	* sc_node_norole_relation
+	* sc node norole relation
 	* Subject domain of parameters and values
 =>Section. Subject domain of parameters and values:
 	* scale
@@ -3929,45 +3929,45 @@ measurement*
 	* parameter
 ∊ Section. Subject domain of parameters and values
 ∊ Section. Subject domain of parameters and values
-∊ measurment_of_fixed_measure
+∊ measurment of fixed measure
 ∊ Library component. scp-program of finding relation's arity value
 ∊ Library component. scp-program of generating answer for agents of counting power of set
 
 
 === nrel_measurement_in_meters ===
-nrel_measurement_in_meters
+measurement in meters
 
-=>nrel_unit:
+=>unit:
 	m
 =>measure*:
 	m
 
 
 === nrel_measurement_in_meters_per_second ===
-nrel_measurement_in_meters_per_second
+measurement in meters per second
 
-=>nrel_unit:
+=>unit:
 	* ...
 	* ...
 
 
 === nrel_meter_measurement ===
-nrel_meter_measurement
+meter measurement
 
 =>rrel_unit:
-	* concept_1_meter
-	* concept_1_meter
+	* 1 meter
+	* 1 meter
 
 
 === nrel_mg ===
 Not Found
 
 === nrel_milligram_per_cubic_decimeter_measurement ===
-nrel_milligram_per_cubic_decimeter_measurement
+milligram per cubic decimeter measurement
 
-∍explored_relation':
-	* subject_domain_of_biological_ponds
-	* subject_domain_of_biological_ponds
+∍explored relation':
+	* subject domain of biological ponds
+	* subject domain of biological ponds
 ∊second domain*:
 	value
 ∊first domain*:
@@ -3980,11 +3980,11 @@ nrel_milligram_per_cubic_decimeter_measurement
 
 
 === nrel_milligram_per_litre_measurement ===
-nrel_milligram_per_litre_measurement
+milligram per litre measurement
 
-∍explored_relation':
-	* subject_domain_of_biological_ponds
-	* subject_domain_of_biological_ponds
+∍explored relation':
+	* subject domain of biological ponds
+	* subject domain of biological ponds
 ∊second domain*:
 	value
 ∊first domain*:
@@ -3998,19 +3998,19 @@ nrel_milligram_per_litre_measurement
 
 
 === nrel_min_value ===
-nrel_min_value
+min value
 
 <=second domain*:
 	Subject domain of parameters and values
 
 
 === nrel_minimum_valid_parameter_value ===
-nrel_minimum_valid_parameter_value
+minimum valid parameter value
 
 
 
 === nrel_more ===
-nrel_more
+more
 
 <=second domain*:
 	Subject domain of parameters and values
@@ -4025,93 +4025,93 @@ more or equal*
 	* non strict order relation
 	* binary relation
 	* arithmetic operation
-	* sc_node_norole_relation
+	* sc node norole relation
 	* Subject domain of numbers and numeric structures
 ∊ Section. Subject domain of numbers and numeric structures
 ∊ Section. Subject domain of numbers and numeric structures
 
 
 === nrel_multiplicity ===
-nrel_multiplicity
+multiplicity
 
-∍explored_relation':
+∍explored relation':
 	Subject domain of parameters and values
 
 
 === nrel_natural_aeration ===
-nrel_natural_aeration
+natural aeration
 
 =>first domain*:
-	concept_biological_wastewater_treatment_facility
-∍explored_relation':
-	subject_domain_of_biological_wastewater_treatment_facility
+	biological wastewater treatment facility
+∍explored relation':
+	subject domain of biological wastewater treatment facility
 =>second domain*:
-	concept_natural_aeration
+	natural aeration
 
 
 === nrel_necessary_component ===
-nrel_necessary_component
+necessary component
 
-∍nrel_can_whistand:
+∍can whistand:
 	Subject domain of semantic neighbourhoods
 
 
 === nrel_no_less ===
-nrel_no_less
+no less
 
 
 
 === nrel_number_of_sections ===
-nrel_number_of_sections
+number of sections
 
 =>first domain*:
-	concept_biological_wastewater_treatment_facility
-∍explored_relation':
-	subject_domain_of_biological_wastewater_treatment_facility
+	biological wastewater treatment facility
+∍explored relation':
+	subject domain of biological wastewater treatment facility
 =>second domain*:
 	number
 
 
 === nrel_operation ===
-nrel_operation
+operation
 
 <=second domain*:
 	Subject domain of semantic neighbourhoods
 
 
 === nrel_order ===
-nrel_order
+order
 
 <=second domain*:
 	Subject domain of parameters and values
 
 
 === nrel_parameter ===
-nrel_parameter
+parameter
 
 
 
 === nrel_parameter_taken_into_account ===
-nrel_parameter_taken_into_account
+parameter taken into account
 
 <=second domain*:
 	Subject domain of parameters and values
 
 
 === nrel_percentage_measurement ===
-nrel_percentage_measurement
+percentage measurement
 
 =>rrel_unit:
-	concept_1_percent
+	1 percent
 
 
 === nrel_placement ===
-nrel_placement
+placement
 
 
 
 === nrel_power ===
-nrel_power
+power
 
 
 
@@ -4119,9 +4119,9 @@ nrel_power
 private subject domain*
 
 ∍Library component. scp-program of searching all subsections of current subject domain:
-	proc_of_finding_all_private_subject_domains
+	proc of finding all private subject domains
 ∍Library component. scp-program of calculation average depth of subject domain:
-	proc_of_calculation_all_depths_of_subject_domain
+	proc of calculation all depths of subject domain
 ∍Section. Interdisciplinary concepts:
 	taxonomy relation
 ∍Section. Subject domain of subject domains:
@@ -4129,7 +4129,7 @@ private subject domain*
 	* norole relation
 	* oriented relation
 	* binary relation
-	* sc_node_norole_relation
+	* sc node norole relation
 	* Subject domain of subject domains
 =>Section. Subject domain of subject domains:
 	* subject domain
@@ -4149,34 +4149,34 @@ private subject domain*
 Not Found
 
 === nrel_recirculation_ratio ===
-nrel_recirculation_ratio
+recirculation ratio
 
 <=sc-text translation*:
 ...
 	параметр, который определяет степень возвращения очищенной воды на сооружения станции очистки сточных вод для разбавления или поддержания определенного расхода.
 =>first domain*:
-	concept_biological_wastewater_treatment_facility
-∍explored_relation':
-	subject_domain_of_biological_wastewater_treatment_facility
+	biological wastewater treatment facility
+∍explored relation':
+	subject domain of biological wastewater treatment facility
 =>second domain*:
-	concept_recirculation_ratio
+	recirculation ratio
 
 
 === nrel_reduction_factor ===
-nrel_reduction_factor
+reduction factor
 
 =>domain*:
 	...
 =>first domain*:
-	concept_soil_material
-∍explored_relation':
-	subject_domain_of_low_capacity_biological_wastewater_treatment_facilities
+	soil material
+∍explored relation':
+	subject domain of low capacity biological wastewater treatment facilities
 =>second domain*:
 	number
 
 
 === nrel_replacement ===
-nrel_replacement
+replacement
 
 <=second domain*:
 	Subject domain of semantic neighbourhoods
@@ -4186,22 +4186,22 @@ nrel_replacement
 second domain*
 
 ∍Library component. scp-program of finding the definitional domain of relation:
-	proc_of_finding_definitional_domain
+	proc of finding definitional domain
 ∍Section. Subject domain of sheaves and relations:
 	* ...
 	* ...
 	* binary relation
-	* sc_node_norole_relation
+	* sc node norole relation
 	* Subject domain of sheaves and relations
 ∊ Section. Subject domain of sheaves and relations
 ∊ Section. Subject domain of ostis-systems
 ∊ Section. Subject domain of logical formulas and logical ontologies
 ∊ Section. Subject domain of subject domains
-∊ section_subjdomain_knowledges
+∊ section subjdomain knowledges
 ∊ Section. Interdisciplinary concepts
 ∊ Section. Subject domain of sheaves and relations
 ∊ Section. Subject domain of signs that do not belong to SC-code texts
-∊ section_subjdomain_sets
+∊ section subjdomain sets
 ∊ Section. Subject domain of parameters and values
 ∊ Library component. scp-program of finding the definitional domain of relation
 ∊ Justification of development. Scs-code
@@ -4209,31 +4209,31 @@ second domain*
 ∊ Section. Subject domain of informational structures that do not belong to SC-code
 ∊ Section. Subject domain of ontologies
 ∊ agent scp-program of сhecking availability of domains in relations within the given structure
-∊ agent scp-program of finding definitional_domain for relation
+∊ agent scp-program of finding definitional domain for relation
 ∊ agent scp-program of finding relations, defined for given concept
 ∊ Section. Subject domain of actions and action specifications of abstract scp-machine - base programming language SCP oriented on SC-code texts processing
 
 
 === nrel_separation_of_sludge_mixture ===
-nrel_separation_of_sludge_mixture
+separation of sludge mixture
 
-∍explored_relation':
-	subject_domain_of_facilities_for_biological_treatment_in_activated_sludge_systems
+∍explored relation':
+	subject domain of facilities for biological treatment in activated sludge systems
 
 
 === nrel_sludge_index ===
 Not Found
 
 === nrel_solution ===
-nrel_solution
+solution
 
-∍nrel_can_whistand:
+∍can whistand:
 	Subject domain of semantic neighbourhoods
 ∊ agent scp-program of finding condition and solution sc-text for the given task
 
 
 === nrel_specific_air_flow ===
-nrel_specific_air_flow
+specific air flow
 
 <=sc-text translation*:
 ...
@@ -4243,13 +4243,13 @@ nrel_specific_air_flow
 	* ...
 	* ...
 =>first domain*:
-	* concept_biological_filter
-	* concept_biological_wastewater_treatment_facility
-∍explored_relation':
-	subject_domain_of_biological_wastewater_treatment_facility
+	* biological filter
+	* biological wastewater treatment facility
+∍explored relation':
+	subject domain of biological wastewater treatment facility
 =>second domain*:
-	* concept_specific_air_flow
-	* concept_specific_air_flow
+	* specific air flow
+	* specific air flow
 
 
 === nrel_station_productivity ===
@@ -4258,7 +4258,7 @@ Not Found
 === nrel_subdividing ===
 subdividing*
 
-∍section_subjdomain_sets:
+∍section subjdomain sets:
 	* ...
 	* ...
 	* ...
@@ -4266,7 +4266,7 @@ subdividing*
 	* decomposition relation
 	* oriented relation
 	* quasybinary relation
-	* sc_node_norole_relation
+	* sc node norole relation
 	* Subject domain of sets
 ∍Section. Subject domain of sheaves and relations:
 	decomposition relation
@@ -4277,13 +4277,13 @@ subdividing*
 ∊ Section. Design technique for unified logical semantic models of knowledge processing machine
 ∊ Section. Subject domain of situations and events in sc-memory
 ∊ Section. Subject domain of logical formulas and logical ontologies
-∊ section_subjdomain_actions_executing_in_sc_memory
-∊ section_subjdomain_knowledges
+∊ section subjdomain actions executing in sc memory
+∊ section subjdomain knowledges
 ∊ Section. Subject domain of signs that do not belong to SC-code texts
-∊ section_subjdomain_actions_and_tasks
+∊ section subjdomain actions and tasks
 ∊ Section. Subject domain of temporary entity
-∊ section_subjdomain_sets
-∊ section_subjdomain_sets
+∊ section subjdomain sets
+∊ section subjdomain sets
 ∊ Section. Subject domain of numbers and numeric structures
 ∊ Section. Subject domain of structures
 ∊ Section. Subject domain of problematic knowledge base fragments
@@ -4299,7 +4299,7 @@ subdividing*
 ∊ Section. SCs-code. Basic sc.s-connectors
 ∊ Section. Subject domain of ontologies
 ∊ agent scp-program of specifying of indicated entity
-∊ section_subject_domain_of_sc_agents
+∊ section subject domain of sc agents
 ∊ Section. SCs-code. Additional sc.s-connectors
 ∊ agent scp-program of check for crossing from one partition elements within a given domain
 ∊ Section. Concept of reusable abstract sc-agent
@@ -4309,59 +4309,59 @@ subdividing*
 
 
 === nrel_subsystem ===
-nrel_subsystem
+subsystem
 
 <=second domain*:
 	Subject domain of semantic neighbourhoods
 
 
 === nrel_taken_into_account_parameter ===
-nrel_taken_into_account_parameter
+taken into account parameter
 
 
 
 === nrel_technological_scheme ===
-nrel_technological_scheme
+technological scheme
 
-∍explored_relation':
-	subject_domain_of_facilities_for_biological_treatment_in_activated_sludge_systems
+∍explored relation':
+	subject domain of facilities for biological treatment in activated sludge systems
 
 
 === nrel_test_for_loading_material ===
-nrel_test_for_loading_material
+test for loading material
 
-∍explored_relation':
-	subject_domain_of_biological_wastewater_treatment_facility
+∍explored relation':
+	subject domain of biological wastewater treatment facility
 <=sc-text translation*:
 ...
 	комплекс мероприятий по оценке его характеристик и свойств в процессе эксплуатации
 =>first domain*:
-	concept_biological_wastewater_treatment_facility
+	biological wastewater treatment facility
 
 
 === nrel_union ===
-nrel_union
+union
 
 ∊ Section. Technique of designing computer systems knowledge bases in context of Global knowledge base with the purpose of compatibility of knowledge bases supporting
 
 
 === nrel_unit ===
-nrel_unit
+unit
 
 
 
 === nrel_units ===
-nrel_units
+units
 
 
 
 === nrel_valid_parameter_value ===
-nrel_valid_parameter_value
+valid parameter value
 
 
 
 === nrel_volume ===
-nrel_volume
+volume
 
 <=second domain*:
 	Subject domain of parameters and values
@@ -4371,7 +4371,7 @@ nrel_volume
 Not Found
 
 === nrel_volumetric_load ===
-nrel_volumetric_load
+volumetric load
 
 <=sc-text translation*:
 ...
@@ -4379,20 +4379,20 @@ nrel_volumetric_load
 =>domain*:
 	...
 =>first domain*:
-	concept_biological_filter
-∍explored_relation':
-	subject_domain_of_biological_filters
+	biological filter
+∍explored relation':
+	subject domain of biological filters
 =>second domain*:
-	concept_volumetric_load
+	volumetric load
 
 
 === nrel_volumetric_loading ===
-nrel_volumetric_loading
+volumetric loading
 
 
 
 === nrel_waste_water_flow ===
-nrel_waste_water_flow
+waste water flow
 
 <=sc-text translation*:
 ...
@@ -4400,35 +4400,35 @@ nrel_waste_water_flow
 =>domain*:
 	...
 =>first domain*:
-	concept_biological_wastewater_treatment_facility
-∍explored_relation':
-	subject_domain_of_biological_wastewater_treatment_facility
+	biological wastewater treatment facility
+∍explored relation':
+	subject domain of biological wastewater treatment facility
 =>second domain*:
-	concept_waste_water_flow
+	waste water flow
 
 
 === nrel_wastewater_distribution ===
-nrel_wastewater_distribution
+wastewater distribution
 
-∍explored_relation':
-	subject_domain_of_biological_wastewater_treatment_facility
+∍explored relation':
+	subject domain of biological wastewater treatment facility
 <=sc-text translation*:
 ...
 	процесс равномерного распределения и транспортировки сточных вод от источников их образования к сооружениям для очистки и дальнейшего использования или сброса
 =>first domain*:
-	concept_biological_wastewater_treatment_facility
+	biological wastewater treatment facility
 
 
 === nrel_water_movement_direction ===
-nrel_water_movement_direction
+water movement direction
 
 ∊first domain*:
-	concept_direction
-∍explored_relation':
-	* subject_domain_of_biological_ponds
-	* subject_domain_of_biological_ponds
+	direction
+∍explored relation':
+	* subject domain of biological ponds
+	* subject domain of biological ponds
 ∊second domain*:
-	concept_biological_pond
+	biological pond
 =>sc-text translation*:
 	...
 =>domain*:
@@ -4436,7 +4436,7 @@ nrel_water_movement_direction
 
 
 === nrel_way ===
-nrel_way
+way
 
 <=second domain*:
 	Subject domain of semantic neighbourhoods
@@ -4449,13 +4449,13 @@ whole-part
 	* taxonomy relation
 	* ...
 	* orde relation
-	* sc_node_norole_relation
+	* sc node norole relation
 ∊ Section. Interdisciplinary concepts
 ∊ Section. Interdisciplinary concepts
 
 
 === nrel_working_height ===
-nrel_working_height
+working height
 
 <=sc-text translation*:
 ...
@@ -4463,20 +4463,20 @@ nrel_working_height
 =>domain*:
 	...
 =>first domain*:
-	concept_biological_filter
-∍explored_relation':
-	subject_domain_of_biological_filters
+	biological filter
+∍explored relation':
+	subject domain of biological filters
 =>second domain*:
-	concept_working_height
+	working height
 
 
 === rrel_explored_relation ===
-explored_relation'
+explored relation'
 
 ∍Section. Subject domain of subject domains:
 	* ...
 	* role relation
-	* sc_node_role_relation
+	* sc node role relation
 	* ...
 	* Subject domain of subject domains
 =>Section. Subject domain of subject domains:
@@ -4490,12 +4490,12 @@ explored_relation'
 ∊ Section. Subject domain of logical formulas and logical ontologies
 ∊ Section. Subject domain of subject domains
 ∊ Section. Subject domain of subject domains
-∊ section_subjdomain_knowledges
+∊ section subjdomain knowledges
 ∊ Section. Subject domain of unified logical semantic models of computer systems
 ∊ Section. Subject domain of signs that do not belong to SC-code texts
-∊ section_subjdomain_actions_and_tasks
+∊ section subjdomain actions and tasks
 ∊ Section. Subject domain of temporary entity
-∊ section_subjdomain_sets
+∊ section subjdomain sets
 ∊ Section. Subject domain of numbers and numeric structures
 ∊ Section. Subject domain of structures
 ∊ Section. Subject domain of parameters and values
@@ -4505,7 +4505,7 @@ explored_relation'
 ∊ agent scp-program of calculation absolute ontology depths
 ∊ Section. Subject domain of informational structures that do not belong to SC-code
 ∊ Section. Subject domain of ontologies
-∊ section_subject_domain_of_sc_agents
+∊ section subject domain of sc agents
 ∊ agent scp-program of calculation dispersion of ontology depths
 ∊ agent scp-program of calculation dispersion of vertex degrees
 ∊ agent scp-program of calculation the average value of different types of outbound connections of ontology vertexes
@@ -4529,305 +4529,305 @@ explored_relation'
 
 
 === rrel_final_destination ===
-rrel_final_destination
+rrel final destination
 
 <=second domain*:
 	Subject domain of semantic neighbourhoods
 
 
 === rrel_starting_point ===
-rrel_starting_point
+rrel starting point
 
 <=second domain*:
 	Subject domain of semantic neighbourhoods
 
 
 === rrel_unit ===
-rrel_unit
+rrel unit
 
 
 
 === subject_domain_of_biological_filters ===
-subject_domain_of_biological_filters
+subject domain of biological filters
 
 <=private subject domain*:
-	subject_domain_of_biological_wastewater_treatment_facility
+	subject domain of biological wastewater treatment facility
 ∊maximum class of explored objects':
-	concept_biological_filter
+	biological filter
 ∊not maximum class of explored objects':
-	* concept_disk_insight
-	* concept_disk_material
-	* concept_filter_disk_rotation_drive
-	* concept_filter_disk
-	* concept_bulk_density
-	* concept_device_of_lower_supporting_layer
-	* concept_drainage_system
-	* concept_distribution_system
-	* concept_bottom_washing_device
-	* concept_emptying_device
-	* concept_specific_air_flow
-	* concept_design_surface_loading
-	* concept_amount_of_excess_biofilm
-	* concept_working_height
-	* concept_biofilm_moisture
-	* concept_volumetric_load
-	* concept_air_supply_method
-	* concept_biofilm
-	* concept_dry_matter
-	* concept_disk_biological_filter
-	* concept_drum_biological_filter
-	* concept_tower_biological_filter
-	* concept_highly_loaded_biological_filter
-	* concept_drip_biological_filter
-	* concept_flooded_biological_filter
-	* concept_rotary_biological_filter
-	* concept_plastic_loading_biological_filter
-	* concept_polymer_loaded_biological_filter
-	* concept_mineral_loaded_biological_filter
-	* concept_irrigated_biological_filter
-∊explored_relation':
-	* nrel_volumetric_load
-	* nrel_disk_rotation_drive
-	* nrel_filter_disk
-	* nrel_disk_material
-	* nrel_disk_insight
-	* nrel_design_surface_loading
-	* nrel_amount_of_excess_biofilm
-	* nrel_working_height
-	* nrel_biofilm_mosture
-	* nrel_air_supply_method
+	* disk insight
+	* disk material
+	* filter disk rotation drive
+	* filter disk
+	* bulk density
+	* device of lower supporting layer
+	* drainage system
+	* distribution system
+	* bottom washing device
+	* emptying device
+	* specific air flow
+	* design surface loading
+	* amount of excess biofilm
+	* working height
+	* biofilm moisture
+	* volumetric load
+	* air supply method
+	* biofilm
+	* dry matter
+	* disk biological filter
+	* drum biological filter
+	* tower biological filter
+	* highly loaded biological filter
+	* drip biological filter
+	* flooded biological filter
+	* rotary biological filter
+	* plastic loading biological filter
+	* polymer loaded biological filter
+	* mineral loaded biological filter
+	* irrigated biological filter
+∊explored relation':
+	* volumetric load
+	* disk rotation drive
+	* filter disk
+	* disk material
+	* disk insight
+	* design surface loading
+	* amount of excess biofilm
+	* working height
+	* biofilm mosture
+	* air supply method
 
 
 === subject_domain_of_biological_ponds ===
-subject_domain_of_biological_ponds
+subject domain of biological ponds
 
 <=private subject domain*:
-	subject_domain_of_biological_wastewater_treatment_facility
+	subject domain of biological wastewater treatment facility
 ∊maximum class of explored objects':
-	concept_biological_pond
+	biological pond
 ∊not maximum class of explored objects':
-	* concept_direction
-	* concept_width_pond_with_natural_aeration
-	* concept_length_pond_with_natural_aeration
-	* concept_quantity
-	* concept_distance_from_water_level
-	* concept_assembly_device
-	* concept_tray_mark
-	* concept_bypass_pipe
-	* concept_water_speed
-	* concept_length_to_width_ratio
-	* concept_step
-	* concept_section
-	* concept_low_filtration_soil
-	* concept_settling_of_purified_water
-	* concept_lattice
-	* concept_artificial_aeration
-	* concept_natural_aeration
-	* concept_aeration
-	* concept_suspended_matter
-	* concept_content_of_suspended_metter
-	* concept_pond_with_natural_aeration
-	* concept_pond_with_artificial_aeration
-∊explored_relation':
-	* nrel_milligram_per_cubic_decimeter_measurement
-	* nrel_milligram_per_litre_measurement
-	* nrel_milligram_per_cubic_decimeter_measurement
-	* nrel_water_movement_direction
-	* nrel_milligram_per_litre_measurement
-	* nrel_water_movement_direction
+	* direction
+	* width pond with natural aeration
+	* length pond with natural aeration
+	* quantity
+	* distance from water level
+	* assembly device
+	* tray mark
+	* bypass pipe
+	* water speed
+	* length to width ratio
+	* step
+	* section
+	* low filtration soil
+	* settling of purified water
+	* lattice
+	* artificial aeration
+	* natural aeration
+	* aeration
+	* suspended matter
+	* content of suspended metter
+	* pond with natural aeration
+	* pond with artificial aeration
+∊explored relation':
+	* milligram per cubic decimeter measurement
+	* milligram per litre measurement
+	* milligram per cubic decimeter measurement
+	* water movement direction
+	* milligram per litre measurement
+	* water movement direction
 ∊ subject domain
 
 
 === subject_domain_of_biological_wastewater_treatment_facility ===
-subject_domain_of_biological_wastewater_treatment_facility
+subject domain of biological wastewater treatment facility
 
 ∊maximum class of explored objects':
-	concept_biological_wastewater_treatment_facility
+	biological wastewater treatment facility
 ∊not maximum class of explored objects':
-	* concept_recirculation_ratio
-	* concept_loading_material_size
-	* concept_loading
-	* concept_specific_air_flow
-	* concept_total_nitrogen
-	* concept_removed_BOC5
-	* concept_contaminator
-	* concept_polymer_loading_material
-	* concept_mineral_loading_material
-	* concept_natural_aeration
-	* concept_artificial_aeration
-	* concept_aerofilter
-	* concept_partial_treatment
-	* concept_complete_treatment
-	* concept_biodegradable_substance
-	* concept_nitrifying_substance
-	* concept_denitrifying_substance
-	* concept_inorganic_impurity
-	* concept_organic_impurity
-	* concept_waste_water_flow
-	* concept_COH
-	* concept_loading_height
-	* concept_loading_material
-	* concept_hydraulic_load
-	* concept_BOC5
-	* concept_degree_of_purification
-	* concept_biological_filter
-∊explored_relation':
-	* nrel_specific_air_flow
-	* nrel_recirculation_ratio
-	* nrel_test_for_loading_material
-	* nrel_loading
-	* nrel_material_size
-	* nrel_natural_aeration
-	* nrel_number_of_sections
-	* nrel_wastewater_distribution
-	* nrel_contaminator
-	* nrel_waste_water_flow
-	* nrel_COH
-	* nrel_BOC5
-	* nrel_hydraulic_load
-	* nrel_loading_height
-	* nrel_loading_material
-	* nrel_degree_of_purification
+	* recirculation ratio
+	* loading material size
+	* loading
+	* specific air flow
+	* total nitrogen
+	* removed BOC5
+	* contaminator
+	* polymer loading material
+	* mineral loading material
+	* natural aeration
+	* artificial aeration
+	* aerofilter
+	* partial treatment
+	* complete treatment
+	* biodegradable substance
+	* nitrifying substance
+	* denitrifying substance
+	* inorganic impurity
+	* organic impurity
+	* waste water flow
+	* COH
+	* loading height
+	* loading material
+	* hydraulic load
+	* BOC5
+	* degree of purification
+	* biological filter
+∊explored relation':
+	* specific air flow
+	* recirculation ratio
+	* test for loading material
+	* loading
+	* material size
+	* natural aeration
+	* number of sections
+	* wastewater distribution
+	* contaminator
+	* waste water flow
+	* COH
+	* BOC5
+	* hydraulic load
+	* loading height
+	* loading material
+	* degree of purification
 <=private subject domain*:
-	subject_domain_of_treatment_facilities
+	subject domain of treatment facilities
 =>private subject domain*:
-	* subject_domain_of_secondary_settling_tanks
-	* subject_domain_of_biological_ponds
-	* subject_domain_of_facilities_for_biological_treatment_in_activated_sludge_systems
-	* subject_domain_of_low_capacity_biological_wastewater_treatment_facilities
-	* subject_domain_of_biological_filters
+	* subject domain of secondary settling tanks
+	* subject domain of biological ponds
+	* subject domain of facilities for biological treatment in activated sludge systems
+	* subject domain of low capacity biological wastewater treatment facilities
+	* subject domain of biological filters
 ∊ subject domain
 
 
 === subject_domain_of_deep_wastewater_treatment_facilities ===
-subject_domain_of_deep_wastewater_treatment_facilities
+subject domain of deep wastewater treatment facilities
 
 <=private subject domain*:
-	subject_domain_of_treatment_facilities
+	subject domain of treatment facilities
 ∊maximum class of explored objects':
-	concept_deep_wastewater_treatment_facility
+	deep wastewater treatment facility
 ∊not maximum class of explored objects':
-	* concept_reserve_useful_area_soil_filtration_platform
-	* concept_useful_area_soil_filtration_platform
-	* concept_wastewater_treatment_efficiency
-	* concept_concentration_pollutants_wastewater
-	* concept_soil_filtration_platform
-	* concept_microfilter
-	* concept_specific_pollutants
-	* concept_facility_deep_oxidation_organic_and_nitrogen_compounds
-	* concept_facility_removing_suspended_solids_and_phosphorus_compounds
+	* reserve useful area soil filtration platform
+	* useful area soil filtration platform
+	* wastewater treatment efficiency
+	* concentration pollutants wastewater
+	* soil filtration platform
+	* microfilter
+	* specific pollutants
+	* facility deep oxidation organic and nitrogen compounds
+	* facility removing suspended solids and phosphorus compounds
 ∊ subject domain
 
 
 === subject_domain_of_facilities_for_biological_treatment_in_activated_sludge_systems ===
-subject_domain_of_facilities_for_biological_treatment_in_activated_sludge_systems
+subject domain of facilities for biological treatment in activated sludge systems
 
 <=private subject domain*:
-	subject_domain_of_biological_wastewater_treatment_facility
+	subject domain of biological wastewater treatment facility
 ∊maximum class of explored objects':
-	concept_activated_sludge_system
+	activated sludge system
 ∊not maximum class of explored objects':
-	* concept_membrane_filter
-	* concept_SBR_reactor
-	* concept_mixer
-	* concept_COC
-	* concept_consumption
-	* concept_activate_sludge_recycling
-	* concept_airlift
-	* concept_supercharger
-	* concept_gas_blower
-	* concept_blower
-	* concept_air_supply_equipment
-	* concept_pneumatic_aerator
-	* concept_jet_aerator
-	* concept_pneumomechanical_aerator
-	* concept_mechanical_aerator
-	* concept_aerator
-	* concept_oxygen_concentration
-	* concept_oxygen_demand_for_wastewater_treatment
-	* concept_increase_in_activated_sludge
-	* concept_combined_method_for_removing_phosphorus_compounds
-	* concept_biological_method_for_removing_phosphorus_compounds
-	* concept_reagent_precipitation_method
-	* concept_way_for_removing_phosphorus_compounds
-	* concept_phosphorus_compounds_removal
-	* concept_nitrate_nitrogen_concentration
-	* concept_volume_relation_of_deitrifier_and_tecnological_facility
-	* concept_cyclic_bioreactor
-	* concept_flow_bioreactor
-	* concept_volume_of_technological_facility
-	* concept_denitrifier_volume
-	* concept_pollutant
-	* concept_aeration_tank
-	* concept_sludge_mixture_speed
-	* concept_anoxide_condition
-	* concept_anaerobic_condition
-	* concept_aerobic_condition
-	* concept_removal_of_nitrogen_compounds
-	* concept_mixing_device
-	* concept_purification_from_specific_impurities
-	* concept_denitrification
-	* concept_nitrification
-	* concept_partial_wastewater_cleaning_of_biodegradable_substances
-	* concept_complete_wastewater_cleaning_of_biodegradable_substances
-	* concept_biological_wastewater_cleaning
-	* concept_wastewater_cleaning
-	* concept_activated_sludge_tank
-∊explored_relation':
-	* nrel_use
-	* nrel_separation_of_sludge_mixture
-	* nrel_technological_scheme
-	* nrel_use
+	* membrane filter
+	* SBR reactor
+	* mixer
+	* COC
+	* consumption
+	* activate sludge recycling
+	* airlift
+	* supercharger
+	* gas blower
+	* blower
+	* air supply equipment
+	* pneumatic aerator
+	* jet aerator
+	* pneumomechanical aerator
+	* mechanical aerator
+	* aerator
+	* oxygen concentration
+	* oxygen demand for wastewater treatment
+	* increase in activated sludge
+	* combined method for removing phosphorus compounds
+	* biological method for removing phosphorus compounds
+	* reagent precipitation method
+	* way for removing phosphorus compounds
+	* phosphorus compounds removal
+	* nitrate nitrogen concentration
+	* volume relation of deitrifier and tecnological facility
+	* cyclic bioreactor
+	* flow bioreactor
+	* volume of technological facility
+	* denitrifier volume
+	* pollutant
+	* aeration tank
+	* sludge mixture speed
+	* anoxide condition
+	* anaerobic condition
+	* aerobic condition
+	* removal of nitrogen compounds
+	* mixing device
+	* purification from specific impurities
+	* denitrification
+	* nitrification
+	* partial wastewater cleaning of biodegradable substances
+	* complete wastewater cleaning of biodegradable substances
+	* biological wastewater cleaning
+	* wastewater cleaning
+	* activated sludge tank
+∊explored relation':
+	* use
+	* separation of sludge mixture
+	* technological scheme
+	* use
 ∊ subject domain
 
 
 === subject_domain_of_low_capacity_biological_wastewater_treatment_facilities ===
-subject_domain_of_low_capacity_biological_wastewater_treatment_facilities
+subject domain of low capacity biological wastewater treatment facilities
 
 <=private subject domain*:
-	subject_domain_of_biological_wastewater_treatment_facility
+	subject domain of biological wastewater treatment facility
 ∊maximum class of explored objects':
-	concept_low_capacity_biological_wastewater_treatment_facility
+	low capacity biological wastewater treatment facility
 ∊not maximum class of explored objects':
-	* concept_hole
-	* concept_bottom
-	* concept_receiving_waterhouse
-	* concept_wastewater_freezing
-	* concept_effective_area
-	* concept_working_area
-	* concept_backup_card
-	* concept_filtering_fields_map
-	* concept_drainage_device
-	* concept_filter_well
-	* concept_underground_filtration_field
-	* concept_filter_field
-∊explored_relation':
-	* nrel_adjacent
-	* nrel_reduction_factor
-	* nrel_layer
+	* hole
+	* bottom
+	* receiving waterhouse
+	* wastewater freezing
+	* effective area
+	* working area
+	* backup card
+	* filtering fields map
+	* drainage device
+	* filter well
+	* underground filtration field
+	* filter field
+∊explored relation':
+	* adjacent
+	* reduction factor
+	* layer
 
 
 === subject_domain_of_secondary_settling_tanks ===
-subject_domain_of_secondary_settling_tanks
+subject domain of secondary settling tanks
 
-∍section_subject_domain_of_secondary_settling_tanks:
-	* sc_node_struct
+∍section subject domain of secondary settling tanks:
+	* sc node struct
 	* subject domain
 <=private subject domain*:
-	subject_domain_of_biological_wastewater_treatment_facility
-∊section_subject_domain_of_secondary_settling_tanks:
-	* concept_brightener
-	* concept_horizontal_secondary_settling_tank
-	* concept_radial_secondary_settling_tank
-	* concept_vertical_secondary_settling_tank
-	* concept_square
-	* concept_sludge_index
-	* concept_wastewater
-	* concept_secondary_settling_tank
-	* concept_biofilm
-	* concept_activated_sludge
-	* concept_secondary_settling_tank
-∊ section_subject_domain_of_secondary_settling_tanks
+	subject domain of biological wastewater treatment facility
+∊section subject domain of secondary settling tanks:
+	* brightener
+	* horizontal secondary settling tank
+	* radial secondary settling tank
+	* vertical secondary settling tank
+	* square
+	* sludge index
+	* wastewater
+	* secondary settling tank
+	* biofilm
+	* activated sludge
+	* secondary settling tank
+∊ section subject domain of secondary settling tanks
 
 
 === subject_domain_of_semantic_neighborhoods ===
@@ -4836,19 +4836,19 @@ Subject domain of semantic neighbourhoods
 <=section_subjdomain_knowledges:
 	Subject domain of knowledges
 ∊not maximum class of explored objects':
-	* concept_solution
-	* concept_plastic
-	* concept_expanded_clay
-	* concept_crushed_stone
-	* concept_durable_rock_pebbles
-∊nrel_can_whistand:
-	* nrel_solution
-	* nrel_component
-	* nrel_necessary_component
+	* solution
+	* plastic
+	* expanded clay
+	* crushed stone
+	* durable rock pebbles
+∊can whistand:
+	* solution
+	* component
+	* necessary component
 	* ...
 ∍Section subject domain of semantic neighbourhoods:
 	* structure
-	* sc_node_struct
+	* sc node struct
 	* subject domain
 ∊Section subject domain of semantic neighbourhoods:
 	* illustration
@@ -4871,36 +4871,36 @@ Subject domain of semantic neighbourhoods
 	* semantic neighborhood by incident connector
 	* semantic neighborhood
 =>second domain*:
-	* rrel_final_destination
-	* rrel_starting_point
-	* nrel_operation
-	* nrel_condition_of_application
-	* nrel_characteristic
-	* nrel_example
-	* nrel_definition_of_parameters
-	* nrel_way
-	* nrel_replacement
-	* nrel_subsystem
-	* concept_solution
-∊ concept_transportation
-∊ concept_light_loam
-∊ concept_sandy_loam
-∊ concept_sand
-∊ concept_soil_material
-∊ concept_slight_relief
-∊ concept_calm_terrain
-∊ concept_relief
-∊ concept_frost_resistance_test
-∊ concept_boiling
-∊ concept_drainage_system
-∊ concept_distribution_system
-∊ concept_system
-∊ concept_impregnation
-∊ concept_sodium_sulfate_solution
-∊ concept_hydrochlolic_acid_solution
-∊ concept_sodium_sulfate_solution
-∊ concept_hydrochlolic_acid_solution
-∊ section_subjdomain_knowledges
+	* rrel final destination
+	* rrel starting point
+	* operation
+	* condition of application
+	* characteristic
+	* example
+	* definition of parameters
+	* way
+	* replacement
+	* subsystem
+	* solution
+∊ transportation
+∊ light loam
+∊ sandy loam
+∊ sand
+∊ soil material
+∊ slight relief
+∊ calm terrain
+∊ relief
+∊ frost resistance test
+∊ boiling
+∊ drainage system
+∊ distribution system
+∊ system
+∊ impregnation
+∊ sodium sulfate solution
+∊ hydrochlolic acid solution
+∊ sodium sulfate solution
+∊ hydrochlolic acid solution
+∊ section subjdomain knowledges
 ∊ Section subject domain of semantic neighbourhoods
 ∊ Section subject domain of semantic neighbourhoods
 

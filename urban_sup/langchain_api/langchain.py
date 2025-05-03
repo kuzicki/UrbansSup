@@ -3,13 +3,13 @@ from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain.chains import create_history_aware_retriever, create_retrieval_chain
 from langchain.chains.combine_documents import create_stuff_documents_chain
 from .chroma import vectorstore
+from langchain.callbacks.streaming_stdout import StreamingStdOutCallbackHandler
 
 
 # Configure retriever for exact matches
 retriever = vectorstore.as_retriever(
     search_type="similarity",
-    search_kwargs={"k": 2},
-    # metadata_filter="немаксимальный класс объектов исследования"  # Add metadata filtering
+    search_kwargs={"k": 10},
 )
 
 # Update the contextualization prompt to enforce exact matches
@@ -34,7 +34,10 @@ qa_prompt = ChatPromptTemplate.from_messages(
     [
         (
             "system",
-            "You are a helpful AI assistant. Use the following context to answer the user's question. Answer with the information from the context and you must use all the words if they are appropriate to use so and all the info from the provided context.",
+            """Answer in 10-20 sentences using ONLY the context. Follow these rules:
+1. Be strictly concise
+2. NEVER add explanations unless asked
+3. If unsure, say "I don't have formalized knowledge about this""",
         ),
         ("system", "Context: {context}"),
         ("human", "{input}"),
@@ -43,10 +46,13 @@ qa_prompt = ChatPromptTemplate.from_messages(
 
 
 def get_rag_chain(model="bambucha/saiga-llama3"):
-    llm = ChatOllama(model=model, temperature=0.6,     num_ctx=2048,        # Reduce context window
-    num_gpu=40,          # Max layers for 24GB VRAM
-    main_gpu=0,          # Use primary GPU
+    llm = ChatOllama(model=model, temperature=0.5,
+        num_predict=300,     
+        streaming=True,  # Enable streaming
+        callbacks=[StreamingStdOutCallbackHandler()],  # Print tokens to stdout
+        verbose=True
     )
+
     history_aware_retriever = create_history_aware_retriever(
         llm, retriever, contextualize_q_prompt
     )

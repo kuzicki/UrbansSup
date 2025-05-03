@@ -24,21 +24,32 @@ class ChatView(APIView):
         return Response({"messages": messages}, status=status.HTTP_200_OK)
 
     def post(self, request):
-        print(request.data)
         serializer = ChatExchangeSerializer(data=request.data)
         if serializer.is_valid():
             user_query = serializer.validated_data["user_query"]
-            session_id = serializer.validated_data.get("session_id")
-            if not session_id:
-                session_id = str(uuid.uuid4())
-
+            session_id = serializer.validated_data.get("session_id") or str(uuid.uuid4())
             chat_history = get_chat_history(session_id, user=request.user)
+            
             rag_chain = get_rag_chain()
-            model_response = rag_chain.invoke(
+            
+            # For demonstration: Print tokens as they're generated
+            print("\n=== LIVE GENERATION ===")
+            response_buffer = []
+            
+            for chunk in rag_chain.stream(
                 {"input": user_query, "chat_history": chat_history}
-            )["answer"]
+            ):
+                token = chunk.get("answer", "")
+                print(token, end="", flush=True)  # Print tokens as they arrive
+                response_buffer.append(token)
+                
+            full_response = "".join(response_buffer)
+            
+            # Save and return as before
             exchange = serializer.save(
-                model_response=model_response, session_id=session_id, user=request.user
+                model_response=full_response, 
+                session_id=session_id, 
+                user=request.user
             )
 
             return Response(
