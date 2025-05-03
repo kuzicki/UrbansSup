@@ -55,6 +55,10 @@ class ChatListView(APIView):
         user = request.user
         
         # Get distinct sessions with their first message
+        first_message_subquery = ChatExchange.objects.filter(
+            session_id=OuterRef('session_id')
+        ).order_by('created_at')
+
         sessions = (
             ChatExchange.objects
             .filter(user=user)
@@ -62,13 +66,13 @@ class ChatListView(APIView):
             .distinct()
             .annotate(
                 first_message=Subquery(
-                    ChatExchange.objects
-                    .filter(session_id=OuterRef('session_id'))
-                    .order_by('created_at')
-                    .values('user_query')[:1]
+                    first_message_subquery.values('user_query')[:1]
+                ),
+                first_time=Subquery(
+                    first_message_subquery.values('created_at')[:1]
                 )
             )
-            .order_by('-session_id')
+            .order_by('-first_time')
         )
 
         # Format the response

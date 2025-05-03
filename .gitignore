@@ -47,4 +47,4 @@ htmlcov/
 *.sqlite3
 
 # Chroma
-api/chroma_db
+urban_sup/chroma_db
