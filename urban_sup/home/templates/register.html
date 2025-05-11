@@ -1,0 +1,132 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<title>Register</title>
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'css/homestyles.css' %}">
+<style>
+    .auth-container {
+        max-width: 500px; /* Changed from 400px */
+        width: 90%; /* Added for better responsiveness */
+        margin: 0 auto;
+        padding: 40px 35px; /* Increased horizontal padding */
+        background: var(--bg-panel);
+        border-radius: 16px;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    }
+
+    .auth-header {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .auth-header h2 {
+        color: var(--accent-primary);
+        font-size: 2.2rem;
+        margin-bottom: 10px;
+    }
+
+    .auth-form {
+        display: flex;
+        flex-direction: column;
+        gap: 25px; /* Increased gap */
+    }
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 10px; /* Increased gap */
+    }
+
+    .form-group label {
+        color: var(--text-secondary);
+        font-size: 0.95rem;
+    }
+
+    .chat-input {
+        width: 100%;
+        padding: 12px 16px;
+        font-size: 1rem;
+        border: 2px solid var(--text-secondary); /* Added border */
+        border-radius: 8px; /* Rounded corners */
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        background: transparent;
+        color: var(--text-primary);
+    }
+
+    .chat-input:focus {
+        outline: none;
+        border-color: var(--accent-primary); /* Color change on focus */
+        box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1); /* Subtle glow effect */
+    }
+
+    /* Added button sizing */
+    .new-chat-btn {
+        width: 92%;
+        font-size: 1rem;
+        display: block;
+    }
+</style>
+</head>
+<body>
+<div class="main-content" style="margin-left: 0; justify-content: center;">
+    <div class="auth-container">
+        <div class="auth-header">
+            <h2>Регистрация</h2>
+            <p class="text-secondary">Зарегистрируйтесь, чтобы продложить</p>
+        </div>
+        
+        <form id="registerForm" class="auth-form">
+            <div class="form-group">
+                <label for="username">Логин</label>
+                <input type="text" id="username" class="chat-input" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Пароль</label>
+                <input type="password" id="password" class="chat-input" required>
+            </div>
+            
+            <button type="submit" class="new-chat-btn" style="margin-top: 20px;">
+                Зарегистрироваться
+            </button>
+        </form>
+
+        <div style="margin-top: 25px; text-align: center;">
+            <p class="text-secondary" style="margin-bottom: 15px;">Уже есть аккаунт?</p>
+            <a href="/login" class="new-chat-btn" 
+               style="text-decoration: none; background-color: #f0f0f0; color: #333; padding: 12px;">
+                Войти
+            </a>
+        </div>
+    </div>
+</div>
+    <script>
+        document.getElementById("registerForm").addEventListener("submit", async function(e) {
+            e.preventDefault();
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+            try {
+                const response = await fetch("/langchain_api/register/", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({ username, password })
+                });
+                const data = await response.json();
+                if (response.ok) {
+                    alert("Registration successful!");
+                    window.location.href = "/login/";
+                } else {
+                    alert(data.detail || "Registration failed");
+                }
+            } catch (error) {
+                console.error("Error:", error);
+                alert("An error occurred");
+            }
+        });
+    </script>
+</body>
+</html>

@@ -252,29 +252,87 @@ fake_chat_history = {
     }
 }
 
+from django.db import transaction
 
 class ChatHistoryView(APIView):
-    """
-    Контроллер для получения истории чата по ID
-    GET /get-chat-history/<id>/
-    """
+    authentication_classes = [JWTAuthentication]
+    permission_classes = [IsAuthenticated]
 
-    def get(self, request, chat_id):
+    def get_queryset(self, session_id):
+        """Базовый queryset для всех операций"""
+        return ChatExchange.objects.filter(
+            session_id=session_id,
+            user=self.request.user
+        )
+
+    def delete(self, request, chat_id):
+        """Удаление всей истории чата"""
         try:
-            chat_id = int(chat_id)
-            chat_data = fake_chat_history.get(chat_id)
+            with transaction.atomic():
+                messages = self.get_queryset(chat_id)
+                if not messages.exists():
+                    return Response(
+                        {"error": "Чат не найден"},
+                        status=status.HTTP_404_NOT_FOUND
+                    )
 
-            if not chat_data:
+                count = messages.count()
+                messages.delete()
+
                 return Response(
-                    {"error": f"Чат с ID {chat_id} не найден"},
-                    status=status.HTTP_404_NOT_FOUND
+                    {
+                        "message": f"Чат удален",
+                        "deleted_messages": count
+                    },
+                    status=status.HTTP_200_OK
                 )
 
-            # Возвращаем только массив сообщений, как ожидает фронтенд
-            return Response(chat_data["messages"], status=status.HTTP_200_OK)
-
-        except ValueError:
+        except Exception as e:
             return Response(
-                {"error": "ID чата должен быть числом"},
+                {"error": str(e)},
                 status=status.HTTP_400_BAD_REQUEST
             )
+
+    def patch(self, request, chat_id):
+        """Редактирование свойств чата"""
+        try:
+            new_title = request.data.get('title')
+            if not new_title:
+                return Response(
+                    {"error": "Не указано новое название"},
+                    status=status.HTTP_400_BAD_REQUEST
+                )
+
+            with transaction.atomic():
+                # Находим первое сообщение в чате
+                first_message = self.get_queryset(chat_id).order_by('created_at').first()
+
+                if not first_message:
+                    return Response(
+                        {"error": "Чат не найден"},
+                        status=status.HTTP_404_NOT_FOUND
+                    )
+
+                # Обновляем "заголовок" чата (первое сообщение)
+                first_message.user_query = new_title
+                first_message.save()
+
+                # Опционально: обновляем название во всех связанных чатах
+                # если нужно синхронизировать данные
+
+                return Response(
+                    {"message": "Название чата обновлено"},
+                    status=status.HTTP_200_OK
+                )
+
+        except Exception as e:
+            return Response(
+                {"error": str(e)},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
+    def get(self, request, chat_id):
+        """Получение истории чата (опционально)"""
+        messages = self.get_queryset(chat_id).order_by('created_at')
+        serializer = ChatExchangeSerializer(messages, many=True)
+        return Response(serializer.data)

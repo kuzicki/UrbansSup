@@ -11,5 +11,5 @@ urlpatterns = [
     path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('chats/', ChatController.as_view(), name='chat-controller'),
 
-    path('get-chat-history/<int:chat_id>/', ChatHistoryView.as_view(), name='chat-history'),
+    path("chat-history/<uuid:chat_id>/", ChatHistoryView.as_view(), name="chat-history-manage"),
 ]
